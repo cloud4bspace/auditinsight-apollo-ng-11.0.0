@@ -4,17 +4,11 @@ $textColor:#424242;
 $textSecondaryColor:#7a7a7a;
 $dividerColor:#dddddd;
 
-/* Icons */
-$iconFontSize:13px;
-$iconWidth:16px;
-
-$inputGroupAddonBgColor:#b6b7c2;
-
 /* Error */
 $errorColor:#EF5350;
 
 /* Header */
-$headerPadding:6px 12px;
+$headerPadding:.429em .857em;
 $headerBgColor:#f5f5f5;
 $headerBorderColor:#d8d8d8;
 $headerTextColor:#424242;
@@ -24,21 +18,22 @@ $headerIconColor:#424242;
 $headerIconHoverColor:$primaryColor;
 
 /* Contents */
-$contentPadding:6px 12px;
+$contentPadding:.429em .857em;
 $contentBorderColor:#d8d8d8;
 $contentBgColor:#ffffff;
 
 /* Forms */
 $inputBgColor:#ffffff;
-$inputPadding:6px;
+$inputPadding:.429em;
 $inputBorderColor:#cccccc;
 $inputHoverBorderColor:$primaryColor;
+$inputGroupAddonBgColor:#f5f5f5;
 
 /* Buttons */
 $toggleButtonBgColor:#b6b7c2;
 
 /* List Items */
-$listItemPadding:6px 12px;
+$listItemPadding:.429em .857em;
 
 /* Messages */
 $infoMessageBgColor:#39A3F4;
@@ -55,7 +50,7 @@ $datatableCellBorderColor:#d8d8d8;
 $datableEvenRowBgColor:#f9f9f9;
 
 /* TabView */
-$tabHeaderPadding:8px 12px;
+$tabHeaderPadding:.571em .857em;
 
 /* Menus */
 $menuBgColor:#ffffff;

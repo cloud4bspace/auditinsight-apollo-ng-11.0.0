@@ -147,7 +147,7 @@
 }
 
 @mixin focused-input() {
-	border: 1px solid $primaryColor;
+	border-color: $primaryColor;
     @include shadow(0 0 7px 0 $primaryColor);
 }
 

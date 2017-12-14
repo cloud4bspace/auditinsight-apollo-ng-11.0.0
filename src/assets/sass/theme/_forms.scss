@@ -16,8 +16,7 @@ body {
         }
 
         &:enabled:focus:not(.ui-state-error) {
-          border-color: $primaryColor;
-          @include shadow(0 0 7px 0 $primaryColor);
+            @include focused-input();
         }
     }
 
@@ -338,24 +337,62 @@ body {
     }
 
     .ui-autocomplete {
+        .ui-autocomplete-input {
+            width: 100%;
+
+            &.ui-corner-all {
+                @include border-radius-right($borderRadius);
+            }
+        }
+
+        &.ui-autocomplete-dd {
+            .ui-autocomplete-input {
+                padding-right: 2em;
+                border-right: 1px solid $inputBorderColor;
+            }
+
+            &.ui-autocomplete-multiple {
+                 .ui-autocomplete-multiple-container {
+                     padding-right: 2em;
+                    &.ui-corner-all {
+                        @include border-radius-right($borderRadius);
+                    }
+                 }
+            }
+        }
+
         .ui-autocomplete-dropdown {
             width: 2em;
-            padding: .06em;
+            line-height: 2em;
+            text-align: center;
+            background: transparent;
+            border: 0 none;
+            border-left: 0 none;
+            position: absolute;
+            right: 0;
+            top: 0;
+            color: $textSecondaryColor;
+            @include transition(color $transitionDuration);
 
-            .fa {
+            .ui-button-icon-left {
+                line-height: inherit;
                 @include icon_override("\f078");
             }
 
-            &.ui-button-icon-only {
-                .ui-button-text {
-                    padding: 0.385em;
-                }
+            &:hover {
+                background: transparent;
+                color: $textSecondaryColor;
+            }
+
+            &:focus {
+                background: transparent;
+                color: $primaryColor;
             }
         }
 
         &.ui-autocomplete-multiple {
             .ui-autocomplete-multiple-container {
-                padding: $inputPadding - 1px;
+                padding: $inputPadding;
 
                 &:not(.ui-state-disabled):hover {
                     border-color: $inputHoverBorderColor;
@@ -407,17 +444,17 @@ body {
     }
 
     .ui-fluid {
-        .ui-autocomplete-multiple.ui-autocomplete-dd {
-            .ui-autocomplete-multiple-container {
-                border-right: 0 none;
-                width: calc(100% - 2em);
+        .ui-autocomplete {
+            &.ui-autocomplete-multiple.ui-autocomplete-dd {
+                .ui-autocomplete-multiple-container {
+                    width: 100%;
+                }
             }
-        }
 
-        .ui-autocomplete-dd {
-            .ui-inputtext {
-                border-right: 0 none;
-                width: calc(100% - 2em);
+            &.ui-autocomplete-dd {
+                .ui-inputtext {
+                    width: 100%;
+                }
             }
         }
     }
@@ -461,7 +498,6 @@ body {
 
     .ui-dropdown {
         @include transition(box-shadow $transitionDuration, border-color $transitionDuration);
-        @include box-sizing(border-box);
         border: 1px solid $inputBorderColor;
 
         &:not(.ui-state-disabled):hover {
@@ -1013,11 +1049,10 @@ body {
             td {
                 padding: 2px;
 
-                a,span {
-                    min-width: 15px;
+                a {
                     text-align: center;
                     color: $textColor;
-                    padding: .35em;
+                    padding: .5em;
                     @include border-radius($borderRadius);
 
                     &:hover {
@@ -1123,7 +1158,7 @@ body {
         .ui-inputgroup-addon {
             border-color: $inputBorderColor;
             background-color: $inputGroupAddonBgColor;
-            padding: $inputPadding;
+            min-width: 2.5em;
 
             &:first-child {
               @include border-radius-left($borderRadius);
