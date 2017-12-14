@@ -207,11 +207,9 @@ export class AppMenuComponent implements OnInit, AfterViewInit, OnDestroy {
     animations: [
         trigger('children', [
             state('visible', style({
-                display: 'block',
                 height: '*'
             })),
             state('hidden', style({
-                display: 'none',
                 height: '0px'
             })),
             transition('visible => hidden', animate('400ms cubic-bezier(0.86, 0, 0.07, 1)')),
