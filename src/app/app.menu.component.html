@@ -1,0 +1,23 @@
+<div class="layout-menu-container">
+    <div #layoutMenuScroller class="nano">
+        <div class="nano-content menu-scroll-content">
+            <div class="layout-menu-title">MENU</div>
+            <ul app-submenu [item]="model" root="true" class="layout-menu" visible="true" [reset]="reset"></ul>
+            <div class="layout-menu-footer">
+                <div class="layout-menu-footer-title">TASKS</div>
+
+                <div class="layout-menu-footer-content">
+                  <p-progressBar [value]="50" [showValue]="false"></p-progressBar>
+                  Today
+
+                  <p-progressBar [value]="80" [showValue]="false"></p-progressBar>
+                  Overall
+                </div>
+            </div>
+        </div>
+        <div class="nano-pane">
+            <div class="nano-slider" style="height: 768px; transform: translate(0px, 0px);"></div>
+        </div>
+    </div>
+</div>
+
