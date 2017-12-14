@@ -1159,6 +1159,7 @@ body {
             border-color: $inputBorderColor;
             background-color: $inputGroupAddonBgColor;
             min-width: 2.5em;
+            padding: $inputPadding;
 
             &:first-child {
               @include border-radius-left($borderRadius);
