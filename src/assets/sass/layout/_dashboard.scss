@@ -101,57 +101,6 @@
         }
     }
 
-    .knobs {
-        text-align: center;
-
-        .ui-panel-content {
-            padding: 0;
-        }
-
-        .knob-title {
-            margin-bottom: 10px;
-            font-size: 20px;
-        }
-
-        div.ui-g-12 {
-            border-right: 1px solid $dividerColor;
-            position: relative;
-            overflow: hidden;
-
-            &:last-child {
-                border-right: 0 none;
-            }
-
-            i {
-                position: absolute;
-                font-size: 24px;
-                left: 50%;
-                top: 50%;
-                width: 36px;
-                height: 36px;
-                margin-left: -18px;
-                margin-top: -28px;
-                @include opacity(.7);
-            }
-
-            &.knob-users {
-                color: $green;
-            }
-
-            &.knob-mobile {
-                color: $orange;
-            }
-
-            &.knob-pageviews {
-                color: $blue;
-            }
-
-            &.knob-sales {
-                color: $red;
-            }
-        }
-    }
-
     .disk-spaces {
         .ui-panel-content {
             padding: 2em;
@@ -575,15 +524,56 @@
             width: 100%;
         }
     }
-}
 
-@media (max-width: 1024px) {
-    .dashboard {
-        .knobs {
-            > div {
-                border-right-color: transparent;
-                border-bottom: 1px solid $dividerColor;
-            }
+    .status-title{
+        margin-bottom: 0.714em;
+        font-size: 1.429em;
+        text-align: center;
+    }
+
+    .circle1{
+        @include circle(#6ebc3b);
+        i {
+            @include circle-icon(#6ebc3b);
+        }
+        span {
+            @include circle-text(#6ebc3b)
+        }
+    }
+    .circle2{
+        @include circle(#f6a821);
+        i {
+            @include circle-icon(#f6a821);
+        }
+        span {
+            @include circle-text(#f6a821)
+        }
+    }
+    .circle3{
+        @include circle(#039ade);
+        i {
+            @include circle-icon(#039ade);
+        }
+        span {
+            @include circle-text(#039ade)
+        }
+    }
+    .circle4{
+        @include circle(#d66351);
+        i {
+            @include circle-icon(#d66351);
+        }
+        span {
+            @include circle-text(#d66351)
+        }
+    }
+
+    .circle-panel{
+        .ui-panel-titlebar {
+            text-align: center;
+        }
+        .ui-panel-content{
+            padding: 0px;
         }
     }
 }

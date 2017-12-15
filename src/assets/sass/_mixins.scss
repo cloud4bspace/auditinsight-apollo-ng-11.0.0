@@ -167,3 +167,38 @@
         clear: both;
     }
 }
+@mixin circle($color){
+  width: 10.714em;
+  height: 10.714em;
+  border: 10px solid #b2b2b2;
+  border-right-color: $color;
+  border-top-color: $color;
+  border-bottom-color: $color;
+  border-radius: 50%;
+  margin: auto;
+}
+@mixin circle-icon($color){
+  position: relative;
+  font-size: 24px;
+  left: 50%;
+  top: 20%;
+  width: 36px;
+  height: 36px;
+  margin-left: -20px;
+  color: $color;
+  text-align: center;
+
+}
+@mixin circle-text($color){
+  width: 79px;
+  height: 50px;
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+  top: 40%;
+  left: 50%;
+  margin-left: -35px;
+  color: $color;
+  font-weight: bold;
+  font-size: 30px;
+}
