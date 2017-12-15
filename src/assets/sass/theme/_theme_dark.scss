@@ -4,11 +4,8 @@ $textColor:#d8d8d8;
 $textSecondaryColor:#acacac;
 $dividerColor:#121213;
 
-/* Error */
-$errorColor:#EF5350;
-
 /* Header */
-$headerPadding:6px 12px;
+$headerPadding:.429em .857em;
 $headerBgColor:#1b3548;
 $headerBorderColor:#121213;
 $headerTextColor:#9fadb7;
@@ -18,13 +15,13 @@ $headerIconColor:#9fadb7;
 $headerIconHoverColor:#ffffff;
 
 /* Contents */
-$contentPadding:6px 12px;
+$contentPadding:.429em .857em;
 $contentBorderColor:#121213;
 $contentBgColor:#1c2937;
 
 /* Forms */
 $inputBgColor:#141e27;
-$inputPadding:6px;
+$inputPadding:.429em;
 $inputBorderColor:#121213;
 $inputHoverBorderColor:$primaryColor;
 $inputGroupAddonBgColor:#1b3548;
@@ -33,7 +30,7 @@ $inputGroupAddonBgColor:#1b3548;
 $toggleButtonBgColor:#323e4b;
 
 /* List Items */
-$listItemPadding:6px 12px;
+$listItemPadding:.429em .857em;
 
 /* Messages */
 $infoMessageBgColor:#39A3F4;
@@ -42,17 +39,12 @@ $warnMessageBgColor:#FFC800;
 $warnMessageTextColor:#141d26;
 $errorMessageBgColor:#EF5350;
 $errorMessageTextColor:#ffffff;
-$fatalMessageBgColor:#E73E51;
-$fatalMessageTextColor:#ffffff;
 
 /* Data */
 $datatableCellBorderColor:#121213;
 $datableEvenRowBgColor:#15222F;
 
 /* TabView */
-$tabHeaderPadding:8px 12px;
-
-/* Menus */
-$menuBgColor:#243447;
+$tabHeaderPadding:.571em .857em;
 
 @import './_theme.scss';
