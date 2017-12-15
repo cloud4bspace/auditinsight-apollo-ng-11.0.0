@@ -185,10 +185,9 @@ body {
 
                         .topbar-badge {
                             float: right;
-                            background-color: #ffffff;
+                            background-color: $primaryTextColor;
                             display: block;
-                            margin-top: -2px;
-                            color: $primaryTextColor;
+                            color: $primaryColor;
                             width: 18px;
                             height: 18px;
                             line-height: 18px;
