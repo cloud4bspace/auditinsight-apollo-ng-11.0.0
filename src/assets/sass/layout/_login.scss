@@ -16,14 +16,18 @@
     border-top: 7px solid $primaryColor;
   }
 
+  .right-side {
+    width: 50%;
+  }
+
   .left-side {
     height: 100%;
     padding-left: 100px;
+    width: 50%;
 
     img {
       padding: 100px 0 100px 0;
       width: 60px;
-      height: 60px;
     }
 
     h1 {
@@ -80,14 +84,12 @@
     }
 
     input {
+      width: 100%;
       font-size: 1em;
     }
 
-    .ui-g-12, .ui-g-6 {
-      padding: .8em;
-    }
-
     .ui-button {
+      width: 100%;
       font-size: 16px;
     }
 
@@ -102,6 +104,7 @@
     .left-side {
       height: 300px;
       padding-left: 25px;
+      width: 100%;
 
       img {
         padding: 20px 0 20px 0;
@@ -114,6 +117,7 @@
 
     .right-side {
       height: 100%;
+      width: 100%;
     }
   }
 
@@ -132,6 +136,7 @@
       height: 200px;
       padding-left: 25px;
       text-align: center;
+      width: 100%;
 
       img {
         padding: 20px 0 20px 0;
@@ -148,6 +153,7 @@
 
     .right-side {
       height: calc(100% - 250px);
+      width: 100%;
     }
   }
 
@@ -158,4 +164,21 @@
       padding-top: 25%;
     }
   }
+}
+
+.ui-button {
+  display: inline-block;
+  position: relative;
+  padding: 0;
+  margin-right: .1em;
+  text-decoration: none !important;
+  cursor: pointer;
+  text-align: center;
+  zoom: 1;
+  overflow: visible; /* the overflow property removes extra width in IE */
+}
+
+.ui-button-text-only .ui-button-text {
+  padding: .25em 1em;
+  display: block;
 }
