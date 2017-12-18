@@ -7,6 +7,8 @@ import {Component, ElementRef, Renderer, ViewChild} from '@angular/core';
 })
 export class AppComponent {
 
+  themeSwitch = false;
+
   public menuMode = 'static';
 
   public menuActive = true;
@@ -65,5 +67,17 @@ export class AppComponent {
 
   isMobile() {
     return window.innerWidth < 1025;
+  }
+
+  changeTheme(theme) {
+    const themeLink: HTMLLinkElement = <HTMLLinkElement> document.getElementById('theme-css');
+    themeLink.href = 'assets/theme/theme-' + theme + '.css';
+    const layoutLink: HTMLLinkElement = <HTMLLinkElement> document.getElementById('layout-css');
+    layoutLink.href = 'assets/layout/css/layout-' + theme + '.css';
+    if(theme.includes('dark')) {
+      this.themeSwitch = true;
+    } else {
+      this.themeSwitch = false;
+    }
   }
 }

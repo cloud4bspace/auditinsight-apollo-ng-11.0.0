@@ -18,7 +18,7 @@
     </span>
 
     <span class="topbar-themeswitcher">
-        <p-inputSwitch [(ngModel)]="themeSwitch" (onChange)="themeChange($event)"></p-inputSwitch>
+        <p-inputSwitch [(ngModel)]="app.themeSwitch" (onChange)="themeChange($event)"></p-inputSwitch>
     </span>
 
     <ul class="topbar-menu fadeInDown" [ngClass]="{'topbar-menu-visible': app.topbarMenuActive}" (click)="app.onTopbarMenuClick()">

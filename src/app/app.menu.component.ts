@@ -37,42 +37,42 @@ export class AppMenuComponent implements OnInit, AfterViewInit, OnDestroy {
                 label: 'Dark', icon: 'fa fa-fw fa-circle', badge: '8',
                 items: [
                     {label: 'Blue', styleClass: 'blue-theme', icon: 'fa fa-fw fa-paint-brush',
-                      command: (event) => {this.changeTheme('blue-dark'); }},
+                      command: (event) => {this.app.changeTheme('blue-dark'); }},
                     {label: 'Green', styleClass: 'green-theme', icon: 'fa fa-fw fa-paint-brush',
-                      command: (event) => {this.changeTheme('green-dark'); }},
+                      command: (event) => {this.app.changeTheme('green-dark'); }},
                     {label: 'Cyan', styleClass: 'cyan-theme', icon: 'fa fa-fw fa-paint-brush',
-                      command: (event) => {this.changeTheme('cyan-dark'); }},
+                      command: (event) => {this.app.changeTheme('cyan-dark'); }},
                     {label: 'Purple', styleClass: 'purple-theme', icon: 'fa fa-fw fa-paint-brush',
-                      command: (event) => {this.changeTheme('purple-dark'); }},
+                      command: (event) => {this.app.changeTheme('purple-dark'); }},
                     {label: 'Indigo', styleClass: 'indigo-theme', icon: 'fa fa-fw fa-paint-brush',
-                      command: (event) => {this.changeTheme('indigo-dark'); }},
+                      command: (event) => {this.app.changeTheme('indigo-dark'); }},
                     {label: 'Yellow', styleClass: 'yellow-theme', icon: 'fa fa-fw fa-paint-brush',
-                      command: (event) => {this.changeTheme('yellow-dark'); }},
+                      command: (event) => {this.app.changeTheme('yellow-dark'); }},
                     {label: 'Orange', styleClass: 'orange-theme', icon: 'fa fa-fw fa-paint-brush',
-                      command: (event) => {this.changeTheme('orange-dark'); }},
+                      command: (event) => {this.app.changeTheme('orange-dark'); }},
                     {label: 'Pink', styleClass: 'pink-theme', icon: 'fa fa-fw fa-paint-brush',
-                      command: (event) => {this.changeTheme('pink-dark'); }}
+                      command: (event) => {this.app.changeTheme('pink-dark'); }}
                 ]
             },
             {
                 label: 'Light', icon: 'fa fa-fw fa-circle-o', badge: '8',
                 items: [
                     {label: 'Blue', styleClass: 'blue-theme', icon: 'fa fa-fw fa-paint-brush',
-                      command: (event) => {this.changeTheme('blue-light'); }},
+                      command: (event) => {this.app.changeTheme('blue-light'); }},
                     {label: 'Green', styleClass: 'green-theme', icon: 'fa fa-fw fa-paint-brush',
-                      command: (event) => {this.changeTheme('green-light'); }},
+                      command: (event) => {this.app.changeTheme('green-light'); }},
                     {label: 'Cyan', styleClass: 'cyan-theme', icon: 'fa fa-fw fa-paint-brush',
-                      command: (event) => {this.changeTheme('cyan-light'); }},
+                      command: (event) => {this.app.changeTheme('cyan-light'); }},
                     {label: 'Purple', styleClass: 'purple-theme', icon: 'fa fa-fw fa-paint-brush',
-                      command: (event) => {this.changeTheme('purple-light'); }},
+                      command: (event) => {this.app.changeTheme('purple-light'); }},
                     {label: 'Indigo', styleClass: 'indigo-theme', icon: 'fa fa-fw fa-paint-brush',
-                      command: (event) => {this.changeTheme('indigo-light'); }},
+                      command: (event) => {this.app.changeTheme('indigo-light'); }},
                     {label: 'Yellow', styleClass: 'yellow-theme', icon: 'fa fa-fw fa-paint-brush',
-                      command: (event) => {this.changeTheme('yellow-light'); }},
+                      command: (event) => {this.app.changeTheme('yellow-light'); }},
                     {label: 'Orange', styleClass: 'orange-theme', icon: 'fa fa-fw fa-paint-brush',
-                      command: (event) => {this.changeTheme('orange-light'); }},
+                      command: (event) => {this.app.changeTheme('orange-light'); }},
                     {label: 'Pink', styleClass: 'pink-theme', icon: 'fa fa-fw fa-paint-brush',
-                      command: (event) => {this.changeTheme('pink-light'); }}
+                      command: (event) => {this.app.changeTheme('pink-light'); }}
                 ]
             },
             {
@@ -157,13 +157,6 @@ export class AppMenuComponent implements OnInit, AfterViewInit, OnDestroy {
         setTimeout(() => {
             jQuery(this.layoutMenuScroller).nanoScroller({flash: true});
         }, 10);
-    }
-
-    changeTheme(theme) {
-        const themeLink: HTMLLinkElement = <HTMLLinkElement> document.getElementById('theme-css');
-        themeLink.href = 'assets/theme/theme-' + theme + '.css';
-        const layoutLink: HTMLLinkElement = <HTMLLinkElement> document.getElementById('layout-css');
-        layoutLink.href = 'assets/layout/css/layout-' + theme + '.css';
     }
 
     ngOnDestroy() {
