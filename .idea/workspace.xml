@@ -15,19 +15,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.menu.component.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/app.menu.component.ts">
+      <file leaf-file-name="_forms.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/assets/sass/theme/_forms.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="205" column="22" lean-forward="true" selection-start-line="205" selection-start-column="22" selection-end-line="205" selection-end-column="22" />
-              <folding>
-                <marker date="1513581376000" expanded="true" signature="9849:11769" ph="..." />
-                <marker date="1513581376000" expanded="true" signature="9990:11746" ph="..." />
-                <marker date="1513581376000" expanded="true" signature="10101:10580" ph="..." />
-                <marker date="1513581376000" expanded="true" signature="10693:11215" ph="..." />
-                <marker date="1513581376000" expanded="true" signature="11265:11430" ph="..." />
-                <marker date="1513581376000" expanded="true" signature="11538:11728" ph="..." />
-              </folding>
+            <state relative-caret-position="190">
+              <caret line="1029" column="27" lean-forward="false" selection-start-line="1029" selection-start-column="27" selection-end-line="1029" selection-end-column="27" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -43,7 +36,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>list</find>
       <find>datep</find>
       <find>sarah</find>
       <find>multise</find>
@@ -73,6 +65,7 @@
       <find>activity-list</find>
       <find>user-card</find>
       <find>sele</find>
+      <find>padding</find>
     </findStrings>
     <replaceStrings>
       <replace>../</replace>
@@ -82,6 +75,7 @@
     <dirStrings>
       <dir>$PROJECT_DIR$/src/app</dir>
       <dir>$PROJECT_DIR$/src/assets</dir>
+      <dir>$PROJECT_DIR$/src/assets/sass/theme</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -118,7 +112,6 @@
         <option value="$PROJECT_DIR$/src/assets/pages/error.html" />
         <option value="$PROJECT_DIR$/src/assets/pages/404.html" />
         <option value="$PROJECT_DIR$/src/assets/pages/access.html" />
-        <option value="$PROJECT_DIR$/src/assets/sass/theme/_data.scss" />
         <option value="$PROJECT_DIR$/src/assets/sass/theme/_misc.scss" />
         <option value="$PROJECT_DIR$/src/app/app.topbar.component.html" />
         <option value="$PROJECT_DIR$/src/app/app.topbar.component.ts" />
@@ -129,7 +122,6 @@
         <option value="$PROJECT_DIR$/src/assets/sass/theme/_icons.scss" />
         <option value="$PROJECT_DIR$/src/assets/sass/_mixins.scss" />
         <option value="$PROJECT_DIR$/src/assets/sass/theme/_theme.scss" />
-        <option value="$PROJECT_DIR$/src/assets/sass/layout/_main.scss" />
         <option value="$PROJECT_DIR$/src/assets/sass/_variables.scss" />
         <option value="$PROJECT_DIR$/src/assets/sass/theme/_theme_light.scss" />
         <option value="$PROJECT_DIR$/src/assets/sass/theme/_theme_dark.scss" />
@@ -138,9 +130,11 @@
         <option value="$PROJECT_DIR$/src/assets/sass/layout/_exception.scss" />
         <option value="$PROJECT_DIR$/src/assets/sass/layout/_landing.scss" />
         <option value="$PROJECT_DIR$/src/assets/pages/landing.html" />
-        <option value="$PROJECT_DIR$/src/assets/sass/theme/_forms.scss" />
         <option value="$PROJECT_DIR$/src/assets/sass/theme/_menus.scss" />
         <option value="$PROJECT_DIR$/src/app/app.menu.component.ts" />
+        <option value="$PROJECT_DIR$/src/assets/sass/layout/_main.scss" />
+        <option value="$PROJECT_DIR$/src/assets/sass/theme/_data.scss" />
+        <option value="$PROJECT_DIR$/src/assets/sass/theme/_forms.scss" />
       </list>
     </option>
   </component>
@@ -227,7 +221,22 @@
               <item name="apollo" type="b2602c69:ProjectViewProjectNode" />
               <item name="apollo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="apollo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="apollo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="sass" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="apollo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="apollo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="sass" type="462c0819:PsiDirectoryNode" />
+              <item name="theme" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -304,12 +313,12 @@
       <workItem from="1513146162738" duration="18181000" />
       <workItem from="1513257971168" duration="5402000" />
       <workItem from="1513327544816" duration="4071000" />
-      <workItem from="1513577641059" duration="2806000" />
+      <workItem from="1513577641059" duration="3647000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77970000" />
+    <option name="totallyTimeSpent" value="78811000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -319,6 +328,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17970401" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -331,7 +341,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -478,13 +487,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/sass/theme/_data.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="493" column="48" lean-forward="false" selection-start-line="493" selection-start-column="48" selection-end-line="493" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/sass/theme/_misc.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -531,6 +533,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
           <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -578,13 +581,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/sass/layout/_main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="188" column="43" lean-forward="false" selection-start-line="188" selection-start-column="43" selection-end-line="188" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/sass/_variables.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -597,14 +593,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="645">
           <caret line="47" column="18" lean-forward="false" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/sass/theme/_theme_dark.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="47" column="32" lean-forward="false" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -648,6 +636,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7725">
           <caret line="515" column="16" lean-forward="false" selection-start-line="515" selection-start-column="16" selection-end-line="515" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -655,14 +644,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287">
           <caret line="175" column="72" lean-forward="false" selection-start-line="175" selection-start-column="31" selection-end-line="175" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/sass/theme/_forms.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="949" column="13" lean-forward="true" selection-start-line="949" selection-start-column="13" selection-end-line="949" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -703,6 +684,38 @@
             <marker date="1513581376000" expanded="true" signature="11265:11430" ph="..." />
             <marker date="1513581376000" expanded="true" signature="11538:11728" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/sass/layout/_main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="24" column="25" lean-forward="false" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/sass/theme/_data.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="376" column="42" lean-forward="false" selection-start-line="376" selection-start-column="42" selection-end-line="376" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/sass/theme/_theme_dark.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="47" column="32" lean-forward="false" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/sass/theme/_forms.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="1029" column="27" lean-forward="false" selection-start-line="1029" selection-start-column="27" selection-end-line="1029" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>

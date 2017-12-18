@@ -558,7 +558,7 @@ body {
             .ui-dropdown-filter {
                 width: 100%;
                 box-sizing: border-box;
-                padding-right: 20px;
+                padding-right: 1.429em;
             }
 
             .fa {
@@ -1027,7 +1027,7 @@ body {
 
             .ui-datepicker-prev {
                 cursor: pointer;
-                top:1em;
+                top:0.857em;
                 color: $headerIconColor;
                 @include icon_override("\f053");
                 @include transition(color $transitionDuration);
@@ -1038,7 +1038,7 @@ body {
 
             .ui-datepicker-next {
                 cursor: pointer;
-                top:1em;
+                top:0.857em;
                 color: $headerIconColor;
                 @include icon_override("\f054");
                 @include transition(color $transitionDuration);
