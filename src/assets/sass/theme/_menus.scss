@@ -163,6 +163,14 @@ body {
                     }
                 }
 
+                &:focus {
+                    @include menu-item-hover();
+
+                  .ui-menuitem-link {
+                    color: #ffffff;
+                  }
+                }
+
                 .ui-menuitem-link {
                     padding: $listItemPadding;
                     width: 100%;
@@ -172,6 +180,10 @@ body {
 
                     &:hover {
                         @include menu-item-hover();
+                    }
+
+                    &:focus {
+                       @include menu-item-hover();
                     }
 
                     .ui-menuitem-icon {
@@ -391,6 +403,16 @@ body {
             a {
                 padding: $headerPadding;
                 color: $textColor;
+
+
+                &:not(.ui-state-active):focus {
+                  outline: 0 none;
+                  background-color: $headerHoverBgColor;
+
+                  &.ui-state-active {
+                    background-color: darken($primaryColor, 10%);
+                  }
+                }
             }
 
             &:not(.ui-state-active):hover {

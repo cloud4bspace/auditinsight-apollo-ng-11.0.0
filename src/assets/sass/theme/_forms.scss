@@ -224,7 +224,10 @@ body {
             &:not(.ui-state-disabled):not(.ui-state-active):hover {
                 border: 1px solid $inputHoverBorderColor;
             }
-
+            &.ui-state-focus {
+              color: $primaryColor;
+              @include focused-input();
+            }
             &.ui-state-active {
                 border: 1px solid $primaryColor;
                 background-color: $primaryColor;
@@ -274,8 +277,11 @@ body {
             }
 
             &.ui-state-focus {
-                border: 1px solid $primaryColor;
-                @include border-shadow();
+                @include focused-input();
+
+                .ui-radiobutton-icon.ui-icon-bullet {
+                  background-color: $primaryColor;
+                }
             }
 
             .ui-radiobutton-icon {
@@ -912,9 +918,8 @@ body {
         }
 
         &:not(.ui-state-disabled):not(.ui-state-active).ui-state-focus {
-            @include border-shadow();
-            background-color: darken($toggleButtonBgColor,10%);
-            color: $textColor;
+          background-color: $toggleButtonBgColor;
+          border-color: $primaryColor;
         }
 
         &.ui-state-active {
@@ -940,8 +945,8 @@ body {
             }
 
             &:not(.ui-state-disabled):not(.ui-state-active).ui-state-focus {
-                @include border-shadow();
-                background-color: darken($toggleButtonBgColor,10%);
+                background-color: $toggleButtonBgColor;
+                border-color: $primaryColor;
             }
 
             &.ui-state-active {
