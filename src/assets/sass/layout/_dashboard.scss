@@ -536,5 +536,8 @@
         .ui-panel-content{
             padding: 0px;
         }
+        div.ui-g-12:not(:last-child) {
+          border-right: 1px solid $dividerColor;
+        }
     }
 }
