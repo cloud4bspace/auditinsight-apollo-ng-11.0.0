@@ -9,7 +9,7 @@ export class AppComponent {
 
   themeSwitch = false;
 
-  public menuMode = 'static';
+  public menuMode = 'horizontal';
 
   public menuActive = true;
 
