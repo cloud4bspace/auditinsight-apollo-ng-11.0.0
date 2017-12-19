@@ -18,20 +18,47 @@
       <file leaf-file-name="app.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/app.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="15" lean-forward="false" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+            <state relative-caret-position="630">
+              <caret line="42" column="62" lean-forward="false" selection-start-line="42" selection-start-column="62" selection-end-line="42" selection-end-column="62" />
               <folding>
-                <marker date="1513250334000" expanded="true" signature="44:428" ph="{...}" />
+                <marker date="1513681748000" expanded="true" signature="76:443" ph="{&quot;layout-static-inactive&quot;: staticMenuDesktopInactive...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.menu.component.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/app.menu.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="91" lean-forward="true" selection-start-line="0" selection-start-column="91" selection-end-line="0" selection-end-column="91" />
+              <folding>
+                <marker date="1513681258000" expanded="true" signature="9111:11031" ph="..." />
+                <marker date="1513681258000" expanded="true" signature="9252:11008" ph="..." />
+                <marker date="1513681258000" expanded="true" signature="9363:9842" ph="..." />
+                <marker date="1513681258000" expanded="true" signature="9955:10477" ph="..." />
+                <marker date="1513681258000" expanded="true" signature="10527:10692" ph="..." />
+                <marker date="1513681258000" expanded="true" signature="10800:10990" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="31" lean-forward="false" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+            <state relative-caret-position="0">
+              <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.topbar.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/app.topbar.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1833">
+              <caret line="4" column="56" lean-forward="true" selection-start-line="4" selection-start-column="56" selection-end-line="4" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -48,7 +75,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>addon</find>
       <find>layout-overlay-ac</find>
       <find>layout-overlay-active</find>
       <find>l</find>
@@ -78,6 +104,7 @@
       <find>app.</find>
       <find>this.app</find>
       <find>app</find>
+      <find>ontopbarmenuclick</find>
     </findStrings>
     <replaceStrings>
       <replace>../</replace>
@@ -97,7 +124,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/app/demo/view/dashboarddemo.component.ts" />
         <option value="$PROJECT_DIR$/src/assets/sass/_mixins.scss" />
         <option value="$PROJECT_DIR$/src/assets/sass/theme/_theme.scss" />
         <option value="$PROJECT_DIR$/src/assets/sass/_variables.scss" />
@@ -138,15 +164,16 @@
         <option value="$PROJECT_DIR$/src/assets/theme/theme-yellow-light.scss" />
         <option value="$PROJECT_DIR$/src/assets/theme/theme-yellow-dark.scss" />
         <option value="$PROJECT_DIR$/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/src/app/app.menu.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/app.component.html" />
-        <option value="$PROJECT_DIR$/src/app/app.topbar.component.html" />
         <option value="$PROJECT_DIR$/src/app/app.topbar.component.ts" />
         <option value="$PROJECT_DIR$/src/assets/sass/theme/_forms.scss" />
         <option value="$PROJECT_DIR$/src/assets/sass/theme/_data.scss" />
         <option value="$PROJECT_DIR$/src/polyfills.ts" />
         <option value="$PROJECT_DIR$/src/app/demo/view/dashboard.component.html" />
         <option value="$PROJECT_DIR$/src/assets/sass/layout/_dashboard.scss" />
+        <option value="$PROJECT_DIR$/src/app/app.menu.component.html" />
+        <option value="$PROJECT_DIR$/src/app/app.menu.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/app.topbar.component.html" />
+        <option value="$PROJECT_DIR$/src/app/app.component.html" />
         <option value="$PROJECT_DIR$/src/app/app.component.ts" />
       </list>
     </option>
@@ -175,9 +202,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="780" />
     <option name="y" value="23" />
-    <option name="width" value="660" />
+    <option name="width" value="1440" />
     <option name="height" value="797" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -323,12 +349,12 @@
       <workItem from="1513583145625" duration="9097000" />
       <workItem from="1513598254294" duration="6430000" />
       <workItem from="1513665893468" duration="1466000" />
-      <workItem from="1513669973401" duration="927000" />
+      <workItem from="1513669973401" duration="6851000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96781000" />
+    <option name="totallyTimeSpent" value="102705000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -365,14 +391,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/assets/theme/theme-indigo-light.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="42" lean-forward="false" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/theme/theme-orange-dark.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -475,20 +493,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="463">
           <caret line="195" column="64" lean-forward="false" selection-start-line="195" selection-start-column="64" selection-end-line="195" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.menu.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="768">
-          <caret line="74" column="51" lean-forward="false" selection-start-line="74" selection-start-column="51" selection-end-line="74" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.topbar.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="36" lean-forward="false" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -662,7 +666,7 @@
         <state relative-caret-position="885">
           <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -731,21 +735,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.component.html">
+    <entry file="file://$PROJECT_DIR$/src/app/app.menu.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="15" lean-forward="false" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
-          <folding>
-            <marker date="1513250334000" expanded="true" signature="44:428" ph="{...}" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="31" lean-forward="false" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+        <state relative-caret-position="0">
+          <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.topbar.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1833">
+          <caret line="4" column="56" lean-forward="true" selection-start-line="4" selection-start-column="56" selection-end-line="4" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="42" column="62" lean-forward="false" selection-start-line="42" selection-start-column="62" selection-end-line="42" selection-end-column="62" />
+          <folding>
+            <marker date="1513681748000" expanded="true" signature="76:443" ph="{&quot;layout-static-inactive&quot;: staticMenuDesktopInactive...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.menu.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="91" lean-forward="true" selection-start-line="0" selection-start-column="91" selection-end-line="0" selection-end-column="91" />
+          <folding>
+            <marker date="1513681258000" expanded="true" signature="9111:11031" ph="..." />
+            <marker date="1513681258000" expanded="true" signature="9252:11008" ph="..." />
+            <marker date="1513681258000" expanded="true" signature="9363:9842" ph="..." />
+            <marker date="1513681258000" expanded="true" signature="9955:10477" ph="..." />
+            <marker date="1513681258000" expanded="true" signature="10527:10692" ph="..." />
+            <marker date="1513681258000" expanded="true" signature="10800:10990" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

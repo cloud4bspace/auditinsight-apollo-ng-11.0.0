@@ -1,12 +1,35 @@
-<div class="layout-wrapper"
-     [ngClass]="{'layout-horizontal': menuMode === 'horizontal', 'layout-overlay': menuMode === 'overlay',
-     'layout-static': menuMode === 'static', 'layout-slim': menuMode === 'slim',
-     'layout-static-inactive': (menuMode == 'static' && menuActive === false),
-     'layout-mobile-active': (mobileMenuActive === true),
-     'layout-overlay-active':(menuMode =='overlay' && menuActive === true)}">
+<div class="layout-wrapper" (click)="onLayoutClick($event)"
+     [ngClass]="{'layout-horizontal': isHorizontal(),
+                 'layout-overlay': isOverlay(),
+                 'layout-static': isStatic(),
+                 'layout-slim':isSlim(),
+                 'layout-static-inactive': staticMenuDesktopInactive,
+                 'layout-mobile-active': staticMenuMobileActive,
+                 'layout-overlay-active':overlayMenuActive}">
 
     <app-topbar></app-topbar>
-    <app-menu [reset]="resetMenu"></app-menu>
+    <div class="layout-menu-container" (click)="onMenuClick($event)">
+        <div #layoutMenuScroller class="nano">
+            <div class="nano-content menu-scroll-content">
+                <div class="layout-menu-title">MENU</div>
+                <app-menu [reset]="resetMenu"></app-menu>
+                <div class="layout-menu-footer">
+                    <div class="layout-menu-footer-title">TASKS</div>
+
+                    <div class="layout-menu-footer-content">
+                        <p-progressBar [value]="50" [showValue]="false"></p-progressBar>
+                        Today
+
+                        <p-progressBar [value]="80" [showValue]="false"></p-progressBar>
+                        Overall
+                    </div>
+                </div>
+            </div>
+            <div class="nano-pane">
+              <div class="nano-slider" style="height: 768px; transform: translate(0px, 0px);"></div>
+            </div>
+        </div>
+    </div>
 
     <div class="layout-content">
 
@@ -17,6 +40,6 @@
         </div>
 
         <app-footer></app-footer>
-        <div class="layout-mask" *ngIf="mobileMenuActive"></div>
+        <div class="layout-mask" *ngIf="staticMenuMobileActive"></div>
     </div>
 </div>

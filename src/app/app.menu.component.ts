@@ -3,21 +3,17 @@ import {trigger, state, style, transition, animate} from '@angular/animations';
 import {MenuItem} from 'primeng/primeng';
 import {AppComponent} from './app.component';
 
-declare var jQuery: any;
-
 @Component({
     selector: 'app-menu',
-    templateUrl: './app.menu.component.html'
+  template: `
+        <ul app-submenu [item]="model" root="true" class="layout-menu" [reset]="reset" visible="true"></ul>
+    `
 })
-export class AppMenuComponent implements OnInit, AfterViewInit, OnDestroy {
+export class AppMenuComponent implements OnInit{
 
     @Input() reset: boolean;
 
     model: any[];
-
-    layoutMenuScroller: HTMLDivElement;
-
-    @ViewChild('layoutMenuScroller') layoutMenuScrollerViewChild: ElementRef;
 
     constructor(public app: AppComponent) {}
 
@@ -150,18 +146,6 @@ export class AppMenuComponent implements OnInit, AfterViewInit, OnDestroy {
             {label: 'Documentation', icon: 'fa fa-fw fa-book', routerLink: ['/documentation']}
         ];
     }
-
-    ngAfterViewInit() {
-        this.layoutMenuScroller = <HTMLDivElement> this.layoutMenuScrollerViewChild.nativeElement;
-
-        setTimeout(() => {
-            jQuery(this.layoutMenuScroller).nanoScroller({flash: true});
-        }, 10);
-    }
-
-    ngOnDestroy() {
-        jQuery(this.layoutMenuScroller).nanoScroller({flash: true});
-    }
 }
 
 @Component({
@@ -257,11 +241,11 @@ export class AppSubMenuComponent {
         // hide menu
         if (!item.items) {
           if (this.app.isHorizontal() || this.app.isSlim()) {
-            this.app.resetMenu = true;
-          } else {
-            this.app.resetMenu = false;
-          }
+            this.app.resetMenu = true; } else {
+            this.app.resetMenu = false; }
 
+          this.app.overlayMenuActive = false;
+          this.app.staticMenuMobileActive = false;
           this.app.menuHoverActive = !this.app.menuHoverActive;
         }
     }

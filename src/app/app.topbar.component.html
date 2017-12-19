@@ -21,7 +21,7 @@
         <p-inputSwitch [(ngModel)]="app.themeSwitch" (onChange)="themeChange($event)"></p-inputSwitch>
     </span>
 
-    <ul class="topbar-menu fadeInDown" [ngClass]="{'topbar-menu-visible': app.topbarMenuActive}" (click)="app.onTopbarMenuClick()">
+    <ul class="topbar-menu fadeInDown" [ngClass]="{'topbar-menu-visible': app.topbarMenuActive}">
         <li #profile [ngClass]="{'menuitem-active':app.activeTopbarItem === profile}" (click)="app.onTopbarItemClick($event, profile)">
             <a href="#">
                 <i class="topbar-icon fa fa-fw fa-user"></i>
