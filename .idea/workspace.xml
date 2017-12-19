@@ -18,11 +18,21 @@
       <file leaf-file-name="app.component.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/app.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+            <state relative-caret-position="135">
+              <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
               <folding>
-                <marker date="1513684654000" expanded="true" signature="76:443" ph="{&quot;layout-static-inactive&quot;: staticMenuDesktopInactive...}" />
+                <marker date="1513685100000" expanded="true" signature="70:437" ph="{&quot;layout-static-inactive&quot;: staticMenuDesktopInactive...}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="163">
+              <caret line="65" column="8" lean-forward="false" selection-start-line="65" selection-start-column="2" selection-end-line="65" selection-end-column="8" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -38,7 +48,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>layout-overlay-ac</find>
       <find>layout-overlay-active</find>
       <find>l</find>
       <find>layout-static-inactive</find>
@@ -68,6 +77,7 @@
       <find>this.app</find>
       <find>app</find>
       <find>ontopbarmenuclick</find>
+      <find>onMenu</find>
     </findStrings>
     <replaceStrings>
       <replace>../</replace>
@@ -207,7 +217,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -231,6 +240,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -307,12 +317,13 @@
       <workItem from="1513665893468" duration="1466000" />
       <workItem from="1513669973401" duration="6896000" />
       <workItem from="1513682051071" duration="1629000" />
-      <workItem from="1513684047711" duration="821000" />
+      <workItem from="1513684047711" duration="829000" />
+      <workItem from="1513684913696" duration="521000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105200000" />
+    <option name="totallyTimeSpent" value="105729000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="0" />
@@ -636,14 +647,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/app.topbar.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -709,12 +712,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="65" column="8" lean-forward="false" selection-start-line="65" selection-start-column="2" selection-end-line="65" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/app.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+        <state relative-caret-position="135">
+          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
           <folding>
-            <marker date="1513684654000" expanded="true" signature="76:443" ph="{&quot;layout-static-inactive&quot;: staticMenuDesktopInactive...}" />
+            <marker date="1513685100000" expanded="true" signature="70:437" ph="{&quot;layout-static-inactive&quot;: staticMenuDesktopInactive...}" />
           </folding>
         </state>
       </provider>
