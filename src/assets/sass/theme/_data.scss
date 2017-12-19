@@ -101,10 +101,6 @@ body {
         .ui-datatable-header {
             .ui-multiselect-item {
                 color: $textColor;
-
-                &.ui-state-highlight {
-                    color: $primaryTextColor;
-                }
             }
         }
 
@@ -166,7 +162,6 @@ body {
                 border-color: $datatableCellBorderColor;
 
                 &.ui-rowgroup-header {
-                    background-color: $primaryColor;
 
                     .fa:hover {
                         color: lighten($primaryColor, 5%);
@@ -561,7 +556,7 @@ body {
                     }
 
                     .ui-treetable-checkbox .ui-chkbox-icon {
-                        margin: 0;
+                        margin-bottom: 4px;
 
                         &.fa-check {
                             color: $primaryColor;
