@@ -6,12 +6,17 @@ import { AppTopBarComponent } from './app.topbar.component';
 import { AppFooterComponent } from './app.footer.component';
 import { AppBreadcrumbComponent } from './app.breadcrumb.component';
 import { BreadcrumbService } from './breadcrumb.service';
+import { InputSwitchModule, ProgressBarModule} from 'primeng/primeng';
+import {FormsModule} from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        ProgressBarModule,
+        InputSwitchModule,
+        FormsModule
       ],
       declarations: [
         AppComponent,

@@ -10,13 +10,13 @@ export class NodeService {
         return this.http.get<any>('assets/demo/data/files.json')
                     .toPromise()
                     .then(res => <any[]> res.data)
-                    .then(data => { return data; });
+                    .then(data => data);
     }
 
     getFilesystem() {
         return this.http.get<any>('assets/demo/data/filesystem.json')
                     .toPromise()
                     .then(res => <any[]> res.data)
-                    .then(data => { return data; });
+                    .then(data => data);
     }
 }

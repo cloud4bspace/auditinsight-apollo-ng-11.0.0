@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, AfterViewInit, OnDestroy, ElementRef, Renderer, ViewChild} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {trigger, state, style, transition, animate} from '@angular/animations';
 import {MenuItem} from 'primeng/primeng';
 import {AppComponent} from './app.component';
@@ -9,7 +9,7 @@ import {AppComponent} from './app.component';
         <ul app-submenu [item]="model" root="true" class="layout-menu" [reset]="reset" visible="true"></ul>
     `
 })
-export class AppMenuComponent implements OnInit{
+export class AppMenuComponent implements OnInit {
 
     @Input() reset: boolean;
 
