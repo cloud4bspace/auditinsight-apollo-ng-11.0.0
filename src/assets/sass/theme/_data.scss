@@ -1,5 +1,6 @@
 body {
     .ui-paginator {
+        padding: $headerPadding;
 
         .ui-paginator-first,.ui-paginator-prev,.ui-paginator-next,.ui-paginator-last {
             color: $headerTextColor;
@@ -89,6 +90,89 @@ body {
                     outline: 0 none;
                     border: 1px solid $primaryColor;
                 }
+            }
+        }
+    }
+
+    .ui-table {
+        .ui-table-caption,
+        .ui-table-summary {
+            padding: $headerPadding;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .ui-table-caption {
+            border-bottom: 0 none;
+        }
+
+        .ui-table-summary {
+            border-top: 0 none;
+        }
+
+        .ui-table-thead > tr > th,
+        .ui-table-tbody > tr > td,
+        .ui-table-tfoot > tr > td {
+            padding: $contentPadding;
+        }
+
+        .ui-table-thead > tr > th,
+        .ui-table-tfoot > tr > td {
+            background: $headerBgColor;
+            color: $headerTextColor;
+            border: 1px solid $datatableCellBorderColor;
+        }
+    
+        .ui-sortable-column {
+            &:not(.ui-state-highlight):hover {
+                @include list-item-hover();
+            }
+
+            &.ui-state-highlight {
+                background-color: $primaryColor;
+                color: $primaryTextColor;
+            }
+        }
+    
+        .ui-table-tbody {
+            > tr {
+                background: $contentBgColor;
+
+                > td {
+                    background: inherit;
+                    border: 1px solid $datatableCellBorderColor;
+                }
+
+                &.ui-state-highlight {
+                    background-color: $primaryColor;
+                    color: $primaryTextColor;
+                }
+        
+                &.ui-contextmenu-selected {
+                    background-color: lighten($primaryColor, 20%);
+                    color: $primaryTextColor;
+                }
+            }
+
+            > tr:nth-child(even) {
+                background-color: $datableEvenRowBgColor;
+        
+                &.ui-state-highlight {
+                    background-color: $primaryColor;
+                    color: $primaryTextColor;
+                }
+        
+                &.ui-contextmenu-selected {
+                    background-color: lighten($primaryColor, 20%);
+                    color: $primaryTextColor;
+                }
+            }
+        }
+
+        &.ui-table-hoverable-rows {
+            .ui-table-tbody > tr:not(.ui-state-highlight):hover {
+                cursor: pointer;
+                @include list-item-hover();
             }
         }
     }
