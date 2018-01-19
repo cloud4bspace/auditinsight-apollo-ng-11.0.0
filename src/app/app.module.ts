@@ -64,6 +64,7 @@ import {SpinnerModule} from 'primeng/primeng';
 import {SplitButtonModule} from 'primeng/primeng';
 import {StepsModule} from 'primeng/primeng';
 import {TabMenuModule} from 'primeng/primeng';
+import { TableModule } from 'primeng/table';
 import {TabViewModule} from 'primeng/primeng';
 import {TerminalModule} from 'primeng/primeng';
 import {TieredMenuModule} from 'primeng/primeng';
@@ -161,6 +162,7 @@ import {BreadcrumbService} from './breadcrumb.service';
     SpinnerModule,
     SplitButtonModule,
     StepsModule,
+    TableModule,
     TabMenuModule,
     TabViewModule,
     TerminalModule,

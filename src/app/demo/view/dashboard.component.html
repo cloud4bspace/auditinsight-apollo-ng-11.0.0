@@ -271,13 +271,26 @@
         </p-panel>
 
         <div class="sales-panel">
-            <p-dataTable [value]="cars" [style]="{'margin-bottom':'20px'}" selectionMode="single">
-                <p-header>Recent Sales</p-header>
-                <p-column field="vin" header="Vin" sortable="true"></p-column>
-                <p-column field="year" header="Year" sortable="true"></p-column>
-                <p-column field="brand" header="Brand" sortable="true"></p-column>
-                <p-column field="color" header="Color" sortable="true"></p-column>
-            </p-dataTable>
+            <p-table [columns]="cols" [value]="cars" selectionMode="single" dataKey="vin" [style]="{'margin-bottom':'20px'}">
+                <ng-template pTemplate="caption">
+                    Recent Sales
+                </ng-template>
+                <ng-template pTemplate="header" let-columns>
+                    <tr>
+                        <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+                          {{col.header}}
+                          <p-sortIcon [field]="col.field"></p-sortIcon>
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-rowData let-columns="columns">
+                    <tr [pSelectableRow]="rowData">
+                        <td *ngFor="let col of columns">
+                          {{rowData[col.field]}}
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
         </div>
     </div>
 
