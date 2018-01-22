@@ -23,6 +23,8 @@ export class DashboardDemoComponent implements OnInit {
 
     selectedCity: any;
 
+    selectedCar: Car;
+
     items: MenuItem[];
 
     constructor(private carService: CarService, private eventService: EventService, private breadcrumbService: BreadcrumbService) {
