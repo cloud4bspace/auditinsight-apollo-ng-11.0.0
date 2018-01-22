@@ -88,7 +88,7 @@ body {
 
                 &:focus {
                     outline: 0 none;
-                    border: 1px solid $primaryColor;
+                    border-color: $primaryColor;
                 }
             }
         }
@@ -122,7 +122,7 @@ body {
             color: $headerTextColor;
             border: 1px solid $datatableCellBorderColor;
         }
-    
+
         .ui-sortable-column {
             &:not(.ui-state-highlight):hover {
                 @include list-item-hover();
@@ -133,7 +133,7 @@ body {
                 color: $primaryTextColor;
             }
         }
-    
+
         .ui-table-tbody {
             > tr {
                 background: $contentBgColor;
@@ -147,7 +147,7 @@ body {
                     background-color: $primaryColor;
                     color: $primaryTextColor;
                 }
-        
+
                 &.ui-contextmenu-selected {
                     background-color: lighten($primaryColor, 20%);
                     color: $primaryTextColor;
@@ -156,12 +156,12 @@ body {
 
             > tr:nth-child(even) {
                 background-color: $datableEvenRowBgColor;
-        
+
                 &.ui-state-highlight {
                     background-color: $primaryColor;
                     color: $primaryTextColor;
                 }
-        
+
                 &.ui-contextmenu-selected {
                     background-color: lighten($primaryColor, 20%);
                     color: $primaryTextColor;
