@@ -62,7 +62,7 @@ body {
     }
 
     .ui-widget-overlay {
-        background-color: #424242;
+        background-color: $textColor;
         @include opacity(.7);
     }
 

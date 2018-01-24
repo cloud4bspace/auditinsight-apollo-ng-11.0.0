@@ -343,7 +343,7 @@ body {
 
         .ui-datatable-scrollable-header,
         .ui-datatable-scrollable-footer {
-            background-color: #f0f3f5;
+            background-color: $headerBgColor;
 
             .ui-datatable-scrollable-header-box {
                 td {
@@ -594,7 +594,7 @@ body {
 
         tfoot {
             td {
-                background-color: #ffffff;
+                background-color: $headerBgColor;
                 padding: $headerPadding;
                 border-color: $dividerColor;
             }
