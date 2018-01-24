@@ -312,6 +312,11 @@ body {
                             @include transition(transform $transitionDuration);
                         }
 
+                        &.active-menuitem-routerlink {
+                            color: $primaryColor;
+                            font-weight: 700;
+                        }
+
                         &:not(:hover) {
                             &.blue-theme {
                                 i {color: $blue}

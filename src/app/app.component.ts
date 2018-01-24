@@ -10,7 +10,7 @@ export class AppComponent implements AfterViewInit, OnDestroy  {
 
   themeSwitch = false;
 
-  public menuMode = 'horizontal';
+  public menuMode = 'static';
 
   topbarMenuActive: boolean;
 
