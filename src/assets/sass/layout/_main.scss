@@ -98,10 +98,10 @@ body {
                     margin: 0px;
                     @include border-radius(2px);
 
-                    &::-webkit-input-placeholder { color:$primaryTextColor;; opacity: .7; @include transition(opacity .3s);}
-                    &:-moz-placeholder { color:$primaryTextColor;; opacity: .7; @include transition(opacity .3s);}
-                    &::-moz-placeholder { color:$primaryTextColor;; opacity: .7; @include transition(opacity .3s);}
-                    &:-ms-input-placeholder { color:$primaryTextColor;; opacity: .7; @include transition(opacity .3s);}
+                    &::-webkit-input-placeholder { color:$primaryTextColor;; opacity: .7; @include transition(opacity $transitionDuration);}
+                    &:-moz-placeholder { color:$primaryTextColor;; opacity: .7; @include transition(opacity $transitionDuration);}
+                    &::-moz-placeholder { color:$primaryTextColor;; opacity: .7; @include transition(opacity $transitionDuration);}
+                    &:-ms-input-placeholder { color:$primaryTextColor;; opacity: .7; @include transition(opacity $transitionDuration);}
                 }
 
                 .fa {

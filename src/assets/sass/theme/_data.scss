@@ -303,7 +303,7 @@ body {
 
                     .ui-row-toggler {
                         color: $textColor;
-                        @include transition(color .3s);
+                        @include transition(color $transitionDuration);
 
                         &.fa-chevron-circle-right {
                             @include icon_override("\f054");
@@ -324,7 +324,7 @@ body {
 
                     a {
                         color: $headerTextColor;
-                        @include transition(color .3s);
+                        @include transition(color $transitionDuration);
 
                         &:hover {
                             color: $primaryColor;
@@ -486,7 +486,7 @@ body {
 
         .ui-carousel-button {
             margin-top: .4em;
-            @include transition(color .3s);
+            @include transition(color $transitionDuration);
             color: $headerIconColor;
 
             &.ui-carousel-next-button {

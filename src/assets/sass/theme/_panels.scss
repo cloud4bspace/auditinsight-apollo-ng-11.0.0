@@ -52,7 +52,7 @@ body {
             background-color: $headerBgColor;
             margin-left: 10px;
             border: 1px solid $headerBorderColor;
-            @include transition(background-color .3s);
+            @include transition(background-color $transitionDuration);
 
             .ui-fieldset-toggler {
                 float: none;
@@ -177,7 +177,7 @@ body {
                     position: static;
                     box-sizing: border-box;
                     background-color: $headerBgColor;
-                    @include transition(background-color .3s);
+                    @include transition(background-color $transitionDuration);
 
                     a {
                         padding: $tabHeaderPadding;

@@ -275,7 +275,7 @@ body {
             }
 
             .ui-radiobutton-icon {
-                @include transition(background-color .3s);
+                @include transition(background-color $transitionDuration);
                 @include border-radius(50%);
                 background: transparent;
                 width: 10px;

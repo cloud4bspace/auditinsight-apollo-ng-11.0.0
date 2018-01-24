@@ -317,7 +317,7 @@ body {
                 position: static;
                 background-color: $headerBgColor;
                 margin-right: 1px;
-                @include transition(background-color .3s);
+                @include transition(background-color $transitionDuration);
                 @include border-radius(0);
 
                 .ui-menuitem-link {

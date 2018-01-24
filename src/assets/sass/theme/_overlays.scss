@@ -147,7 +147,7 @@ body {
             .ui-lightbox-close {
                 padding: 0;
                 color: $headerTextColor;
-                @include transition(color .3s);
+                @include transition(color $transitionDuration);
                 
                 &:hover {
                     color: lighten($primaryColor, 10%);
@@ -160,7 +160,7 @@ body {
                       
             .ui-lightbox-nav-left {
                 @include icon_override("\f053");
-                @include transition(all .3s);
+                @include transition(all $transitionDuration);
                 font-size: 24px;
                 margin-left: 4px;
 
@@ -175,7 +175,7 @@ body {
             
             .ui-lightbox-nav-right {
                 @include icon_override("\f054");
-                @include transition(all .3s);
+                @include transition(all $transitionDuration);
                 font-size: 24px;
                 margin-right: 4px;
                 
