@@ -174,7 +174,7 @@ body {
 
         &.yellow-btn {
             background-color: $yellow;
-            color: $purple;
+            color: $textColor;
 
             &:hover {
                 background-color: darken($yellow,5%);
@@ -187,16 +187,6 @@ body {
             &:active {
                 background-color: darken($yellow,10%);
             }
-        }
-
-        &.raised-btn {
-            -moz-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
-            -webkit-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
-            box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
-        }
-
-        &.rounded-btn {
-            @include border-radius(15px);
         }
     }
 
@@ -979,8 +969,136 @@ body {
         .ui-button {
             border: 1px solid transparent;
         }
+
         .ui-menu {
-          min-width: 100%;
+            min-width: 100%;
+        }
+
+        &.blue-btn {
+            .ui-button {
+                background-color: $blue;
+
+                &:hover {
+                    background-color: darken($blue,5%);
+                }
+    
+                &:focus {
+                    background-color: darken($blue,5%);
+                }
+    
+                &:active {
+                    background-color: darken($blue,10%);
+                }
+            }
+        }
+
+        &.purple-btn {
+            .ui-button {
+                background-color: $purple;
+
+                &:hover {
+                    background-color: darken($purple,5%);
+                }
+
+                &:focus {
+                    background-color: darken($purple,5%);
+                }
+
+                &:active {
+                    background-color: darken($purple,10%);
+                }
+            }
+        }
+
+        &.orange-btn {
+            .ui-button {
+                background-color: $orange;
+
+                &:hover {
+                    background-color: darken($orange,5%);
+                }
+    
+                &:focus {
+                    background-color: darken($orange,5%);
+                }
+    
+                &:active {
+                    background-color: darken($orange,10%);
+                }
+            }
+        }
+
+        &.pink-btn {
+            .ui-button {
+                background-color: $pink;
+
+                &:hover {
+                    background-color: darken($pink,5%);
+                }
+    
+                &:focus {
+                    background-color: darken($pink,5%);
+                }
+    
+                &:active {
+                    background-color: darken($pink,10%);
+                }
+            }
+        }
+
+        &.green-btn {
+            .ui-button {
+                background-color: $green;
+
+                &:hover {
+                    background-color: darken($green,5%);
+                }
+    
+                &:focus {
+                    background-color: darken($green,5%);
+                }
+    
+                &:active {
+                    background-color: darken($green,10%);
+                }                
+            }
+        }
+
+        &.red-btn {
+            .ui-button {
+                background-color: $red;
+
+                &:hover {
+                    background-color: darken($red,5%);
+                }
+    
+                &:focus {
+                    background-color: darken($red,5%);
+                }
+    
+                &:active {
+                    background-color: darken($red,10%);
+                }
+            }
+        }
+
+        &.yellow-btn {
+            .ui-button {
+                background-color: $yellow;
+                color: $textColor;
+    
+                &:hover {
+                    background-color: darken($yellow,5%);
+                }
+    
+                &:focus {
+                    background-color: darken($yellow,5%);
+                }
+    
+                &:active {
+                    background-color: darken($yellow,10%);
+                }
+            }
         }
     }
 

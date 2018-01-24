@@ -115,6 +115,7 @@ body {
     .ui-slidemenu .ui-menuitem-link {
         padding: $listItemPadding;
         color: $textColor;
+        font-weight: normal;
         @include border-radius(0);
 
         &:hover {
@@ -160,7 +161,7 @@ body {
             &.ui-menuitem-active {
                 > .ui-menuitem-link {
                   background-color: $primaryColor;
-                  color: #ffffff;
+                  color: $primaryTextColor;
                 }
             }
         }
@@ -182,7 +183,7 @@ body {
             &.ui-menuitem-active {
                 > .ui-menuitem-link {
                   background-color: $primaryColor;
-                  color: #ffffff;
+                  color: $primaryTextColor;
                 }
             }
         }
@@ -206,7 +207,7 @@ body {
           &.ui-menuitem-active {
             > .ui-menuitem-link {
               background-color: $primaryColor;
-              color: #ffffff;
+              color: $primaryTextColor;
             }
           }
         }
@@ -217,7 +218,6 @@ body {
           width: 100%;
           color: $textColor;
           background-color: $dividerColor;
-          box-sizing: border-box;
           @include border-radius(0);
           border: 0 none;
 
@@ -245,7 +245,7 @@ body {
             &.ui-menuitem-active {
               > .ui-menuitem-link {
                 background-color: $primaryColor;
-                color: #ffffff;
+                color: $primaryTextColor;
               }
             }
         }
@@ -274,7 +274,7 @@ body {
             &.ui-menuitem-active {
               > .ui-menuitem-link {
                 background-color: $primaryColor;
-                color: #ffffff;
+                color: $primaryTextColor;
               }
             }
         }
@@ -288,7 +288,6 @@ body {
             border: 0 none;
             border-bottom: 1px solid $headerBorderColor;
             background: transparent;
-            @include box-sizing(border-box);
             @include border-radius(0);
 
             .ui-tabmenuitem {

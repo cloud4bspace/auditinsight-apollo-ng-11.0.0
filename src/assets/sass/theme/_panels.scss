@@ -262,24 +262,8 @@ body {
     }
 
     .ui-toolbar {
-        background-color: $contentBgColor;
-        border-color: $contentBorderColor;
+        background-color: $headerBgColor;
+        border-color: $headerBorderColor;
         padding: $headerPadding;
-
-        .fa-bars {
-          color: black;
-        }
-    }
-}
-
-@media (max-width: 640px) {
-    body {
-        .ui-panelgrid {
-            .ui-grid-responsive {
-                .ui-grid-row {
-                    border: 0 none;
-                }
-            }
-        }
     }
 }

@@ -84,9 +84,8 @@ body {
                 position: relative;
                 float: right;
                 margin: 0 10px 0 0;
-                display: inline-block;
                 top: 3px;
-
+                
                 input {
                     display: inline-block;
                     border: 0 none;
@@ -94,7 +93,7 @@ body {
                     background: lighten($primaryColor, 10%);
                     outline: 0 none;
                     color: $primaryTextColor;
-                    width: 150px;
+                    width: 175px;
                     padding: 4px 20px 4px 8px;
                     margin: 0px;
                     @include border-radius(2px);
@@ -434,7 +433,7 @@ body {
                 @include clearfix();
 
                 ul {
-                    margin: 8px 0 0 0;
+                    margin: 10px 0 0 0;
                     padding: 0 0 0 12px;
                     list-style: none;
                     color: $menuitemTextColor;

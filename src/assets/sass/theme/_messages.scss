@@ -7,7 +7,6 @@ body {
         }
 
         &.ui-messages-info {
-            display: none;
             background-color: $infoMessageBgColor;
             border-color: $infoMessageBgColor;
             color: $infoMessageTextColor;
@@ -23,6 +22,22 @@ body {
             }
         }
 
+        &.ui-messages-success {
+            background-color: $successMessageBgColor;
+            border-color: $successMessageBgColor;
+            color: $successMessageTextColor;
+
+            .ui-messages-icon {
+                color: darken($successMessageBgColor, 30%);
+            }
+
+            .ui-messages-close {
+                .fa {
+                    color: $successMessageTextColor;
+                }
+            }
+        }
+
         &.ui-messages-warn {
             background-color: $warnMessageBgColor;
             border-color: $warnMessageBgColor;
@@ -34,7 +49,7 @@ body {
 
             .ui-messages-close {
                 .fa {
-                    color:  $warnMessageTextColor;
+                    color: $warnMessageTextColor;
                 }
             }
         }
@@ -82,6 +97,16 @@ body {
 
                 .ui-growl-image {
                     color: darken($infoMessageBgColor, 30%);
+                }
+            }
+
+            &.ui-growl-message-success {
+                background-color: $successMessageBgColor;
+                border-color: $successMessageBgColor;
+                color: $successMessageTextColor;
+
+                .ui-growl-image {
+                    color: darken($successMessageBgColor, 30%);
                 }
             }
 

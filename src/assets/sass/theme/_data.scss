@@ -382,6 +382,8 @@ body {
 
     .ui-picklist {
         .ui-picklist-buttons {
+            padding: $contentPadding;
+
             button {
                 font-size: $fontSize + 2;
             }
@@ -414,7 +416,7 @@ body {
 
     .ui-orderlist {
         .ui-orderlist-controls {
-            margin-right: 10px;
+            padding: $contentPadding;
 
             button {
                 font-size: $fontSize + 2;
@@ -604,6 +606,7 @@ body {
                     border-left: 1px solid $dividerColor;
                 }
             }
+
             > div {
                 &.ui-treetable-row-selectable {
                     cursor: pointer;
@@ -613,7 +616,7 @@ body {
                         color: $primaryTextColor;
 
                         .ui-treetable-toggler {
-                            color: #ffffff;
+                            color: $primaryTextColor;
                         }
                     }
 
@@ -622,7 +625,7 @@ body {
                         border-color: darken($primaryColor,5%);
 
                         .ui-treetable-toggler {
-                            color: #ffffff;
+                            color: $primaryTextColor;
                         }
                     }
                 }
@@ -641,10 +644,8 @@ body {
 
                     .ui-treetable-checkbox .ui-chkbox-icon {
                         margin-bottom: 4px;
-
-                        &.fa-check {
-                            color: $primaryColor;
-                        }
+                        color: $primaryColor;
+                        margin-left: 0;
                     }
                 }
             }
@@ -766,6 +767,7 @@ body {
         }
         .fc-event-container {
             .fc-event {
+                font-size: $fontSize;
                 border-color: $primaryColor;
                 background-color: darken($primaryColor,5%);
             }

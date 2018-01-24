@@ -31,7 +31,7 @@ body {
         border: grey;
         
         .ui-dialog-titlebar {
-            padding: $headerPadding;
+            padding: 1em;
             
             .ui-dialog-title {
                 margin: 0;
@@ -54,7 +54,7 @@ body {
         }
         
         .ui-dialog-content {
-            padding: $contentPadding;
+            padding: 1em;
         }
         
         .ui-dialog-footer {
