@@ -53,13 +53,15 @@ body {
                     display: inline-block;
                     background-color: $primaryColor;
                     @include border-radius(50%);
-                    padding: 0.5em 1em;
+                    padding: 0.5em;
                     font-size: 1em;
                     color: $primaryTextColor;
                     position: relative;
                     top: 1em;
                     margin-bottom: 1em;
                     border: 1px solid lighten($primaryColor,15%);
+                    width: 2.5em;
+                    height: 2.5em;
                 }
 
                 .ui-steps-title {
@@ -158,10 +160,18 @@ body {
         }
 
         .ui-menuitem {
+            margin: 0;
+
+            .ui-menuitem-link {
+                .ui-submenu-icon {
+                    right: 0.429em;
+                }
+            }
+
             &.ui-menuitem-active {
                 > .ui-menuitem-link {
-                  background-color: $primaryColor;
-                  color: $primaryTextColor;
+                    background-color: $primaryColor;
+                    color: $primaryTextColor;
                 }
             }
         }
@@ -173,17 +183,21 @@ body {
         .ui-submenu-list {
             padding: 0;
             border: 0 none;
-
-            .ui-menuitem {
-              margin: 0;
-            }
         }
 
         .ui-menuitem {
+            margin: 0;
+
+            .ui-menuitem-link {
+                .ui-submenu-icon {
+                    right: 0.429em;
+                }
+            }
+
             &.ui-menuitem-active {
                 > .ui-menuitem-link {
-                  background-color: $primaryColor;
-                  color: $primaryTextColor;
+                    background-color: $primaryColor;
+                    color: $primaryTextColor;
                 }
             }
         }
@@ -193,37 +207,43 @@ body {
         padding: 0;
 
         .ui-submenu-list {
-          padding: 0;
-          border: 0 none;
+            padding: 0;
+            border: 0 none;
 
-          .ui-menuitem {
-            margin: 0;
-          }
+            .ui-menuitem {
+                margin: 0;
+            }
         }
 
         .ui-menuitem {
-          margin: 0;
+            margin: 0;
 
-          &.ui-menuitem-active {
-            > .ui-menuitem-link {
-              background-color: $primaryColor;
-              color: $primaryTextColor;
+            .ui-menuitem-link {
+                .ui-submenu-icon {
+                    right: 0.429em;
+                }
             }
-          }
+
+            &.ui-menuitem-active {
+                > .ui-menuitem-link {
+                    background-color: $primaryColor;
+                    color: $primaryTextColor;
+                }
+            }
         }
 
         .ui-slidemenu-backward {
-          margin-bottom: .4em;
-          padding: $headerPadding;
-          width: 100%;
-          color: $textColor;
-          background-color: $dividerColor;
-          @include border-radius(0);
-          border: 0 none;
+            margin-bottom: .4em;
+            padding: $headerPadding;
+            width: 100%;
+            color: $textColor;
+            background-color: $dividerColor;
+            @include border-radius(0);
+            border: 0 none;
 
-          &:hover {
-            background-color: darken($dividerColor, 10%);
-          }
+            &:hover {
+                background-color: darken($dividerColor, 10%);
+            }
         }
     }
 
@@ -233,20 +253,22 @@ body {
         .ui-submenu-list {
             padding: 0;
             border: 0 none;
-
-            .ui-menuitem {
-              margin: 0;
-            }
         }
 
         .ui-menuitem {
             margin: 0;
 
+            .ui-menuitem-link {
+                .ui-submenu-icon {
+                    right: 0.429em;
+                }
+            }
+
             &.ui-menuitem-active {
-              > .ui-menuitem-link {
-                background-color: $primaryColor;
-                color: $primaryTextColor;
-              }
+                > .ui-menuitem-link {
+                    background-color: $primaryColor;
+                    color: $primaryTextColor;
+                }
             }
         }
     }
@@ -354,50 +376,38 @@ body {
         }
 
         .ui-panelmenu-header {
-            background-color: $headerBgColor;
             padding: 0;
-            font-size: $fontSize;
-            color: $textColor;
-            border: 1px solid $contentBorderColor;
-            @include transition(background-color $transitionDuration);
 
-            a {
+            > a {
                 padding: $headerPadding;
-                color: $textColor;
-
-
-                &:not(.ui-state-active):focus {
-                  outline: 0 none;
-                  background-color: $headerHoverBgColor;
-
-                  &.ui-state-active {
-                    background-color: darken($primaryColor, 10%);
-                  }
-                }
+                background-color: $headerBgColor;
+                color: $headerTextColor;
+                border: 1px solid $headerBorderColor;
+                outline: 0 none;
             }
 
-            &:not(.ui-state-active):hover {
-                background-color: $headerHoverBgColor;
-
-                .ui-icon {
-                    color: $headerIconHoverColor;
-                }
-
-                span.ui-panelmenu-icon {
-                    color: $headerIconHoverColor;
+            &:not(.ui-state-active) {
+                > a:focus {
+                    background-color: $headerHoverBgColor;
+                }     
+                
+                > a:hover {
+                    background-color: $headerHoverBgColor;
                 }
             }
 
             &.ui-state-active {
-                border: 1px solid $primaryColor;
-                background-color: $primaryColor;
-
-                a {
+                > a {
+                    background-color: $primaryColor;
                     color: $primaryTextColor;
-                }
 
-                .ui-icon {
-                    color: $primaryTextColor;
+                    &:focus {
+                        background-color: darken($primaryColor, 15%);
+                    }
+
+                    &:hover {
+                        background-color: darken($primaryColor, 15%);
+                    }
                 }
             }
         }
@@ -411,13 +421,17 @@ body {
         }
 
         .ui-panelmenu-content {
+            padding: $contentPadding;
+            padding-left: 0;
+            padding-right: 0;
+
             .ui-menuitem-link {
                 padding: $listItemPadding;
                 color: $textColor;
-                @include transition(background-color );
+                @include border-radius(0);
 
                 &:hover {
-                    @include list-item-hover();
+                    @include menu-item-hover();
                 }
 
                 > span.ui-icon {
@@ -425,15 +439,10 @@ body {
                     vertical-align: middle;
                     left: auto;
                     margin-right: 0.3em;
-
-                    &.ui-panelmenu-icon.ui-icon-triangle-1-s {
-                        margin-top: -0.3em;
-                    }
                 }
 
                 .ui-menuitem-text {
                     display: inline-block;
-                    vertical-align: middle;
                 }
             }
         }

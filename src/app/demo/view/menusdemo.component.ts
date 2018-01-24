@@ -15,6 +15,8 @@ export class MenusDemoComponent implements OnInit {
 
     breadcrumbItems: MenuItem[];
 
+    homeIcon: MenuItem;
+
     tieredItems: MenuItem[];
 
     items: MenuItem[];
@@ -28,6 +30,7 @@ export class MenusDemoComponent implements OnInit {
     stepsItems: MenuItem[];
 
     constructor(private breadcrumbService: BreadcrumbService) {
+        this.homeIcon = {icon: 'fa fa-home'};
         this.breadcrumbService.setItems([
             { label: 'Components' },
             { label: 'Menus', routerLink: ['/menus'] }
@@ -262,15 +265,16 @@ export class MenusDemoComponent implements OnInit {
                 label: 'File',
                 icon: 'fa-file-o',
                 items: [{
-                        label: 'New',
+                        label: 'New', 
                         icon: 'fa-plus',
                         items: [
-                            {label: 'Project'},
-                            {label: 'Other'},
+                            {label: 'Project', icon: 'fa-lock'},
+                            {label: 'Other', icon: 'fa-list'}
                         ]
                     },
-                    {label: 'Open'},
-                    {label: 'Quit'}
+                    {label: 'Open', icon: 'fa-external-link'},
+                    {separator: true},
+                    {label: 'Quit', icon: 'fa-close'}
                 ]
             },
             {
@@ -286,14 +290,15 @@ export class MenusDemoComponent implements OnInit {
                 icon: 'fa-question',
                 items: [
                     {
-                        label: 'Contents'
+                        label: 'Contents',
+                        icon: 'fa-bars'
                     },
                     {
-                        label: 'Search',
-                        icon: 'fa-search',
+                        label: 'Search', 
+                        icon: 'fa-search', 
                         items: [
                             {
-                                label: 'Text',
+                                label: 'Text', 
                                 items: [
                                     {
                                         label: 'Workspace'
@@ -301,7 +306,8 @@ export class MenusDemoComponent implements OnInit {
                                 ]
                             },
                             {
-                                label: 'File'
+                                label: 'File',
+                                icon: 'fa-file',
                             }
                     ]}
                 ]

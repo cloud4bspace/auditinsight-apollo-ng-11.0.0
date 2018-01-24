@@ -2,7 +2,7 @@
     <div class="ui-g-12">
         <div class="card no-margin">
             <h1>Breadcrumb</h1>
-            <p-breadcrumb [model]="breadcrumbItems"></p-breadcrumb>
+            <p-breadcrumb [model]="breadcrumbItems" [home]="homeIcon"></p-breadcrumb>
         </div>
 
         <div class="card">
@@ -56,7 +56,7 @@
             <h1>MegaMenu - Horizontal</h1>
             <p-megaMenu [model]="megaMenuItems"></p-megaMenu>
 
-            <h1>MegaMenu - Vertical</h1>
+            <h1 style="margin-top:2em">MegaMenu - Vertical</h1>
             <p-megaMenu [model]="megaMenuItems" orientation="vertical" [style]="{'width':'200px'}"></p-megaMenu>
         </div>
     </div>
