@@ -265,7 +265,7 @@ export class MenusDemoComponent implements OnInit {
                 label: 'File',
                 icon: 'fa-file-o',
                 items: [{
-                        label: 'New', 
+                        label: 'New',
                         icon: 'fa-plus',
                         items: [
                             {label: 'Project', icon: 'fa-lock'},
@@ -294,11 +294,11 @@ export class MenusDemoComponent implements OnInit {
                         icon: 'fa-bars'
                     },
                     {
-                        label: 'Search', 
-                        icon: 'fa-search', 
+                        label: 'Search',
+                        icon: 'fa-search',
                         items: [
                             {
-                                label: 'Text', 
+                                label: 'Text',
                                 items: [
                                     {
                                         label: 'Workspace'
