@@ -7,11 +7,12 @@ import {BreadcrumbService} from '../../breadcrumb.service';
         .docs pre {
             font-family: monospace;
             background-color: #dee4e9;
-            color: #757575;
+            color: #424242;
             padding: 1em;
             font-size: 14px;
             border-radius: 3px;
             overflow: auto;
+            font-weight: bold;
         }`
     ]
 })
