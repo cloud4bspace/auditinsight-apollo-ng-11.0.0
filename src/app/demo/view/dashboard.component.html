@@ -272,7 +272,7 @@
 
         <div class="sales-panel">
             <div class="card">
-                <p-table [columns]="cols" [value]="cars" selectionMode="single" dataKey="vin" [(selection)]="selectedCar">
+                <p-table [columns]="cols" [value]="cars" selectionMode="single" dataKey="vin" [(selection)]="selectedCar" [responsive]="true">
                     <ng-template pTemplate="caption">
                         Recent Sales
                     </ng-template>
