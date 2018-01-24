@@ -107,7 +107,53 @@ body {
         }
     }
 
+    .ui-menu .ui-menuitem-link,
+    .ui-menubar .ui-menuitem-link,
+    .ui-tieredmenu .ui-menuitem-link,
+    .ui-contextmenu .ui-menuitem-link,
+    .ui-megamenu .ui-menuitem-link,
+    .ui-slidemenu .ui-menuitem-link {
+        padding: $listItemPadding;
+        color: $textColor;
+        @include border-radius(0);
+
+        &:hover {
+            @include menu-item-hover();
+        }
+
+        &:focus {
+            @include menu-item-hover();
+        }
+    }
+
     .ui-menu {
+        padding: 0;
+
+        .ui-menuitem {
+            margin: 0;
+        }
+
+        &.ui-shadow, .ui-shadow {
+            @include overlay-shadow();
+        }
+
+        .ui-submenu-header {
+            border: 0 none;
+            margin: 0;
+            padding: $listItemPadding;
+        }
+    }
+
+    .ui-menubar {
+        padding: 0;
+
+        .ui-submenu-list {
+            padding: 0;
+            border-top: 0 none;
+        }
+    }
+
+    /*.ui-menu {
         padding: 0;
 
         &.ui-shadow, .ui-shadow {
@@ -316,7 +362,7 @@ body {
                 vertical-align: initial;
             }
         }
-    }
+    }*/
 
     .ui-tabmenu {
         border: 0 none;
