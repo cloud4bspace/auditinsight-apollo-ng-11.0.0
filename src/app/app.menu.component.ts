@@ -23,8 +23,8 @@ export class AppMenuComponent implements OnInit {
             {
                 label: 'Menu', icon: 'fa fa-fw fa-bars',
                 items: [
-                    {label: 'Horizontal', icon: 'fa fa-fw fa-arrows-v', command: event => this.app.menuMode = 'horizontal'},
-                    {label: 'Overlay', icon: 'fa fa-fw fa-arrows-h', command: event => this.app.menuMode = 'overlay'},
+                    {label: 'Horizontal', icon: 'fa fa-fw fa-arrows-h', command: event => this.app.menuMode = 'horizontal'},
+                    {label: 'Overlay', icon: 'fa fa-fw fa-arrows-v', command: event => this.app.menuMode = 'overlay'},
                     {label: 'Static', icon: 'fa fa-fw fa-bars', command: event => this.app.menuMode = 'static'},
                     {label: 'Slim', icon: 'fa fa-fw fa-window-restore', command: event => this.app.menuMode = 'slim'}
                 ]
@@ -143,7 +143,7 @@ export class AppMenuComponent implements OnInit {
                     }
                 ]
             },
-            {label: 'Documentation', icon: 'fa fa-fw fa-book', routerLink: ['/documentation']}
+            {label: 'Docs', icon: 'fa fa-fw fa-book', routerLink: ['/documentation']}
         ];
     }
 }

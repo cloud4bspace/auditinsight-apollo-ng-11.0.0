@@ -425,24 +425,28 @@ body {
             padding-left: 0;
             padding-right: 0;
 
-            .ui-menuitem-link {
-                padding: $listItemPadding;
-                color: $textColor;
+            .ui-menuitem {
                 @include border-radius(0);
 
-                &:hover {
-                    @include menu-item-hover();
-                }
-
-                > span.ui-icon {
-                    display: inline-block;
-                    vertical-align: middle;
-                    left: auto;
-                    margin-right: 0.3em;
-                }
-
-                .ui-menuitem-text {
-                    display: inline-block;
+                .ui-menuitem-link {
+                    padding: $listItemPadding;
+                    color: $textColor;
+                    @include border-radius(0);
+    
+                    &:hover {
+                        @include menu-item-hover();
+                    }
+    
+                    > span.ui-icon {
+                        display: inline-block;
+                        vertical-align: middle;
+                        left: auto;
+                        margin-right: 0.3em;
+                    }
+    
+                    .ui-menuitem-text {
+                        display: inline-block;
+                    }
                 }
             }
         }
