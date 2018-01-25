@@ -534,6 +534,29 @@ $tabHeaderPadding:.571em .857em;
 &lt;div class="layout-wrapper layout-horizontal"&gt;
 </pre>
 
+            <h1>Breadcrumb</h1>
+            <p>Apollo has an optional built-in breadcrumb section right below the topbar. 
+                The items are dynamically generated using a BreadcrumbService where each main page that goes into the router-outlet should provide a collection of MenuItem instances. 
+                Here is an example component that updates the breadcrumb.</p>
+<pre>
+import &#123;Component&#125; from '@angular/core';
+import &#123;BreadcrumbService&#125; from '../../breadcrumb.service';
+
+@Component(&#123;
+    templateUrl: './emptydemo.component.html'
+&#125;)
+export class ControlPanelComponent &#123;
+    
+    constructor(private breadcrumbService: BreadcrumbService) &#123;
+        this.breadcrumbService.setItems([
+            &#123;label: 'Admin'&#125;,
+            &#123;label: 'Control Panel', routerLink: ['/controlpanel']&#125;
+        ]);
+    &#125;
+    
+&#125;
+</pre>
+
             <p>It is also possible to leave the choice to the user by keeping the preference at a component and using an ngClass expression so that user can switch between modes. Sample
             application has an example implementation of such use case. Refer to app.component.ts for an example.</p>
 

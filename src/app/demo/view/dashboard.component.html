@@ -177,7 +177,7 @@
                         <span class="location">jane@pf-verona.com</span>
                     </div>
                     <div class="contact-actions">
-                        <button type="button" pButton icon="fa-paper-plane-o"></button>
+                        <button type="button" pButton icon="fa-microphone"></button>
                         <button type="button" pButton icon="fa-phone" class="green-btn"></button>
                     </div>
                 </li>
@@ -188,7 +188,7 @@
                         <span class="location">joshua@pf-verona.com</span>
                     </div>
                     <div class="contact-actions">
-                      <button type="button" pButton icon="fa-paper-plane-o"></button>
+                      <button type="button" pButton icon="fa-microphone"></button>
                       <button type="button" pButton icon="fa-phone" class="green-btn"></button>
                     </div>
                 </li>
@@ -199,7 +199,7 @@
                         <span class="location">emily@pf-verona.com</span>
                     </div>
                     <div class="contact-actions">
-                      <button type="button" pButton icon="fa-paper-plane-o"></button>
+                      <button type="button" pButton icon="fa-microphone"></button>
                       <button type="button" pButton icon="fa-phone" class="green-btn"></button>
                     </div>
                 </li>
@@ -210,7 +210,7 @@
                         <span class="location">tim@pf-verona.com</span>
                     </div>
                     <div class="contact-actions">
-                      <button type="button" pButton icon="fa-paper-plane-o"></button>
+                      <button type="button" pButton icon="fa-microphone"></button>
                       <button type="button" pButton icon="fa-phone" class="green-btn"></button>
                     </div>
                 </li>
@@ -221,7 +221,7 @@
                         <span class="location">kelly@pf-verona.com</span>
                     </div>
                     <div class="contact-actions">
-                      <button type="button" pButton icon="fa-paper-plane-o"></button>
+                      <button type="button" pButton icon="fa-microphone"></button>
                       <button type="button" pButton icon="fa-phone" class="green-btn"></button>
                     </div>
                 </li>
@@ -272,7 +272,7 @@
 
         <div class="sales-panel">
             <div class="card">
-                <p-table [columns]="cols" [value]="cars" selectionMode="single" dataKey="vin" [(selection)]="selectedCar" [responsive]="true">
+                <p-table [columns]="cols" [value]="cars" selectionMode="single" dataKey="vin" [(selection)]="selectedCar" [responsive]="true" [paginator]="true" [rows]="10">
                     <ng-template pTemplate="caption">
                         Recent Sales
                     </ng-template>

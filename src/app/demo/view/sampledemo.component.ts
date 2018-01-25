@@ -66,10 +66,12 @@ export class SampleDemoComponent implements OnInit {
     selectedType: string;
 
     constructor(private carService: CarService, private countryService: CountryService, private nodeService: NodeService,
-                private breadcrumbService: BreadcrumbService) { this.breadcrumbService.setItems([
-      { label: 'Components' },
-      { label: 'Sample', routerLink: ['/sample'] }
-    ]); }
+        private breadcrumbService: BreadcrumbService) {
+        this.breadcrumbService.setItems([
+            { label: 'Components' },
+            { label: 'Sample', routerLink: ['/sample'] }
+        ]);
+    }
 
     ngOnInit() {
         this.carService.getCarsSmall().then(cars => this.cars = cars);
