@@ -1,11 +1,11 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {trigger, state, style, transition, animate} from '@angular/animations';
-import {MenuItem} from 'primeng/primeng';
-import {AppComponent} from './app.component';
+import { Component, Input, OnInit } from '@angular/core';
+import { trigger, state, style, transition, animate } from '@angular/animations';
+import { MenuItem } from 'primeng/primeng';
+import { AppComponent } from './app.component';
 
 @Component({
     selector: 'app-menu',
-  template: `
+    template: `
         <ul app-submenu [item]="model" root="true" class="layout-menu" [reset]="reset" visible="true"></ul>
     `
 })
@@ -15,87 +15,121 @@ export class AppMenuComponent implements OnInit {
 
     model: any[];
 
-    constructor(public app: AppComponent) {}
+    constructor(public app: AppComponent) { }
 
     ngOnInit() {
         this.model = [
-            {label: 'Dashboard', icon: 'fa fa-fw fa-dashboard', routerLink: ['/']},
+            { label: 'Dashboard', icon: 'fa fa-fw fa-dashboard', routerLink: ['/'] },
             {
                 label: 'Menu', icon: 'fa fa-fw fa-bars',
                 items: [
-                    {label: 'Horizontal', icon: 'fa fa-fw fa-arrows-h', command: event => this.app.menuMode = 'horizontal'},
-                    {label: 'Overlay', icon: 'fa fa-fw fa-arrows-v', command: event => this.app.menuMode = 'overlay'},
-                    {label: 'Static', icon: 'fa fa-fw fa-bars', command: event => this.app.menuMode = 'static'},
-                    {label: 'Slim', icon: 'fa fa-fw fa-window-restore', command: event => this.app.menuMode = 'slim'}
+                    { label: 'Horizontal', icon: 'fa fa-fw fa-arrows-h', command: event => this.app.menuMode = 'horizontal' },
+                    { label: 'Overlay', icon: 'fa fa-fw fa-arrows-v', command: event => this.app.menuMode = 'overlay' },
+                    { label: 'Static', icon: 'fa fa-fw fa-bars', command: event => this.app.menuMode = 'static' },
+                    { label: 'Slim', icon: 'fa fa-fw fa-window-restore', command: event => this.app.menuMode = 'slim' }
                 ]
             },
             {
                 label: 'Dark', icon: 'fa fa-fw fa-circle', badge: '8',
                 items: [
-                    {label: 'Blue', styleClass: 'blue-theme', icon: 'fa fa-fw fa-paint-brush',
-                      command: (event) => {this.app.changeTheme('blue-dark'); }},
-                    {label: 'Green', styleClass: 'green-theme', icon: 'fa fa-fw fa-paint-brush',
-                      command: (event) => {this.app.changeTheme('green-dark'); }},
-                    {label: 'Cyan', styleClass: 'cyan-theme', icon: 'fa fa-fw fa-paint-brush',
-                      command: (event) => {this.app.changeTheme('cyan-dark'); }},
-                    {label: 'Purple', styleClass: 'purple-theme', icon: 'fa fa-fw fa-paint-brush',
-                      command: (event) => {this.app.changeTheme('purple-dark'); }},
-                    {label: 'Indigo', styleClass: 'indigo-theme', icon: 'fa fa-fw fa-paint-brush',
-                      command: (event) => {this.app.changeTheme('indigo-dark'); }},
-                    {label: 'Yellow', styleClass: 'yellow-theme', icon: 'fa fa-fw fa-paint-brush',
-                      command: (event) => {this.app.changeTheme('yellow-dark'); }},
-                    {label: 'Orange', styleClass: 'orange-theme', icon: 'fa fa-fw fa-paint-brush',
-                      command: (event) => {this.app.changeTheme('orange-dark'); }},
-                    {label: 'Pink', styleClass: 'pink-theme', icon: 'fa fa-fw fa-paint-brush',
-                      command: (event) => {this.app.changeTheme('pink-dark'); }}
+                    {
+                        label: 'Blue', styleClass: 'blue-theme', icon: 'fa fa-fw fa-paint-brush',
+                        command: (event) => { this.app.changeTheme('blue-dark'); }
+                    },
+                    {
+                        label: 'Green', styleClass: 'green-theme', icon: 'fa fa-fw fa-paint-brush',
+                        command: (event) => { this.app.changeTheme('green-dark'); }
+                    },
+                    {
+                        label: 'Cyan', styleClass: 'cyan-theme', icon: 'fa fa-fw fa-paint-brush',
+                        command: (event) => { this.app.changeTheme('cyan-dark'); }
+                    },
+                    {
+                        label: 'Purple', styleClass: 'purple-theme', icon: 'fa fa-fw fa-paint-brush',
+                        command: (event) => { this.app.changeTheme('purple-dark'); }
+                    },
+                    {
+                        label: 'Indigo', styleClass: 'indigo-theme', icon: 'fa fa-fw fa-paint-brush',
+                        command: (event) => { this.app.changeTheme('indigo-dark'); }
+                    },
+                    {
+                        label: 'Yellow', styleClass: 'yellow-theme', icon: 'fa fa-fw fa-paint-brush',
+                        command: (event) => { this.app.changeTheme('yellow-dark'); }
+                    },
+                    {
+                        label: 'Orange', styleClass: 'orange-theme', icon: 'fa fa-fw fa-paint-brush',
+                        command: (event) => { this.app.changeTheme('orange-dark'); }
+                    },
+                    {
+                        label: 'Pink', styleClass: 'pink-theme', icon: 'fa fa-fw fa-paint-brush',
+                        command: (event) => { this.app.changeTheme('pink-dark'); }
+                    }
                 ]
             },
             {
                 label: 'Light', icon: 'fa fa-fw fa-circle-o', badge: '8',
                 items: [
-                    {label: 'Blue', styleClass: 'blue-theme', icon: 'fa fa-fw fa-paint-brush',
-                      command: (event) => {this.app.changeTheme('blue-light'); }},
-                    {label: 'Green', styleClass: 'green-theme', icon: 'fa fa-fw fa-paint-brush',
-                      command: (event) => {this.app.changeTheme('green-light'); }},
-                    {label: 'Cyan', styleClass: 'cyan-theme', icon: 'fa fa-fw fa-paint-brush',
-                      command: (event) => {this.app.changeTheme('cyan-light'); }},
-                    {label: 'Purple', styleClass: 'purple-theme', icon: 'fa fa-fw fa-paint-brush',
-                      command: (event) => {this.app.changeTheme('purple-light'); }},
-                    {label: 'Indigo', styleClass: 'indigo-theme', icon: 'fa fa-fw fa-paint-brush',
-                      command: (event) => {this.app.changeTheme('indigo-light'); }},
-                    {label: 'Yellow', styleClass: 'yellow-theme', icon: 'fa fa-fw fa-paint-brush',
-                      command: (event) => {this.app.changeTheme('yellow-light'); }},
-                    {label: 'Orange', styleClass: 'orange-theme', icon: 'fa fa-fw fa-paint-brush',
-                      command: (event) => {this.app.changeTheme('orange-light'); }},
-                    {label: 'Pink', styleClass: 'pink-theme', icon: 'fa fa-fw fa-paint-brush',
-                      command: (event) => {this.app.changeTheme('pink-light'); }}
+                    {
+                        label: 'Blue', styleClass: 'blue-theme', icon: 'fa fa-fw fa-paint-brush',
+                        command: (event) => { this.app.changeTheme('blue-light'); }
+                    },
+                    {
+                        label: 'Green', styleClass: 'green-theme', icon: 'fa fa-fw fa-paint-brush',
+                        command: (event) => { this.app.changeTheme('green-light'); }
+                    },
+                    {
+                        label: 'Cyan', styleClass: 'cyan-theme', icon: 'fa fa-fw fa-paint-brush',
+                        command: (event) => { this.app.changeTheme('cyan-light'); }
+                    },
+                    {
+                        label: 'Purple', styleClass: 'purple-theme', icon: 'fa fa-fw fa-paint-brush',
+                        command: (event) => { this.app.changeTheme('purple-light'); }
+                    },
+                    {
+                        label: 'Indigo', styleClass: 'indigo-theme', icon: 'fa fa-fw fa-paint-brush',
+                        command: (event) => { this.app.changeTheme('indigo-light'); }
+                    },
+                    {
+                        label: 'Yellow', styleClass: 'yellow-theme', icon: 'fa fa-fw fa-paint-brush',
+                        command: (event) => { this.app.changeTheme('yellow-light'); }
+                    },
+                    {
+                        label: 'Orange', styleClass: 'orange-theme', icon: 'fa fa-fw fa-paint-brush',
+                        command: (event) => { this.app.changeTheme('orange-light'); }
+                    },
+                    {
+                        label: 'Pink', styleClass: 'pink-theme', icon: 'fa fa-fw fa-paint-brush',
+                        command: (event) => { this.app.changeTheme('pink-light'); }
+                    }
                 ]
             },
             {
                 label: 'Components', icon: 'fa fa-fw fa-sitemap',
                 items: [
-                    {label: 'Sample Page', icon: 'fa fa-fw fa-columns', routerLink: ['/sample']},
-                    {label: 'Forms', icon: 'fa fa-fw fa-code', routerLink: ['/forms']},
-                    {label: 'Data', icon: 'fa fa-fw fa-table', routerLink: ['/data']},
-                    {label: 'Panels', icon: 'fa fa-fw fa-list-alt', routerLink: ['/panels']},
-                    {label: 'Overlays', icon: 'fa fa-fw fa-square', routerLink: ['/overlays']},
-                    {label: 'Menus', icon: 'fa fa-fw fa-minus-square-o', routerLink: ['/menus']},
-                    {label: 'Messages', icon: 'fa fa-fw fa-circle-o-notch', routerLink: ['/messages']},
-                    {label: 'Charts', icon: 'fa fa-fw fa-area-chart', routerLink: ['/charts']},
-                    {label: 'File', icon: 'fa fa-fw fa-arrow-circle-o-up', routerLink: ['/file']},
-                    {label: 'Misc', icon: 'fa fa-fw fa-user-secret', routerLink: ['/misc']}
+                    { label: 'Sample Page', icon: 'fa fa-fw fa-columns', routerLink: ['/sample'] },
+                    { label: 'Forms', icon: 'fa fa-fw fa-code', routerLink: ['/forms'] },
+                    { label: 'Data', icon: 'fa fa-fw fa-table', routerLink: ['/data'] },
+                    { label: 'Panels', icon: 'fa fa-fw fa-list-alt', routerLink: ['/panels'] },
+                    { label: 'Overlays', icon: 'fa fa-fw fa-square', routerLink: ['/overlays'] },
+                    { label: 'Menus', icon: 'fa fa-fw fa-minus-square-o', routerLink: ['/menus'] },
+                    { label: 'Messages', icon: 'fa fa-fw fa-circle-o-notch', routerLink: ['/messages'] },
+                    { label: 'Charts', icon: 'fa fa-fw fa-area-chart', routerLink: ['/charts'] },
+                    { label: 'File', icon: 'fa fa-fw fa-arrow-circle-o-up', routerLink: ['/file'] },
+                    { label: 'Misc', icon: 'fa fa-fw fa-user-secret', routerLink: ['/misc'] }
                 ]
             },
             {
                 label: 'Pages', icon: 'fa fa-fw fa-life-saver',
                 items: [
-                    {label: 'Empty Page', icon: 'fa fa-fw fa-square-o', routerLink: ['/empty']},
-                    {label: 'Landing Page', icon: 'fa fa-fw fa-globe', url: 'assets/pages/landing.html', target: '_blank'},
-                    {label: 'Login Page', icon: 'fa fa-fw fa-sign-in', url: 'assets/pages/login.html', target: '_blank'},
-                    {label: 'Error Page', icon: 'fa fa-fw fa-exclamation-circle', url: 'assets/pages/error.html', target: '_blank'},
-                    {label: '404 Page', icon: 'fa fa-fw fa-times', url: 'assets/pages/404.html', target: '_blank'},
-                    {label: 'Access Denied Page', icon: 'fa fa-fw fa-exclamation-triangle',
-                      url: 'assets/pages/access.html', target: '_blank'}
+                    { label: 'Empty Page', icon: 'fa fa-fw fa-square-o', routerLink: ['/empty'] },
+                    { label: 'Landing Page', icon: 'fa fa-fw fa-globe', url: 'assets/pages/landing.html', target: '_blank' },
+                    { label: 'Login Page', icon: 'fa fa-fw fa-sign-in', url: 'assets/pages/login.html', target: '_blank' },
+                    { label: 'Error Page', icon: 'fa fa-fw fa-exclamation-circle', url: 'assets/pages/error.html', target: '_blank' },
+                    { label: '404 Page', icon: 'fa fa-fw fa-times', url: 'assets/pages/404.html', target: '_blank' },
+                    {
+                        label: 'Access Denied Page', icon: 'fa fa-fw fa-exclamation-triangle',
+                        url: 'assets/pages/access.html', target: '_blank'
+                    }
                 ]
             },
             {
@@ -107,16 +141,16 @@ export class AppMenuComponent implements OnInit {
                             {
                                 label: 'Submenu 1.1', icon: 'fa fa-fw fa-sign-in',
                                 items: [
-                                    {label: 'Submenu 1.1.1', icon: 'fa fa-fw fa-sign-in'},
-                                    {label: 'Submenu 1.1.2', icon: 'fa fa-fw fa-sign-in'},
-                                    {label: 'Submenu 1.1.3', icon: 'fa fa-fw fa-sign-in'},
+                                    { label: 'Submenu 1.1.1', icon: 'fa fa-fw fa-sign-in' },
+                                    { label: 'Submenu 1.1.2', icon: 'fa fa-fw fa-sign-in' },
+                                    { label: 'Submenu 1.1.3', icon: 'fa fa-fw fa-sign-in' },
                                 ]
                             },
                             {
                                 label: 'Submenu 1.2', icon: 'fa fa-fw fa-sign-in',
                                 items: [
-                                    {label: 'Submenu 1.2.1', icon: 'fa fa-fw fa-sign-in'},
-                                    {label: 'Submenu 1.2.2', icon: 'fa fa-fw fa-sign-in'}
+                                    { label: 'Submenu 1.2.1', icon: 'fa fa-fw fa-sign-in' },
+                                    { label: 'Submenu 1.2.2', icon: 'fa fa-fw fa-sign-in' }
                                 ]
                             },
                         ]
@@ -127,23 +161,23 @@ export class AppMenuComponent implements OnInit {
                             {
                                 label: 'Submenu 2.1', icon: 'fa fa-fw fa-sign-in',
                                 items: [
-                                    {label: 'Submenu 2.1.1', icon: 'fa fa-fw fa-sign-in'},
-                                    {label: 'Submenu 2.1.2', icon: 'fa fa-fw fa-sign-in'},
-                                    {label: 'Submenu 2.1.3', icon: 'fa fa-fw fa-sign-in'},
+                                    { label: 'Submenu 2.1.1', icon: 'fa fa-fw fa-sign-in' },
+                                    { label: 'Submenu 2.1.2', icon: 'fa fa-fw fa-sign-in' },
+                                    { label: 'Submenu 2.1.3', icon: 'fa fa-fw fa-sign-in' },
                                 ]
                             },
                             {
                                 label: 'Submenu 2.2', icon: 'fa fa-fw fa-sign-in',
                                 items: [
-                                    {label: 'Submenu 2.2.1', icon: 'fa fa-fw fa-sign-in'},
-                                    {label: 'Submenu 2.2.2', icon: 'fa fa-fw fa-sign-in'}
+                                    { label: 'Submenu 2.2.1', icon: 'fa fa-fw fa-sign-in' },
+                                    { label: 'Submenu 2.2.2', icon: 'fa fa-fw fa-sign-in' }
                                 ]
                             },
                         ]
                     }
                 ]
             },
-            {label: 'Docs', icon: 'fa fa-fw fa-book', routerLink: ['/documentation']}
+            { label: 'Docs', icon: 'fa fa-fw fa-book', routerLink: ['/documentation'] }
         ];
     }
 }
@@ -213,9 +247,9 @@ export class AppSubMenuComponent {
 
     activeIndex: number;
 
-    constructor(public app: AppComponent) {}
+    constructor(public app: AppComponent) { }
 
-    itemClick(event: Event, item: MenuItem, index: number) {
+    itemClick(event: Event, item: MenuItem, index: number)  {
         if (this.root) {
             this.app.menuHoverActive = !this.app.menuHoverActive;
         }
@@ -230,7 +264,7 @@ export class AppSubMenuComponent {
 
         // execute command
         if (item.command) {
-            item.command({originalEvent: event, item: item});
+            item.command({ originalEvent: event, item: item });
         }
 
         // prevent hash change
@@ -240,13 +274,15 @@ export class AppSubMenuComponent {
 
         // hide menu
         if (!item.items) {
-          if (this.app.isHorizontal() || this.app.isSlim()) {
-            this.app.resetMenu = true; } else {
-            this.app.resetMenu = false; }
+            if (this.app.isHorizontal() || this.app.isSlim()) {
+                this.app.resetMenu = true;
+            } else {
+                this.app.resetMenu = false;
+            }
 
-          this.app.overlayMenuActive = false;
-          this.app.staticMenuMobileActive = false;
-          this.app.menuHoverActive = !this.app.menuHoverActive;
+            this.app.overlayMenuActive = false;
+            this.app.staticMenuMobileActive = false;
+            this.app.menuHoverActive = !this.app.menuHoverActive;
         }
     }
 
@@ -267,7 +303,7 @@ export class AppSubMenuComponent {
     set reset(val: boolean) {
         this._reset = val;
 
-        if (this._reset && (this.app.isHorizontal() || this.app.isSlim())) {
+        if (this._reset && (this.app.isHorizontal() ||  this.app.isSlim())) {
             this.activeIndex = null;
         }
     }

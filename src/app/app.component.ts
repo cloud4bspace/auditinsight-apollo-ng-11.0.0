@@ -146,7 +146,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
         themeLink.href = 'assets/theme/theme-' + theme + '.css';
         const layoutLink: HTMLLinkElement = <HTMLLinkElement>document.getElementById('layout-css');
         layoutLink.href = 'assets/layout/css/layout-' + theme + '.css';
-        
+
         if (theme.indexOf('dark') !== -1)
             this.darkTheme = true;
         else
