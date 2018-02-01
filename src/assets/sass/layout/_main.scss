@@ -85,7 +85,7 @@ body {
                 float: right;
                 margin: 0 10px 0 0;
                 top: 3px;
-                
+
                 input {
                     display: inline-block;
                     border: 0 none;
@@ -270,6 +270,27 @@ body {
             @include border-box();
             @include overlay-shadow;
 
+            .ui-scrollpanel {
+                background: transparent;
+                border-radius: 0;
+                border: none;
+                .ui-scrollpanel-bar {
+                  background-color: #aaaaaa;
+                  opacity: 0.3;
+                  filter: alpha(opacity=30);
+                }
+                .ui-scrollpanel-hidden {
+                  display: block;
+                  visibility: hidden;
+                }
+
+                .layout-menu-content {
+                  width: 248px;
+                  padding-right: 18px;
+                  padding-bottom: 120px;
+                }
+            }
+
             .layout-menu {
                 margin: 0;
                 padding: 0;
@@ -399,30 +420,6 @@ body {
                         margin-top: -5px;
                         border-width: 5px 5px 5px 0;
                         border-right-color: $primaryColor;
-                    }
-                }
-            }
-
-            .nano {
-                > .nano-content {
-                    &.menu-scroll-content {
-                        display: block;
-                        height: 100%;
-                        position: relative;
-                        overflow: scroll;
-                        overflow-x: hidden;
-                    }
-
-                    .nano-scroll-footer {
-                        height: 120px;
-                    }
-                }
-
-                > .nano-pane {
-                    .nano-slider {
-                        background-color: #aaaaaa;
-                        opacity: 0.3;
-                        filter: alpha(opacity=30);
                     }
                 }
             }
@@ -661,11 +658,17 @@ body {
                         }
                     }
 
-                    .nano {
-                        overflow: visible;
-
-                        > .nano-content {
+                    .ui-scrollpanel {
+                        .ui-scrollpanel-wrapper {
+                          overflow: visible;
+                          .ui-scrollpanel-content {
                             overflow: visible;
+                          }
+                        }
+                        .layout-menu-content {
+                          width: 100%;
+                          padding-right: 0;
+                          padding-bottom: 0;
                         }
                     }
 
@@ -870,16 +873,15 @@ body {
                         display: none;
                     }
 
-                    .nano {
-                        overflow: visible;
-
-                        .nano-content {
+                    .ui-scrollpanel {
+                        .ui-scrollpanel-wrapper {
                             overflow: visible;
-                            margin-right: 0px !important;
+                            .ui-scrollpanel-content {
+                                overflow: visible;
+                            }
                         }
-
-                        .nano-pane {
-                            display: none !important;
+                        .layout-menu-content {
+                            width: 100%;
                         }
                     }
 
@@ -1017,30 +1019,6 @@ body {
                                 }
                               }
                             }
-                        }
-                    }
-                }
-            }
-
-            &.layout-horizontal, &.layout-slim {
-                .layout-menu-container {
-                    .nano {
-                        > .nano-content {
-                            &.menu-scroll-content {
-                                display: block;
-                                height: auto;
-                                position: static;
-                                overflow: visible;
-                                overflow-x: visible;
-                            }
-
-                            .nano-scroll-footer {
-                                height: 0px;
-                            }
-                        }
-
-                        > .nano-pane {
-                            display: none !important;
                         }
                     }
                 }

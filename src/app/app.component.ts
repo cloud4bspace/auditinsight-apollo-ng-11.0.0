@@ -1,12 +1,12 @@
 import { Component, ElementRef, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
-declare var jQuery: any;
+import {ScrollPanel} from 'primeng/primeng';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements AfterViewInit, OnDestroy {
+export class AppComponent implements AfterViewInit {
 
     darkTheme = false;
 
@@ -32,14 +32,10 @@ export class AppComponent implements AfterViewInit, OnDestroy {
 
     menuHoverActive: boolean;
 
-    @ViewChild('layoutMenuScroller') layoutMenuScrollerViewChild: ElementRef;
+    @ViewChild('layoutMenuScroller') layoutMenuScrollerViewChild: ScrollPanel;
 
     ngAfterViewInit() {
-        this.layoutMenuScroller = <HTMLDivElement>this.layoutMenuScrollerViewChild.nativeElement;
-
-        setTimeout(() => {
-            jQuery(this.layoutMenuScroller).nanoScroller({ flash: true });
-        }, 10);
+        setTimeout(() => {this.layoutMenuScrollerViewChild.moveBar(); }, 100);
     }
 
     onLayoutClick() {
@@ -85,9 +81,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
         this.resetMenu = false;
 
         if (!this.isHorizontal()) {
-            setTimeout(() => {
-                jQuery(this.layoutMenuScroller).nanoScroller();
-            }, 500);
+            setTimeout(() => {this.layoutMenuScrollerViewChild.moveBar(); }, 500);
         }
     }
 
@@ -136,6 +130,11 @@ export class AppComponent implements AfterViewInit, OnDestroy {
         return window.innerWidth > 1024;
     }
 
+    isTablet() {
+      const width = window.innerWidth;
+      return width <= 1024 && width > 640;
+    }
+
     hideOverlayMenu() {
         this.overlayMenuActive = false;
         this.staticMenuMobileActive = false;
@@ -147,13 +146,10 @@ export class AppComponent implements AfterViewInit, OnDestroy {
         const layoutLink: HTMLLinkElement = <HTMLLinkElement>document.getElementById('layout-css');
         layoutLink.href = 'assets/layout/css/layout-' + theme + '.css';
 
-        if (theme.indexOf('dark') !== -1)
-            this.darkTheme = true;
-        else
-            this.darkTheme = false;
-    }
-
-    ngOnDestroy() {
-        jQuery(this.layoutMenuScroller).nanoScroller({ flash: true });
+        if (theme.indexOf('dark') !== -1) {
+          this.darkTheme = true;
+        } else {
+          this.darkTheme = false;
+        }
     }
 }

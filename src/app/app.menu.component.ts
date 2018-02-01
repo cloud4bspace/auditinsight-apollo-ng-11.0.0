@@ -225,10 +225,12 @@ export class AppMenuComponent implements OnInit {
                 height: '*'
             })),
             state('visible', style({
-                height: '*'
+                height: '*',
+                'z-index': 100
             })),
             state('hidden', style({
-                height: '0px'
+                height: '0px',
+                'z-index': '*'
             })),
             transition('visibleAnimated => hiddenAnimated', animate('400ms cubic-bezier(0.86, 0, 0.07, 1)')),
             transition('hiddenAnimated => visibleAnimated', animate('400ms cubic-bezier(0.86, 0, 0.07, 1)'))
@@ -269,6 +271,9 @@ export class AppSubMenuComponent {
 
         // prevent hash change
         if (item.items || (!item.url && !item.routerLink)) {
+            setTimeout(() => {
+              this.app.layoutMenuScrollerViewChild.moveBar();
+            }, 450);
             event.preventDefault();
         }
 
@@ -287,7 +292,8 @@ export class AppSubMenuComponent {
     }
 
     onMouseEnter(index: number) {
-        if (this.root && this.app.menuHoverActive && (this.app.isHorizontal() || this.app.isSlim())) {
+        if (this.root && this.app.menuHoverActive && (this.app.isHorizontal() || this.app.isSlim())
+          && !this.app.isMobile() && !this.app.isTablet()) {
             this.activeIndex = index;
         }
     }

@@ -57,6 +57,7 @@ import { ProgressBarModule } from 'primeng/primeng';
 import { RadioButtonModule } from 'primeng/primeng';
 import { RatingModule } from 'primeng/primeng';
 import { ScheduleModule } from 'primeng/primeng';
+import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { SelectButtonModule } from 'primeng/primeng';
 import { SlideMenuModule } from 'primeng/primeng';
 import { SliderModule } from 'primeng/primeng';
@@ -156,6 +157,7 @@ import { BreadcrumbService } from './breadcrumb.service';
         RadioButtonModule,
         RatingModule,
         ScheduleModule,
+        ScrollPanelModule,
         SelectButtonModule,
         SlideMenuModule,
         SliderModule,

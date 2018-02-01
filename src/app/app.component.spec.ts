@@ -6,7 +6,7 @@ import { AppTopBarComponent } from './app.topbar.component';
 import { AppFooterComponent } from './app.footer.component';
 import { AppBreadcrumbComponent } from './app.breadcrumb.component';
 import { BreadcrumbService } from './breadcrumb.service';
-import { InputSwitchModule, ProgressBarModule} from 'primeng/primeng';
+import {InputSwitchModule, ProgressBarModule, ScrollPanel} from 'primeng/primeng';
 import {FormsModule} from '@angular/forms';
 
 describe('AppComponent', () => {
@@ -24,7 +24,8 @@ describe('AppComponent', () => {
         AppSubMenuComponent,
         AppTopBarComponent,
         AppFooterComponent,
-        AppBreadcrumbComponent
+        AppBreadcrumbComponent,
+        ScrollPanel
       ],
       providers: [BreadcrumbService]
     }).compileComponents();
