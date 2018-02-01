@@ -968,6 +968,7 @@ body {
     .ui-splitbutton.ui-buttonset {
         .ui-button {
             border: 1px solid transparent;
+            vertical-align: middle;
         }
 
         .ui-menu {
@@ -981,11 +982,11 @@ body {
                 &:hover {
                     background-color: darken($blue,5%);
                 }
-    
+
                 &:focus {
                     background-color: darken($blue,5%);
                 }
-    
+
                 &:active {
                     background-color: darken($blue,10%);
                 }
@@ -1017,11 +1018,11 @@ body {
                 &:hover {
                     background-color: darken($orange,5%);
                 }
-    
+
                 &:focus {
                     background-color: darken($orange,5%);
                 }
-    
+
                 &:active {
                     background-color: darken($orange,10%);
                 }
@@ -1035,11 +1036,11 @@ body {
                 &:hover {
                     background-color: darken($pink,5%);
                 }
-    
+
                 &:focus {
                     background-color: darken($pink,5%);
                 }
-    
+
                 &:active {
                     background-color: darken($pink,10%);
                 }
@@ -1053,14 +1054,14 @@ body {
                 &:hover {
                     background-color: darken($green,5%);
                 }
-    
+
                 &:focus {
                     background-color: darken($green,5%);
                 }
-    
+
                 &:active {
                     background-color: darken($green,10%);
-                }                
+                }
             }
         }
 
@@ -1071,11 +1072,11 @@ body {
                 &:hover {
                     background-color: darken($red,5%);
                 }
-    
+
                 &:focus {
                     background-color: darken($red,5%);
                 }
-    
+
                 &:active {
                     background-color: darken($red,10%);
                 }
@@ -1086,15 +1087,15 @@ body {
             .ui-button {
                 background-color: $yellow;
                 color: $textColor;
-    
+
                 &:hover {
                     background-color: darken($yellow,5%);
                 }
-    
+
                 &:focus {
                     background-color: darken($yellow,5%);
                 }
-    
+
                 &:active {
                     background-color: darken($yellow,10%);
                 }
