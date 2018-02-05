@@ -60,8 +60,8 @@ Run 'ng help' for more options.
 
     &lt;app-topbar&gt;&lt;/app-topbar&gt;
     &lt;div class="layout-menu-container" (click)="onMenuClick($event)"&gt;
-        &lt;div #layoutMenuScroller class="nano"&gt;
-            &lt;div class="nano-content menu-scroll-content"&gt;
+        &lt;p-scrollPanel #layoutMenuScroller [style]="&#123;height: '100%'&#125;"&gt;
+            &lt;div class="layout-menu-content"&gt;
                 &lt;div class="layout-menu-title"&gt;MENU&lt;/div&gt;
                 &lt;app-menu [reset]="resetMenu"&gt;&lt;/app-menu&gt;
                 &lt;div class="layout-menu-footer"&gt;
@@ -76,7 +76,7 @@ Run 'ng help' for more options.
                     &lt;/div&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
-        &lt;/div&gt;
+        &lt;/p-scrollPanel&gt;
     &lt;/div&gt;
 
     &lt;div class="layout-content"&gt;
@@ -89,7 +89,7 @@ Run 'ng help' for more options.
         &lt;app-footer&gt;&lt;/app-footer&gt;
         &lt;div class="layout-mask" *ngIf="staticMenuMobileActive"&gt;&lt;/div&gt;
     &lt;/div&gt;
-&lt;/div&gt;   
+&lt;/div&gt;
 </pre>
 
             <h1>Menu</h1>
@@ -253,37 +253,17 @@ export class AppMenuComponent implements OnInit &#123;
             <p>To setup Apollo in an existing project, copy the <i>src/assets</i> folder to your projects folder with the same name
                 and replace the contents of app.component.ts, app.component.html with their counterparts in Apollo under <i>src/app</i> folder.</p>
 
-            <p>Dependencies of Apollo are listed below and needs to be added to package.json</p>
+          <p>Install PrimeNG</p>
 <pre>
-"primeng": "^5.2.0-rc.2",        //required: PrimeNG components
-"chart.js": "^2.4.0",            //optional: chart component
-"fullcalendar": "^3.1.0",        //optional: schedule component
-"moment": "^2.17.1",             //optional: chart and schedule components
-"quill": "^1.1.8",               //optional: editor component
-"jquery": "^3.1.1",              //optional: schedule component and nanoscroller
+npm install primeng@latest --save
 </pre>
 
-            <p>Add PrimeNG CSS at styles section in angular-cli.json</p>
+          <p>Add PrimeNG CSS at styles section in angular-cli.json.</p>
 
 <pre>
 "styles": [
     "../node_modules/primeng/resources/primeng.min.css",        //required: PrimeNG components
-    "../node_modules/fullcalendar/dist/fullcalendar.min.css",   //optional: schedule component
-    "../node_modules/quill/dist/quill.snow.css",                //optional: editor component
-    "../node_modules/nanoscroller/bin/css/nanoscroller.css",    //optional: nanoscroller
     "styles.scss"                                               //your styles and overrides
-],
-</pre>
-
-            <p>Add the following scripts to your angular-cli.json</p>
-<pre>
-"scripts": [
-    "../node_modules/nanoscroller/bin/javascripts/jquery.nanoscroller.js",  //optional: nanoscroller
-    "../node_modules/moment/moment.js",                                     //optional: schedule and chart components
-    "../node_modules/chart.js/dist/Chart.js",                               //optional: chart component
-    "../node_modules/fullcalendar/dist/fullcalendar.js",                    //optional: schedule component
-    "../node_modules/quill/dist/quill.js"                                   //optional: editor component
-    "../node_modules/jquery/dist/jquery.js",                                //optional: schedule component and nanoscroller
 ],
 </pre>
 
@@ -333,7 +313,7 @@ export class AppMenuComponent implements OnInit &#123;
 $primaryColor:#39a3f4;
 $primaryTextColor:#ffffff;
 
-@import '../sass/theme/_theme_light.scss';  
+@import '../sass/theme/_theme_light.scss';
 </pre>
 
             <p>If you are creating a dark theme, import the _theme_dark.scss instead;</p>
@@ -341,7 +321,7 @@ $primaryTextColor:#ffffff;
 $primaryColor:#39a3f4;
 $primaryTextColor:#ffffff;
 
-@import '../sass/theme/_theme_light.scss';  
+@import '../sass/theme/_theme_light.scss';
 </pre>
 
             <p> An example sass command to compile the css would be;</p>
@@ -460,7 +440,7 @@ $datableEvenRowBgColor:#f9f9f9;
 /* TabView */
 $tabHeaderPadding:.571em .857em;
 
-@import './_theme.scss';        
+@import './_theme.scss';
 </pre>
 
 <h3>sass/variables/_theme_dark.scss</h3>
@@ -516,7 +496,7 @@ $datableEvenRowBgColor:#15222F;
 /* TabView */
 $tabHeaderPadding:.571em .857em;
 
-@import './_theme.scss';              
+@import './_theme.scss';
 </pre>
 
             <h1>Menu Modes</h1>
@@ -535,8 +515,8 @@ $tabHeaderPadding:.571em .857em;
 </pre>
 
             <h1>Breadcrumb</h1>
-            <p>Apollo has an optional built-in breadcrumb section right below the topbar. 
-                The items are dynamically generated using a BreadcrumbService where each main page that goes into the router-outlet should provide a collection of MenuItem instances. 
+            <p>Apollo has an optional built-in breadcrumb section right below the topbar.
+                The items are dynamically generated using a BreadcrumbService where each main page that goes into the router-outlet should provide a collection of MenuItem instances.
                 Here is an example component that updates the breadcrumb.</p>
 <pre>
 import &#123;Component&#125; from '@angular/core';
@@ -546,14 +526,14 @@ import &#123;BreadcrumbService&#125; from '../../breadcrumb.service';
     templateUrl: './emptydemo.component.html'
 &#125;)
 export class ControlPanelComponent &#123;
-    
+
     constructor(private breadcrumbService: BreadcrumbService) &#123;
         this.breadcrumbService.setItems([
             &#123;label: 'Admin'&#125;,
             &#123;label: 'Control Panel', routerLink: ['/controlpanel']&#125;
         ]);
     &#125;
-    
+
 &#125;
 </pre>
 
@@ -566,6 +546,19 @@ export class ControlPanelComponent &#123;
             <h1>Customizing Styles</h1>
             <p>It is suggested to write your customizations in styles.scss file or another file instead of adding them to the
                 scss files under sass folders to avoid maintenance issues after an update.</p>
+
+            <h1>Migration Guide</h1>
+            <p>For seamless updates and easier maintenance, we suggest keeping your CSS customizations in a separate sass file such as styles.scss as defined in .angular-cli.json so that your changes are not overriden with an update.</p>
+
+            <h4>1.0.0 to 5.2.0</h4>
+            <p>Adds support for PrimeNG 5.2.0 (e.g. TurboTable), replaces nanoscroller with PrimeNG ScrollPanel and reimplements ripple effect to run outside of NgZone for better performance.</p>
+            <ul>
+              <li>Remove nanoscroller as it is replaced by ScrollPanel component of PrimeNG.</li>
+              <li>Update app.component.ts.</li>
+              <li>Update app.menu.component.ts and app.menu.component.html.</li>
+              <li>Update layout css files.</li>
+              <li>Update theme css files.</li>
+            </ul>
         </div>
     </div>
 </div>
