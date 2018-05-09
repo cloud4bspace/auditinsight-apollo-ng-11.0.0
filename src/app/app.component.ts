@@ -106,6 +106,10 @@ export class AppComponent implements AfterViewInit {
         event.preventDefault();
     }
 
+    onTopbarSubItemClick(event) {
+      event.preventDefault();
+    }
+
     isHorizontal() {
         return this.menuMode === 'horizontal';
     }

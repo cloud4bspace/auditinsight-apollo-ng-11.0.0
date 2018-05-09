@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 @Component({
     selector: 'app-menu',
     template: `
-        <ul app-submenu [item]="model" root="true" class="layout-menu" [reset]="reset" visible="true"></ul>
+        <ul app-submenu [item]="model" root="true" class="layout-menu" [reset]="reset" visible="true" parentActive="true"></ul>
     `
 })
 export class AppMenuComponent implements OnInit {
@@ -210,7 +210,7 @@ export class AppMenuComponent implements OnInit {
                   <div class="layout-menu-tooltip-arrow"></div>
                   <div class="layout-menu-tooltip-text">{{child.label}}</div>
                 </div>
-                <ul app-submenu [item]="child" *ngIf="child.items" [visible]="isActive(i)" [reset]="reset"
+                <ul app-submenu [item]="child" *ngIf="child.items" [visible]="isActive(i)" [reset]="reset" [parentActive]="isActive(i)"
                     [@children]="(app.isSlim()||app.isHorizontal())&&root ? isActive(i) ?
                     'visible' : 'hidden' : isActive(i) ? 'visibleAnimated' : 'hiddenAnimated'"></ul>
             </li>
@@ -244,6 +244,8 @@ export class AppSubMenuComponent {
     @Input() root: boolean;
 
     @Input() visible: boolean;
+
+   _parentActive: boolean;
 
     _reset: boolean;
 
@@ -312,5 +314,17 @@ export class AppSubMenuComponent {
         if (this._reset && (this.app.isHorizontal() ||  this.app.isSlim())) {
             this.activeIndex = null;
         }
+    }
+
+    @Input() get parentActive(): boolean {
+      return this._parentActive;
+    }
+
+    set parentActive(val: boolean) {
+      this._parentActive = val;
+
+      if (!this._parentActive) {
+        this.activeIndex = null;
+      }
     }
 }
