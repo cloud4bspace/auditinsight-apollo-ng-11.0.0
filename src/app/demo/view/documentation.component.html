@@ -514,6 +514,9 @@ $tabHeaderPadding:.571em .857em;
 &lt;div class="layout-wrapper layout-horizontal"&gt;
 </pre>
 
+            <p>It is also possible to leave the choice to the user by keeping the preference at a component and using an ngClass expression so that user can switch between modes. Sample
+            application has an example implementation of such use case. Refer to app.component.ts for an example.</p>
+
             <h1>Breadcrumb</h1>
             <p>Apollo has an optional built-in breadcrumb section right below the topbar.
                 The items are dynamically generated using a BreadcrumbService where each main page that goes into the router-outlet should provide a collection of MenuItem instances.
@@ -536,9 +539,6 @@ export class ControlPanelComponent &#123;
 
 &#125;
 </pre>
-
-            <p>It is also possible to leave the choice to the user by keeping the preference at a component and using an ngClass expression so that user can switch between modes. Sample
-            application has an example implementation of such use case. Refer to app.component.ts for an example.</p>
 
             <h1>Grid CSS</h1>
             <p>Apollo uses PrimeNG Grid CSS (ui-g-*) throughout the demos, although any Grid library can be used with it. Apollo itself does not depend on Grid CSS.</p>
