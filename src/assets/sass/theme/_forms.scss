@@ -32,7 +32,7 @@ body {
             background-color: darken($primaryColor,5%);
         }
 
-        &:enabled:focus {
+        &:enabled:not(.ui-button-secondary):focus {
             outline: 0 none;
             background-color: darken($primaryColor,5%);
         }
@@ -176,6 +176,65 @@ body {
             &:active {
                 background-color: darken($yellow,10%);
             }
+        }
+    }
+
+
+    .ui-button.ui-state-default.ui-button-secondary, .ui-buttonset.ui-button-secondary > .ui-button.ui-state-default  {
+        &:enabled:focus {
+            outline: 0 none;
+        }
+    }
+
+    .ui-button.ui-state-default.ui-button-info, .ui-buttonset.ui-button-info > .ui-button.ui-state-default  {
+         background-color: $blue;
+
+         &:enabled:hover {
+             background-color: darken($blue,5%);
+         }
+
+         &:enabled:focus {
+             outline: 0 none;
+             background-color: darken($blue,5%);
+         }
+     }
+
+    .ui-button.ui-state-default.ui-button-success, .ui-buttonset.ui-button-success > .ui-button.ui-state-default  {
+        background-color: $green;
+
+        &:enabled:hover {
+            background-color: darken($green,5%);
+        }
+
+        &:enabled:focus {
+            outline: 0 none;
+            background-color: darken($green,5%);
+        }
+    }
+
+    .ui-button.ui-state-default.ui-button-warning, .ui-buttonset.ui-button-warning > .ui-button.ui-state-default  {
+        background-color: $orange;
+
+        &:enabled:hover {
+            background-color: darken($orange,5%);
+        }
+
+        &:enabled:focus {
+            outline: 0 none;
+            background-color: darken($orange,5%);
+        }
+    }
+
+    .ui-button.ui-state-default.ui-button-danger, .ui-buttonset.ui-button-danger > .ui-button.ui-state-default  {
+        background-color: $red;
+
+        &:enabled:hover {
+            background-color: darken($red,5%);
+        }
+
+        &:enabled:focus {
+            outline: 0 none;
+            background-color: darken($red,5%);
         }
     }
 
