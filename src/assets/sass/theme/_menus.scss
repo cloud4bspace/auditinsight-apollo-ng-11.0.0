@@ -26,7 +26,7 @@ body {
                 &:first-child {
                     font-size: $fontSize + 2;
 
-                    &.fa-home {
+                    &.pi-home {
                         color: $textSecondaryColor;
                         margin: 0;
                         font-size: 15px;
@@ -164,7 +164,9 @@ body {
 
             .ui-menuitem-link {
                 .ui-submenu-icon {
-                    right: 0.429em;
+                    vertical-align: middle;
+                    margin-right: 0.429em;
+                    margin-left: 0.429em;
                 }
             }
 
@@ -389,8 +391,8 @@ body {
             &:not(.ui-state-active) {
                 > a:focus {
                     background-color: $headerHoverBgColor;
-                }     
-                
+                }
+
                 > a:hover {
                     background-color: $headerHoverBgColor;
                 }
@@ -432,18 +434,18 @@ body {
                     padding: $listItemPadding;
                     color: $textColor;
                     @include border-radius(0);
-    
+
                     &:hover {
                         @include menu-item-hover();
                     }
-    
+
                     > span.ui-icon {
                         display: inline-block;
                         vertical-align: middle;
                         left: auto;
                         margin-right: 0.3em;
                     }
-    
+
                     .ui-menuitem-text {
                         display: inline-block;
                     }

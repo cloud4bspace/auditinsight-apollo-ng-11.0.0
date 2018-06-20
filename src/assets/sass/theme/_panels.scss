@@ -124,16 +124,16 @@ body {
                     color: $primaryTextColor;
                 }
 
-                .fa {
+                .pi {
                     color: $primaryTextColor;
                 }
             }
 
-            .fa-caret-right {
+            .pi-caret-right {
                 @include icon_override("\f054");
             }
 
-            .fa-caret-down {
+            .pi-caret-down {
                 @include icon_override("\f078");
             }
 
@@ -204,7 +204,7 @@ body {
                     &:not(.ui-state-active):not(.ui-state-disabled):hover {
                         background-color: $headerHoverBgColor;
 
-                        .fa-times {
+                        .pi-times {
                             color: $headerIconHoverColor;
                         }
                         a {
