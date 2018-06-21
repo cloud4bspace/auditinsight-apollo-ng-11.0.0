@@ -68,15 +68,15 @@ body {
         &.blue-btn {
             background-color: $blue;
 
-            &:hover {
+            &:enabled:hover {
                 background-color: darken($blue,5%);
             }
 
-            &:focus {
+            &:enabled:focus {
                 background-color: darken($blue,5%);
             }
 
-            &:active {
+            &:enabled:active {
                 background-color: darken($blue,10%);
             }
         }
@@ -84,15 +84,15 @@ body {
         &.purple-btn {
             background-color: $purple;
 
-            &:hover {
+            &:enabled:hover {
                 background-color: darken($purple,5%);
             }
 
-            &:focus {
+            &:enabled:focus {
                 background-color: darken($purple,5%);
             }
 
-            &:active {
+            &:enabled:active {
                 background-color: darken($purple,10%);
             }
         }
@@ -100,15 +100,15 @@ body {
         &.orange-btn {
             background-color: $orange;
 
-            &:hover {
+            &:enabled:hover {
                 background-color: darken($orange,5%);
             }
 
-            &:focus {
+            &:enabled:focus {
                 background-color: darken($orange,5%);
             }
 
-            &:active {
+            &:enabled:active {
                 background-color: darken($orange,10%);
             }
         }
@@ -116,15 +116,15 @@ body {
         &.pink-btn {
             background-color: $pink;
 
-            &:hover {
+            &:enabled:hover {
                 background-color: darken($pink,5%);
             }
 
-            &:focus {
+            &:enabled:focus {
                 background-color: darken($pink,5%);
             }
 
-            &:active {
+            &:enabled:active {
                 background-color: darken($pink,10%);
             }
         }
@@ -132,15 +132,15 @@ body {
         &.green-btn {
             background-color: $green;
 
-            &:hover {
+            &:enabled:hover {
                 background-color: darken($green,5%);
             }
 
-            &:focus {
+            &:enabled:focus {
                 background-color: darken($green,5%);
             }
 
-            &:active {
+            &:enabled:active {
                 background-color: darken($green,10%);
             }
         }
@@ -148,15 +148,15 @@ body {
         &.red-btn {
             background-color: $red;
 
-            &:hover {
+            &:enabled:hover {
                 background-color: darken($red,5%);
             }
 
-            &:focus {
+            &:enabled:focus {
                 background-color: darken($red,5%);
             }
 
-            &:active {
+            &:enabled:active {
                 background-color: darken($red,10%);
             }
         }
@@ -165,16 +165,48 @@ body {
             background-color: $yellow;
             color: $textColor;
 
-            &:hover {
+            &:enabled:hover {
                 background-color: darken($yellow,5%);
             }
 
-            &:focus {
+            &:enabled:focus {
                 background-color: darken($yellow,5%);
             }
 
             &:active {
                 background-color: darken($yellow,10%);
+            }
+        }
+
+        &.cyan-btn {
+            background-color: $cyan;
+
+            &:enabled:hover {
+                background-color: darken($cyan,5%);
+            }
+
+            &:enabled:focus {
+                background-color: darken($cyan,5%);
+            }
+
+            &:enabled:active {
+                background-color: darken($cyan,10%);
+            }
+        }
+
+        &.indigo-btn {
+            background-color: $indigo;
+
+            &:enabled:hover {
+                background-color: darken($indigo,5%);
+            }
+
+            &:enabled:focus {
+                background-color: darken($indigo,5%);
+            }
+
+            &:enabled:active {
+                background-color: darken($indigo,10%);
             }
         }
     }
@@ -1019,7 +1051,8 @@ body {
         }
 
         .ui-menu {
-            min-width: 100%;
+            width: 100%;
+            min-width: 12.5em;
         }
 
         &.blue-btn {

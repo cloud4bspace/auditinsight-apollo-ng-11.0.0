@@ -284,6 +284,10 @@ body {
                   visibility: hidden;
                 }
 
+                .ui-scrollpanel-content {
+                    overflow-x: hidden;
+                }
+
                 .layout-menu-content {
                   width: 248px;
                   padding-right: 18px;
@@ -880,6 +884,11 @@ body {
                                 overflow: visible;
                             }
                         }
+
+                        .ui-scrollpanel-bar {
+                            display: none;
+                        }
+
                         .layout-menu-content {
                             width: 100%;
                         }
