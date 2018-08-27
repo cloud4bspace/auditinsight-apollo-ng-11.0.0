@@ -60,20 +60,39 @@ body {
                 right: 10px;
 
                 .ui-inputswitch {
-                    background-color: #ffffff;
-                    border-color: #d8d8d8;
 
-                    .ui-inputswitch-handle {
-                        background-color: #d8d8d8;
+                    .ui-inputswitch-slider {
+                        background-color: #ffffff;
+                        border-color:#d8d8d8;
+
+                        &:before {
+                            background-color: #d8d8d8;
+                        }
                     }
 
                     &.ui-inputswitch-checked {
-                        background-color: #243447;
-                        border-color: #243447;
+                        .ui-inputswitch-slider {
+                            background-color: #243447;
+                            border-color: #243447;
 
-                        .ui-inputswitch-handle {
-                          background-color: #0e141c;
-                          color: #0e141c;
+                            &:before {
+                                background-color: #0e141c;
+                                color: #0e141c;
+                            }
+                        }
+
+                        &:not(.ui-state-disabled):hover {
+                            .ui-inputswitch-slider {
+                                background-color: #243447;
+                                border-color: #243447;
+                            }
+                        }
+
+                        &.ui-inputswitch-focus {
+                            .ui-inputswitch-slider {
+                                background-color: #243447;
+                                border-color: #243447;
+                            }
                         }
                     }
                 }

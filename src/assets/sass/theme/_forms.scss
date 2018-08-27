@@ -379,37 +379,67 @@ body {
     .ui-inputswitch {
         height: 14px;
         width: 34px !important;
-        overflow: visible;
-        background-color: $inputBgColor;
-        border-color: $inputBorderColor;
-        @include border-radius(8px);
 
-        .ui-inputswitch-handle {
-            top: -4px;
-            background-color: darken($inputBgColor, 10%);
-            @include border-radius(50%);
-            @include transition(background-color $transitionDuration);
-            width: 20px !important;
-            height: 20px !important;
-        }
+        .ui-inputswitch-slider {
+            background-color: $inputBgColor;
+            border: 1px solid $inputBorderColor;
+            @include border-radius(8px);
+            @include transition(background-color .3s);
 
-        .ui-inputswitch-on {
-            visibility: hidden;
-        }
-
-        .ui-inputswitch-off, .ui-inputswitch-on {
-          span {
-              visibility: hidden;
-          }
+            &:before {
+                background-color: darken($inputBgColor, 10%);
+                height: 1.429em;
+                width: 1.429em;
+                left: 0;
+                bottom: -0.286em;
+                border-radius: 50%;
+                -webkit-transition: $transitionDuration;
+                transition: $transitionDuration;
+            }
         }
 
         &.ui-inputswitch-checked {
-            background-color: lighten($primaryColor, 15%);
-            border-color: lighten($primaryColor, 15%);
+            .ui-inputswitch-slider:before {
+                -webkit-transform: translateX(1.250em);
+                -ms-transform: translateX(1.250em);
+                transform: translateX(1.250em);
+            }
+        }
 
-            .ui-inputswitch-handle {
-              background-color: lighten($primaryColor, 5%);
-              color: lighten($primaryColor, 5%);
+        &.ui-inputswitch-focus {
+            .ui-inputswitch-slider {
+                background-color: $inputBgColor;
+            }
+        }
+
+        &:not(.ui-state-disabled):hover {
+            .ui-inputswitch-slider {
+                background-color: $inputBgColor;
+            }
+        }
+
+        &.ui-inputswitch-checked {
+            .ui-inputswitch-slider {
+                background-color: lighten($primaryColor, 15%);
+                border-color: lighten($primaryColor, 15%);
+
+                &:before {
+                    background-color: lighten($primaryColor, 5%)
+                }
+            }
+
+            &:not(.ui-state-disabled):hover {
+                .ui-inputswitch-slider {
+                    background-color: lighten($primaryColor, 15%);
+                    border-color: lighten($primaryColor, 15%);
+                }
+            }
+
+            &.ui-inputswitch-focus {
+                .ui-inputswitch-slider {
+                    background: lighten($primaryColor, 15%);
+                    border-color: lighten($primaryColor, 15%);
+                }
             }
         }
     }
@@ -1284,7 +1314,7 @@ body {
 
                 > a {
                     cursor: pointer;
-                    
+
                     &:hover {
                         @include list-item-hover();
                     }
