@@ -60,6 +60,7 @@ body {
         }
 
         &.ui-button-icon-only {
+            min-width: 2em;
             .ui-button-text {
                 padding: .385em;
             }
@@ -1288,22 +1289,14 @@ body {
 
             .ui-datepicker-prev {
                 cursor: pointer;
-                top:0.857em;
                 color: $headerIconColor;
                 @include transition(color $transitionDuration);
-                span {
-                    display: none;
-                }
             }
 
             .ui-datepicker-next {
                 cursor: pointer;
-                top:0.857em;
                 color: $headerIconColor;
                 @include transition(color $transitionDuration);
-                span {
-                    display: none;
-                }
             }
         }
 

@@ -252,5 +252,10 @@ body {
         background-color: $headerBgColor;
         border-color: $headerBorderColor;
         padding: $headerPadding;
+
+        .ui-toolbar-seperator {
+            vertical-align: middle;
+            margin: 0 0.5em;
+        }
     }
 }
