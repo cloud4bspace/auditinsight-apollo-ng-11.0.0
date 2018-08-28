@@ -34,7 +34,7 @@ body {
 
         &:enabled:not(.ui-button-secondary):focus {
             outline: 0 none;
-            background-color: darken($primaryColor,5%);
+            background-color: lighten($primaryColor,5%);
         }
 
         &:enabled:active  {
@@ -73,7 +73,7 @@ body {
             }
 
             &:enabled:focus {
-                background-color: darken($blue,5%);
+                background-color: lighten($blue,5%);
             }
 
             &:enabled:active {
@@ -89,7 +89,7 @@ body {
             }
 
             &:enabled:focus {
-                background-color: darken($purple,5%);
+                background-color: lighten($purple,5%);
             }
 
             &:enabled:active {
@@ -105,7 +105,7 @@ body {
             }
 
             &:enabled:focus {
-                background-color: darken($orange,5%);
+                background-color: lighten($orange,5%);
             }
 
             &:enabled:active {
@@ -121,7 +121,7 @@ body {
             }
 
             &:enabled:focus {
-                background-color: darken($pink,5%);
+                background-color: lighten($pink,5%);
             }
 
             &:enabled:active {
@@ -137,7 +137,7 @@ body {
             }
 
             &:enabled:focus {
-                background-color: darken($green,5%);
+                background-color: lighten($green,5%);
             }
 
             &:enabled:active {
@@ -153,7 +153,7 @@ body {
             }
 
             &:enabled:focus {
-                background-color: darken($red,5%);
+                background-color: lighten($red,5%);
             }
 
             &:enabled:active {
@@ -170,7 +170,7 @@ body {
             }
 
             &:enabled:focus {
-                background-color: darken($yellow,5%);
+                background-color: lighten($yellow,5%);
             }
 
             &:active {
@@ -186,7 +186,7 @@ body {
             }
 
             &:enabled:focus {
-                background-color: darken($cyan,5%);
+                background-color: lighten($cyan,5%);
             }
 
             &:enabled:active {
@@ -202,7 +202,7 @@ body {
             }
 
             &:enabled:focus {
-                background-color: darken($indigo,5%);
+                background-color: lighten($indigo,5%);
             }
 
             &:enabled:active {
@@ -227,7 +227,7 @@ body {
 
          &:enabled:focus {
              outline: 0 none;
-             background-color: darken($blue,5%);
+             background-color: lighten($blue,5%);
          }
      }
 
@@ -240,7 +240,7 @@ body {
 
         &:enabled:focus {
             outline: 0 none;
-            background-color: darken($green,5%);
+            background-color: lighten($green,5%);
         }
     }
 
@@ -253,7 +253,7 @@ body {
 
         &:enabled:focus {
             outline: 0 none;
-            background-color: darken($orange,5%);
+            background-color: lighten($orange,5%);
         }
     }
 
@@ -266,7 +266,7 @@ body {
 
         &:enabled:focus {
             outline: 0 none;
-            background-color: darken($red,5%);
+            background-color: lighten($red,5%);
         }
     }
 
@@ -489,11 +489,6 @@ body {
             color: $textSecondaryColor;
             @include transition(color $transitionDuration);
 
-            .ui-button-icon-left {
-                line-height: inherit;
-                @include icon_override("\f078");
-            }
-
             &:enabled:hover {
                 background: transparent;
                 color: $textSecondaryColor;
@@ -645,7 +640,6 @@ body {
 
             .pi-caret-down {
                 color: $textSecondaryColor;
-                @include icon_override("\f078");
                 line-height: inherit;
                 margin-top: -1em;
             }
@@ -727,9 +721,7 @@ body {
             @include box-sizing(border-box);
 
             .pi {
-                line-height: inherit;
                 color: $textSecondaryColor;
-                @include icon_override("\f078");
             }
         }
 
@@ -1282,7 +1274,6 @@ body {
                 cursor: pointer;
                 top:0.857em;
                 color: $headerIconColor;
-                @include icon_override("\f053");
                 @include transition(color $transitionDuration);
                 span {
                     display: none;
@@ -1293,7 +1284,6 @@ body {
                 cursor: pointer;
                 top:0.857em;
                 color: $headerIconColor;
-                @include icon_override("\f054");
                 @include transition(color $transitionDuration);
                 span {
                     display: none;
@@ -1425,12 +1415,6 @@ body {
 
             .ui-button {
                 margin-right: 8px;
-
-                &.ui-fileupload-upload {
-                    .ui-icon {
-                        @include icon_override("\f093");
-                    }
-                }
             }
         }
 
