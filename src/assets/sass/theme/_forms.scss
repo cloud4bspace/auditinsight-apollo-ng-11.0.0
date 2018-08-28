@@ -69,11 +69,11 @@ body {
             background-color: $blue;
 
             &:enabled:hover {
-                background-color: darken($blue,5%);
+                background-color: darken($blue,6%);
             }
 
             &:enabled:focus {
-                background-color: lighten($blue,5%);
+                background-color: lighten($blue,6%);
             }
 
             &:enabled:active {
@@ -85,11 +85,11 @@ body {
             background-color: $purple;
 
             &:enabled:hover {
-                background-color: darken($purple,5%);
+                background-color: darken($purple,6%);
             }
 
             &:enabled:focus {
-                background-color: lighten($purple,5%);
+                background-color: lighten($purple,7%);
             }
 
             &:enabled:active {
@@ -101,11 +101,11 @@ body {
             background-color: $orange;
 
             &:enabled:hover {
-                background-color: darken($orange,5%);
+                background-color: darken($orange,6%);
             }
 
             &:enabled:focus {
-                background-color: lighten($orange,5%);
+                background-color: lighten($orange,6%);
             }
 
             &:enabled:active {
@@ -117,11 +117,11 @@ body {
             background-color: $pink;
 
             &:enabled:hover {
-                background-color: darken($pink,5%);
+                background-color: darken($pink,6%);
             }
 
             &:enabled:focus {
-                background-color: lighten($pink,5%);
+                background-color: lighten($pink,6%);
             }
 
             &:enabled:active {
@@ -133,11 +133,11 @@ body {
             background-color: $green;
 
             &:enabled:hover {
-                background-color: darken($green,5%);
+                background-color: darken($green,6%);
             }
 
             &:enabled:focus {
-                background-color: lighten($green,5%);
+                background-color: lighten($green,6%);
             }
 
             &:enabled:active {
@@ -149,11 +149,11 @@ body {
             background-color: $red;
 
             &:enabled:hover {
-                background-color: darken($red,5%);
+                background-color: darken($red,6%);
             }
 
             &:enabled:focus {
-                background-color: lighten($red,5%);
+                background-color: lighten($red,6%);
             }
 
             &:enabled:active {
@@ -166,11 +166,11 @@ body {
             color: $textColor;
 
             &:enabled:hover {
-                background-color: darken($yellow,5%);
+                background-color: darken($yellow,6%);
             }
 
             &:enabled:focus {
-                background-color: lighten($yellow,5%);
+                background-color: lighten($yellow,6%);
             }
 
             &:active {
@@ -182,11 +182,11 @@ body {
             background-color: $cyan;
 
             &:enabled:hover {
-                background-color: darken($cyan,5%);
+                background-color: darken($cyan,6%);
             }
 
             &:enabled:focus {
-                background-color: lighten($cyan,5%);
+                background-color: lighten($cyan,6%);
             }
 
             &:enabled:active {
@@ -198,11 +198,11 @@ body {
             background-color: $indigo;
 
             &:enabled:hover {
-                background-color: darken($indigo,5%);
+                background-color: darken($indigo,6%);
             }
 
             &:enabled:focus {
-                background-color: lighten($indigo,5%);
+                background-color: lighten($indigo,6%);
             }
 
             &:enabled:active {
@@ -222,12 +222,12 @@ body {
          background-color: $blue;
 
          &:enabled:hover {
-             background-color: darken($blue,5%);
+             background-color: darken($blue,6%);
          }
 
          &:enabled:focus {
              outline: 0 none;
-             background-color: lighten($blue,5%);
+             background-color: lighten($blue,6%);
          }
      }
 
@@ -235,12 +235,12 @@ body {
         background-color: $green;
 
         &:enabled:hover {
-            background-color: darken($green,5%);
+            background-color: darken($green,6%);
         }
 
         &:enabled:focus {
             outline: 0 none;
-            background-color: lighten($green,5%);
+            background-color: lighten($green,6%);
         }
     }
 
@@ -248,12 +248,12 @@ body {
         background-color: $orange;
 
         &:enabled:hover {
-            background-color: darken($orange,5%);
+            background-color: darken($orange,6%);
         }
 
         &:enabled:focus {
             outline: 0 none;
-            background-color: lighten($orange,5%);
+            background-color: lighten($orange,6%);
         }
     }
 
@@ -261,12 +261,12 @@ body {
         background-color: $red;
 
         &:enabled:hover {
-            background-color: darken($red,5%);
+            background-color: darken($red,6%);
         }
 
         &:enabled:focus {
             outline: 0 none;
-            background-color: lighten($red,5%);
+            background-color: lighten($red,6%);
         }
     }
 
