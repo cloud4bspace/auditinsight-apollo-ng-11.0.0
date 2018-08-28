@@ -22,7 +22,6 @@ body {
         }
 
         .ui-paginator-first {
-
             &:before {
                 position: relative;
                 top: 3px;
@@ -30,8 +29,6 @@ body {
         }
 
         .ui-paginator-prev {
-            @include rotate(180deg);
-
             &:before {
                 position: relative;
                 top: 3px;
@@ -39,7 +36,6 @@ body {
         }
 
         .ui-paginator-next {
-
             &:before {
                 position: relative;
                 top: 3px;
@@ -47,7 +43,6 @@ body {
         }
 
         .ui-paginator-last {
-
             &:before {
                 position: relative;
                 top: 3px;
