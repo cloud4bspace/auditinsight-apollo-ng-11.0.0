@@ -1,6 +1,6 @@
 {
     "name": "apollo",
-    "version": "6.1.1-SNAPSHOT",
+    "version": "6.1.1",
     "license": "PrimeNG Commercial",
     "scripts": {
         "ng": "ng",
