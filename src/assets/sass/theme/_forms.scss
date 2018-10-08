@@ -26,7 +26,7 @@ body {
         background-color: $primaryColor;
         border: 1px solid transparent;
         font-size: $fontSize;
-        @include transition(background-color $transitionDuration);
+        @include transition(background-color $transitionDuration, box-shadow $transitionDuration);
 
         &:enabled:hover {
             background-color: darken($primaryColor,5%);
@@ -34,7 +34,7 @@ body {
 
         &:enabled:focus {
             outline: 0 none;
-            background-color: lighten($primaryColor,5%);
+            @include shadow(0 0 14px 0 $primaryColor);
         }
 
         &:enabled:active  {
@@ -74,7 +74,7 @@ body {
             }
 
             &:enabled:focus {
-                background-color: lighten($blue,6%);
+                @include shadow(0 0 14px 0 $blue);
             }
 
             &:enabled:active {
@@ -90,7 +90,7 @@ body {
             }
 
             &:enabled:focus {
-                background-color: lighten($purple,7%);
+                @include shadow(0 0 14px 0 $purple);
             }
 
             &:enabled:active {
@@ -106,7 +106,7 @@ body {
             }
 
             &:enabled:focus {
-                background-color: lighten($orange,5%);
+                @include shadow(0 0 14px 0 $orange);
             }
 
             &:enabled:active {
@@ -122,7 +122,7 @@ body {
             }
 
             &:enabled:focus {
-                background-color: lighten($pink,5%);
+                @include shadow(0 0 14px 0 $pink);
             }
 
             &:enabled:active {
@@ -138,7 +138,7 @@ body {
             }
 
             &:enabled:focus {
-                background-color: lighten($green,5%);
+                @include shadow(0 0 14px 0 $green);
             }
 
             &:enabled:active {
@@ -154,7 +154,7 @@ body {
             }
 
             &:enabled:focus {
-                background-color: lighten($red,5%);
+                @include shadow(0 0 14px 0 $red);
             }
 
             &:enabled:active {
@@ -171,7 +171,7 @@ body {
             }
 
             &:enabled:focus {
-                background-color: lighten($yellow,4%);
+                @include shadow(0 0 14px 0 $yellow);
             }
 
             &:enabled:active {
@@ -187,7 +187,7 @@ body {
             }
 
             &:enabled:focus {
-                background-color: lighten($cyan,5%);
+                @include shadow(0 0 14px 0 $cyan);
             }
 
             &:enabled:active {
@@ -203,7 +203,7 @@ body {
             }
 
             &:enabled:focus {
-                background-color: lighten($indigo,6%);
+                @include shadow(0 0 14px 0 $indigo);
             }
 
             &:enabled:active {
@@ -216,7 +216,7 @@ body {
     .ui-button.ui-state-default.ui-button-secondary, .ui-buttonset.ui-button-secondary > .ui-button.ui-state-default  {
         background-color: $secondary;
         border-color: $secondary;
-        color: $textColor;
+        color: $secondaryAccent;
 
         &:enabled:hover {
             border-color: darken($secondary,5%);
@@ -226,7 +226,7 @@ body {
         &:enabled:focus {
             border-color: $secondary;
             outline: 0 none;
-            background-color: lighten($secondary,2%);
+            @include shadow(0 0 14px 0 $blue);
         }
 
         &:enabled:active {
@@ -244,7 +244,7 @@ body {
 
          &:enabled:focus {
              outline: 0 none;
-             background-color: lighten($blue,6%);
+             @include shadow(0 0 14px 0 $blue);
          }
 
         &:enabled:active {
@@ -261,7 +261,7 @@ body {
 
         &:enabled:focus {
             outline: 0 none;
-            background-color: lighten($green,5%);
+            @include shadow(0 0 14px 0 $green);
         }
 
         &:enabled:active {
@@ -278,7 +278,7 @@ body {
 
         &:enabled:focus {
             outline: 0 none;
-            background-color: lighten($orange,5%);
+            @include shadow(0 0 14px 0 $orange);
         }
 
         &:enabled:active {
@@ -295,7 +295,7 @@ body {
 
         &:enabled:focus {
             outline: 0 none;
-            background-color: lighten($red,5%);
+            @include shadow(0 0 14px 0 $red);
         }
 
         &:enabled:active {
