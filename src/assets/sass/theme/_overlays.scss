@@ -24,6 +24,17 @@ body {
                 right: .05em;
             }
         }
+
+        &:after {
+            border-color: rgba($contentBgColor, 0);
+            border-bottom-color: $contentBgColor;
+        }
+
+        &.ui-overlaypanel-flipped {
+            &:after {
+                border-top-color: $contentBgColor;
+            }
+        }
     }
 
     .ui-dialog {

@@ -802,6 +802,14 @@ body {
         }
     }
 
+    .ui-virtualscroller {
+        .ui-virtualscroller-list {
+            li {
+                border-bottom: 1px solid $contentBorderColor;
+            }
+        }
+    }
+
     .fc {
         .fc-toolbar {
             .ui-icon-circle-triangle-e {
