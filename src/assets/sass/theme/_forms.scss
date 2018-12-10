@@ -1417,6 +1417,7 @@ body {
             }
         }
         .ui-datepicker-trigger.ui-button {
+            position: absolute;
             width: 2em;
             @include border-radius-left(0);
         }
