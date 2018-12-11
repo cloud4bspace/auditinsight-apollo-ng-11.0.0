@@ -548,11 +548,22 @@ export class ControlPanelComponent &#123;
             <p>Apollo uses PrimeNG Grid CSS (ui-g-*) throughout the demos, although any Grid library can be used with it. Apollo itself does not depend on Grid CSS.</p>
 
             <h1>Customizing Styles</h1>
-            <p>It is suggested to write your customizations in styles.scss file or another file instead of adding them to the
-                scss files under sass folders to avoid maintenance issues after an update.</p>
+            <p>It is suggested to add your customizations in the following sass files under the override folder instead of adding them to the
+                scss files under sass folder to avoid maintenance issues after an update.</p>
+
+            <ul>
+                <li><b>_layout_variables</b>: Variables of the layout.</li>
+                <li><b>_layout_styles</b>: Styles for the layout.</li>
+                <li><b>_theme_variables</b>: Variables of the theme.</li>
+                <li><b>_theme_styles</b>: Styles for the theme.</li>
+            </ul>
 
             <h1>Migration Guide</h1>
-            <p>For seamless updates and easier maintenance, we suggest keeping your CSS customizations in a separate sass file such as styles.scss as defined in angular.json so that your changes are not overriden with an update.</p>
+            <h4>6.1.1 to 7.0.0</h4>
+            <ul>
+                <li>Update layout css files.</li>
+                <li>Update theme css files.</li>
+            </ul>
 
             <h4>6.1.0 to 6.1.1</h4>
             <ul>
