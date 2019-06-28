@@ -1,9 +1,14 @@
-import { ApolloPage } from './app.po';
+import {ApolloPage} from './app.po';
 
-describe('apollo App', () => {
-  let page: ApolloPage;
+describe('Apollo App', () => {
+    let page: ApolloPage;
 
-  beforeEach(() => {
-    page = new ApolloPage();
-  });
+    beforeEach(() => {
+        page = new ApolloPage();
+    });
+
+    it('should display welcome message', () => {
+        page.navigateTo();
+        expect(page.getTitleText()).toEqual('Welcome to Apollo!');
+    });
 });

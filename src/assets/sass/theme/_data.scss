@@ -811,59 +811,74 @@ body {
     }
 
     .fc {
-        .fc-toolbar {
-            .ui-icon-circle-triangle-e {
-                background: none !important;
-                font-family: 'primeicons';
-                speak: none;
-                font-style: normal;
-                font-weight: normal;
-                font-variant: normal;
-                text-transform: none;
-                line-height: 1;
-                display: inline-block;
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
-                text-indent: 0px !important;
-                text-align: center;
+        .fc-button {
+            color: $primaryTextColor;
+            background-color: $primaryColor;
+            font-size: $fontSize;
+            font-family: $fontFamily;
+            height: 2.25em;
+            padding: 0 1em;
+            border: 1px solid transparent;
 
-                &:before {
-                    content: "\e901";
-                }
-                height: auto;
-                width: auto;
-                overflow: visible;
-            }
-
-            .ui-icon-circle-triangle-w {
-                background: none !important;
-                font-family: 'primeicons';
-                speak: none;
-                font-style: normal;
-                font-weight: normal;
-                font-variant: normal;
-                text-transform: none;
-                line-height: 1;
-                display: inline-block;
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
-                text-indent: 0px !important;
-                text-align: center;
-
-                &:before {
-                    content: "\e900";
-                }
-                height: auto;
-                width: auto;
-                overflow: visible;
-            }
-        }
-        .fc-event-container {
-            .fc-event {
-                font-size: $fontSize;
-                border-color: $primaryColor;
+            &:enabled:not(:focus):not(.fc-button-active):hover {
                 background-color: darken($primaryColor,5%);
             }
+
+            &:enabled:not(.fc-button-active):focus {
+                outline: 0 none;
+                @include shadow(0 0 14px 0 $primaryColor);
+            }
+
+            &:not(:disabled).fc-button-active, &:active {
+                background-color: darken($primaryColor,12%);
+                border-color: darken($primaryColor,12%);
+
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+        }
+
+        .fc-head {
+            .fc-row {
+                background-color: $headerBgColor;
+                color: $headerTextColor;
+                border-color: $headerBorderColor;
+
+                th {
+                    border: 1px solid $headerBorderColor;
+                    padding: $headerPadding;
+                }
+            }
+        }
+
+        td.fc-today {
+            background-color: $contentBgColor;
+            border: 1px solid $contentBorderColor;
+            color: $textColor;
+        }
+
+        .fc-toolbar {
+            .ui-state-active {
+                background-color: $contentBgColor;
+                border: 1px solid $contentBorderColor;
+                color: $textColor;
+            }
+        }
+
+        table {
+            box-sizing: border-box;
+        }
+
+        div.ui-widget-content {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        .fc-event {
+            font-size: $fontSize;
+            border-color: $primaryColor;
+            background-color: darken($primaryColor,5%);
         }
     }
 }
