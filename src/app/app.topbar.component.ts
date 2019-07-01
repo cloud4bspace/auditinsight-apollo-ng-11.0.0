@@ -10,7 +10,7 @@ export class AppTopBarComponent {
     constructor(public app: AppComponent) { }
 
     themeChange(e) {
-        const themeLink: HTMLLinkElement = <HTMLLinkElement>document.getElementById('theme-css');
+        const themeLink: HTMLLinkElement = document.getElementById('theme-css') as HTMLLinkElement;
         const href = themeLink.href;
         const themeFile = href.substring(href.lastIndexOf('/') + 1, href.lastIndexOf('.'));
         const themeTokens = themeFile.split('-');

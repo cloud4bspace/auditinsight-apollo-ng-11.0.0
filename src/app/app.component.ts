@@ -145,9 +145,9 @@ export class AppComponent implements AfterViewInit {
     }
 
     changeTheme(theme) {
-        const themeLink: HTMLLinkElement = <HTMLLinkElement>document.getElementById('theme-css');
+        const themeLink: HTMLLinkElement = document.getElementById('theme-css') as HTMLLinkElement;
         themeLink.href = 'assets/theme/theme-' + theme + '.css';
-        const layoutLink: HTMLLinkElement = <HTMLLinkElement>document.getElementById('layout-css');
+        const layoutLink: HTMLLinkElement = document.getElementById('layout-css') as HTMLLinkElement;
         layoutLink.href = 'assets/layout/css/layout-' + theme + '.css';
 
         if (theme.indexOf('dark') !== -1) {

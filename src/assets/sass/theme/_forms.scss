@@ -164,7 +164,7 @@ body {
 
         &.yellow-btn {
             background-color: $yellow;
-            color: $textColor;
+            color: $yellowTextColor;
 
             &:enabled:hover {
                 background-color: darken($yellow,4%);

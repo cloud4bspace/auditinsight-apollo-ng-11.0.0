@@ -92,8 +92,8 @@
                     "options": {
                         "main": "src/test.ts",
                         "polyfills": "src/polyfills.ts",
-                        "tsConfig": "src/tsconfig.spec.json",
-                        "karmaConfig": "src/karma.conf.js",
+                        "tsConfig": "tsconfig.spec.json",
+                        "karmaConfig": "karma.conf.js",
                         "scripts": [
                             "node_modules/chart.js/dist/Chart.js",
                             "node_modules/@fullcalendar/core/main.js",

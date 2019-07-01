@@ -839,6 +839,12 @@ body {
             }
         }
 
+        &.fc-unthemed {
+            td {
+                border-color: $headerBorderColor;
+            }
+        }
+
         .fc-head {
             .fc-row {
                 background-color: $headerBgColor;
