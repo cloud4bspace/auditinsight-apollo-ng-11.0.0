@@ -859,9 +859,9 @@ body {
         }
 
         td.fc-today {
-            background-color: $contentBgColor;
-            border: 1px solid $contentBorderColor;
-            color: $textColor;
+            color: $primaryTextColor;
+            background-color: $primaryColor;
+            border: 1px solid $primaryColor;
         }
 
         .fc-toolbar {
