@@ -435,7 +435,7 @@ body {
         .ui-orderlist-caption {
             padding: $headerPadding;
             box-sizing: border-box;
-            width: 200px;
+            border-bottom: 0;
         }
 
         .ui-orderlist-filter-container {
