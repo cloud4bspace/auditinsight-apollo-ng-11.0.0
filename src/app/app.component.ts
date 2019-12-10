@@ -32,6 +32,12 @@ export class AppComponent implements AfterViewInit {
 
     menuHoverActive: boolean;
 
+    configClick: boolean;
+    
+    configActive: boolean;
+
+    theme: string = "blue-light";
+
     @ViewChild('layoutMenuScroller', { static: true }) layoutMenuScrollerViewChild: ScrollPanel;
 
     ngAfterViewInit() {
@@ -56,6 +62,11 @@ export class AppComponent implements AfterViewInit {
             this.menuHoverActive = false;
         }
 
+        if (this.configActive && !this.configClick) {
+            this.configActive = false;
+        }
+
+        this.configClick = false;
         this.topbarItemClick = false;
         this.menuClick = false;
     }
@@ -110,6 +121,10 @@ export class AppComponent implements AfterViewInit {
       event.preventDefault();
     }
 
+    onConfigClick(event) {
+        this.configClick = true;
+    }
+
     isHorizontal() {
         return this.menuMode === 'horizontal';
     }
@@ -149,6 +164,7 @@ export class AppComponent implements AfterViewInit {
         themeLink.href = 'assets/theme/theme-' + theme + '.css';
         const layoutLink: HTMLLinkElement = document.getElementById('layout-css') as HTMLLinkElement;
         layoutLink.href = 'assets/layout/css/layout-' + theme + '.css';
+        this.theme = theme;
 
         if (theme.indexOf('dark') !== -1) {
           this.darkTheme = true;

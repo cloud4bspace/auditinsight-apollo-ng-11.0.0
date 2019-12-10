@@ -75,6 +75,7 @@ import { VirtualScrollerModule } from 'primeng/virtualscroller';
 
 import { AppComponent } from './app.component';
 import { AppMenuComponent, AppSubMenuComponent } from './app.menu.component';
+import { AppConfigComponent } from './app.config.component';
 import { AppTopBarComponent } from './app.topbar.component';
 import { AppFooterComponent } from './app.footer.component';
 import { AppBreadcrumbComponent } from './app.breadcrumb.component';
@@ -175,6 +176,7 @@ import { BreadcrumbService } from './breadcrumb.service';
     declarations: [
         AppComponent,
         AppMenuComponent,
+        AppConfigComponent,
         AppSubMenuComponent,
         AppTopBarComponent,
         AppFooterComponent,
