@@ -1,5 +1,9 @@
 /* Dashboard */
 .dashboard {
+    .ui-panel {
+        border: 0 none;
+        @include shadow(0 2px 4px 0px rgba(0, 0, 0, 0.3));
+    }
 
     .overview-box {
         @include shadow(0 3px 8px 0 rgba(0, 0, 0, 0.3));
@@ -42,7 +46,6 @@
 
             .overview-ratio-value {
                 display: inline-block;
-                margin-left: -4px;
                 height: 20px;
                 padding: 0 4px;
             }
