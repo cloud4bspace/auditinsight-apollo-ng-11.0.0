@@ -8,8 +8,4 @@ import { AppComponent } from './app.component';
 export class AppTopBarComponent {
 
     constructor(public app: AppComponent) { }
-
-    themeChange() {
-        this.app.changeTheme(this.app.selectedColor);
-    }
 }
