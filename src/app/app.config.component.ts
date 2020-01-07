@@ -16,13 +16,13 @@ import { AppComponent } from './app.component';
                     <p-tabPanel header="Light or Dark">
                         <div class="panel-items">
                             <div class="panel-item">
-                                <a style="cursor: pointer" (click)="changeDarkOrLight(true)">
+                                <a style="cursor: pointer" (click)="app.changeDarkOrLight(true)">
                                     <img src="assets/layout/images/configurator/menu/apollo-dark.png" alt="apollo"/>
                                     <i class="fa fa-check" *ngIf="app.darkTheme"></i>
                                 </a>
                             </div>
                             <div class="panel-item">
-                                <a style="cursor: pointer" (click)="changeDarkOrLight(false)">
+                                <a style="cursor: pointer" (click)="app.changeDarkOrLight(false)">
                                     <img src="assets/layout/images/configurator/menu/apollo-static.png" alt="apollo"/>
                                     <i class="fa fa-check" *ngIf="!app.darkTheme"></i>
                                 </a>
@@ -96,13 +96,6 @@ export class AppConfigComponent implements OnInit {
             {label: 'orange'},
             {label: 'pink'}
         ];
-    }
-
-    changeDarkOrLight(isDark:boolean) {
-        if (this.app.darkTheme != isDark) {
-            this.app.darkTheme = isDark;
-            this.app.changeTheme(this.app.selectedColor);
-        }
     }
 
     onConfigButtonClick(event) {
