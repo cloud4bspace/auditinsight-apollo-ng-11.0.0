@@ -12,6 +12,10 @@ export class AppComponent implements AfterViewInit {
 
     menuMode = 'static';
 
+    theme: string = "blue-light";
+
+    selectedColor: string = "blue";
+
     topbarMenuActive: boolean;
 
     overlayMenuActive: boolean;
@@ -36,12 +40,58 @@ export class AppComponent implements AfterViewInit {
     
     configActive: boolean;
 
-    theme: string = "blue-light";
-
     @ViewChild('layoutMenuScroller', { static: true }) layoutMenuScrollerViewChild: ScrollPanel;
 
     ngAfterViewInit() {
         setTimeout(() => {this.layoutMenuScrollerViewChild.moveBar(); }, 100);
+    }
+
+
+    changeTheme(theme) {
+        this.selectedColor = theme;
+        theme = this.selectedColor + (this.darkTheme ? '-dark' : '-light');
+        this.changeStyleSheetsColor('theme-css', 'theme-' + theme + '.css');
+        this.changeStyleSheetsColor('layout-css', 'layout-' + theme + '.css');
+        this.theme = theme;
+
+        if (theme.indexOf('dark') !== -1) {
+          this.darkTheme = true;
+        } else {
+          this.darkTheme = false;
+        }
+    }
+
+    changeDarkOrLight(isDark:boolean) {
+        if (this.darkTheme != isDark) {
+            this.darkTheme = isDark;
+            this.changeTheme(this.selectedColor);
+        }
+    }
+
+
+    changeStyleSheetsColor(id, value) {
+        const element = document.getElementById(id);
+        const urlTokens = element.getAttribute('href').split('/');
+        urlTokens[urlTokens.length - 1] = value;
+
+        const newURL = urlTokens.join('/');
+
+        this.replaceLink(element, newURL);
+    }
+
+    replaceLink(linkElement, href) {
+        const id = linkElement.getAttribute('id');
+        const cloneLinkElement = linkElement.cloneNode(true);
+
+        cloneLinkElement.setAttribute('href', href);
+        cloneLinkElement.setAttribute('id', id + '-clone');
+
+        linkElement.parentNode.insertBefore(cloneLinkElement, linkElement.nextSibling);
+
+        cloneLinkElement.addEventListener('load', () => {
+            linkElement.remove();
+            cloneLinkElement.setAttribute('id', id);
+        });
     }
 
     onLayoutClick() {
@@ -157,19 +207,5 @@ export class AppComponent implements AfterViewInit {
     hideOverlayMenu() {
         this.overlayMenuActive = false;
         this.staticMenuMobileActive = false;
-    }
-
-    changeTheme(theme) {
-        const themeLink: HTMLLinkElement = document.getElementById('theme-css') as HTMLLinkElement;
-        themeLink.href = 'assets/theme/theme-' + theme + '.css';
-        const layoutLink: HTMLLinkElement = document.getElementById('layout-css') as HTMLLinkElement;
-        layoutLink.href = 'assets/layout/css/layout-' + theme + '.css';
-        this.theme = theme;
-
-        if (theme.indexOf('dark') !== -1) {
-          this.darkTheme = true;
-        } else {
-          this.darkTheme = false;
-        }
     }
 }
