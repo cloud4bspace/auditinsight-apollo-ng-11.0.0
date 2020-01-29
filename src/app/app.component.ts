@@ -12,9 +12,9 @@ export class AppComponent implements AfterViewInit {
 
     menuMode = 'static';
 
-    theme: string = "blue-light";
+    theme = 'blue-light';
 
-    selectedColor: string = "blue";
+    selectedColor = 'blue';
 
     topbarMenuActive: boolean;
 
@@ -37,7 +37,7 @@ export class AppComponent implements AfterViewInit {
     menuHoverActive: boolean;
 
     configClick: boolean;
-    
+
     configActive: boolean;
 
     @ViewChild('layoutMenuScroller', { static: true }) layoutMenuScrollerViewChild: ScrollPanel;
@@ -61,8 +61,8 @@ export class AppComponent implements AfterViewInit {
         }
     }
 
-    changeDarkOrLight(isDark:boolean) {
-        if (this.darkTheme != isDark) {
+    changeDarkOrLight(isDark: boolean) {
+        if (this.darkTheme !== isDark) {
             this.darkTheme = isDark;
             this.changeTheme(this.selectedColor);
         }
