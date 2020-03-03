@@ -28,17 +28,16 @@
     <div class="ui-g-12">
         <div class="card card-w-title">
             <h1>DataView</h1>
-            <p-dataView #dv [value]="cars2" [paginator]="true" [rows]="10" paginatorPosition="both" filterBy="brand" [sortField]="sortField"
-                        [sortOrder]="sortOrder">
+            <p-dataView #dv [value]="cars2" [paginator]="true" [rows]="10" paginatorPosition="both" filterBy="brand" [sortField]="sortField" [sortOrder]="sortOrder">
                 <p-header>
                     <div class="ui-helper-clearfix">
                         <div class="ui-g">
                             <div class="ui-g-12 ui-md-4">
-                                <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By" (onChange)="onSortChange($event)" [style]="{'width':'15em'}"></p-dropdown>
+                                <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By" (onChange)="onSortChange($event)" [style]="{'min-width':'140px'}"></p-dropdown>
                             </div>
                             <div class="ui-g-6 ui-md-4 filter-container">
                                 <div style="position:relative">
-                                    <input type="text" pInputText placeholder="Search by brand" (keyup)="dv.filter($event.target.value)">
+                                    <input type="search" pInputText placeholder="Search by brand" (keyup)="dv.filter($event.target.value)">
                                 </div>
                             </div>
                             <div class="ui-g-6 ui-md-4" style="text-align:right">
@@ -48,45 +47,27 @@
                     </div>
                 </p-header>
                 <ng-template let-car pTemplate="listItem">
-                    <div class="ui-g" style="padding: 2em;border-bottom: 1px solid #d9d9d9">
-                        <div class="ui-g-12 ui-md-3" style="text-align:center">
-                            <img width="72" src="assets/demo/images/car/{{car.brand}}-big.gif">
-                        </div>
-                        <div class="ui-g-12 ui-md-8 car-details">
-                            <div class="ui-g">
-                                <div class="ui-g-2 ui-sm-6">Vin: </div>
-                                <div class="ui-g-10 ui-sm-6">
-                                    <b>{{car.vin}}</b>
-                                </div>
-
-                                <div class="ui-g-2 ui-sm-6">Year: </div>
-                                <div class="ui-g-10 ui-sm-6">
-                                    <b>{{car.year}}</b>
-                                </div>
-
-                                <div class="ui-g-2 ui-sm-6">Brand: </div>
-                                <div class="ui-g-10 ui-sm-6">
-                                    <b>{{car.brand}}</b>
-                                </div>
-
-                                <div class="ui-g-2 ui-sm-6">Color: </div>
-                                <div class="ui-g-10 ui-sm-6">
-                                    <b>{{car.color}}</b>
+                    <div class="ui-g-12">
+                        <div class="car-details-list">
+                            <div>
+                                <img src="assets/demo/images/car/{{car.brand}}.png">
+                                <div class="ui-g">
+                                    <div class="ui-g-12">Vin: <b>{{car.vin}}</b></div>
+                                    <div class="ui-g-12">Year: <b>{{car.year}}</b></div>
+                                    <div class="ui-g-12">Brand: <b>{{car.brand}}</b></div>
+                                    <div class="ui-g-12">Color: <b>{{car.color}}</b></div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="ui-g-12 ui-md-1 search-icon">
-                            <button pButton type="button" icon="pi pi-search" ></button>
+                            <button pButton type="button" icon="pi pi-search" (click)="selectCar($event, car)"></button>
                         </div>
                     </div>
                 </ng-template>
                 <ng-template let-car pTemplate="gridItem">
                     <div style="padding:.5em" class="ui-g-12 ui-md-3">
                         <p-panel [header]="car.vin" [style]="{'text-align':'center'}">
-                            <img src="assets/demo/images/car/{{car.brand}}.gif">
+                            <img src="assets/demo/images/car/{{car.brand}}.png" width="60">
                             <div class="car-detail">{{car.year}} - {{car.color}}</div>
-                            <hr class="ui-widget-content" style="border-top:0">
-                            <button pButton type="button" icon="pi pi-search"  style="margin-top:0"></button>
+                            <button pButton type="button" icon="pi pi-search" (click)="selectCar($event, car)" style="margin-top:0"></button>
                         </p-panel>
                     </div>
                 </ng-template>

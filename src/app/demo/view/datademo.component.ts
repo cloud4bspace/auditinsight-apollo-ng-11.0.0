@@ -12,24 +12,47 @@ import interactionPlugin from '@fullcalendar/interaction';
 @Component({
     templateUrl: './datademo.component.html',
     styles: [`
-        .ui-dataview .filter-container {
+        .filter-container {
             text-align: center;
         }
+        
+        .car-details-list {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2em;
+            border-bottom: 1px solid #d9dad9;
+        }
 
-        @media (max-width: 40em) {
-            .ui-dataview .car-details, .ui-dataview .search-icon{
-                text-align: center;
-                margin-top: 0;
+        .car-details-list > div {
+            display: flex;
+            align-items: center;
+        }
+
+        .car-details-list > div img {
+            margin-right: 14px;
+        }
+
+        .car-detail {
+            padding: 0 1em 1em 1em;
+            border-bottom: 1px solid #d9dad9;
+            margin: 1em;
+        }
+
+        .ui-panel-content {
+            padding: 1em;
+        }
+        
+        @media (max-width: 1024px) {
+            .car-details-list img {
+                width: 75px;
             }
 
-            .ui-dataview .filter-container {
+            .filter-container {
                 text-align: left;
             }
-            .ui-dataview-layout-options.ui-buttonset > .ui-button {
-                margin-left: 0;
-                display: inline-block;
-            }
         }
+        
         .car-item {
             padding-top: 5px;
         }
