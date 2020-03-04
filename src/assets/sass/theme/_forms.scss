@@ -671,12 +671,17 @@ body {
             line-height: 2em;
             text-align: center;
             padding: 0;
+            color: $textSecondaryColor;
 
             .pi-caret-down {
                 color: $textSecondaryColor;
                 line-height: inherit;
                 margin-top: -1em;
             }
+        }
+
+        .ui-dropdown-clear-icon {
+            color: $textSecondaryColor;
         }
 
         &:not(.ui-state-disabled).ui-state-focus {
@@ -834,6 +839,7 @@ body {
         .ui-multiselect-items {
             .ui-multiselect-item {
                 padding: $listItemPadding;
+                color: $textColor;
 
                 .ui-chkbox {
                     position: static;
@@ -1350,7 +1356,7 @@ body {
                 }
 
                 &.ui-datepicker-today {
-                    a {
+                    a:not(.ui-state-active) {
                         background-color: $dividerColor;
                         color: $textColor;
                     }

@@ -115,6 +115,7 @@ body {
         }
 
         .ui-sortable-column {
+            outline: none;
             color: $textColor;
 
             .ui-sortable-column-icon {
@@ -136,6 +137,14 @@ body {
 
                 .ui-sortable-column-icon {
                     color: $primaryTextColor;
+                }
+            }
+
+            &:focus:not(.ui-state-highlight) {
+                @include list-item-hover();
+
+                .ui-sortable-column-icon {
+                    @include list-item-hover();
                 }
             }
         }
