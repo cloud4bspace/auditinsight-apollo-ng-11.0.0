@@ -28,6 +28,6 @@ export const routes: Routes = [
     { path: 'components/charts', component: ChartsDemoComponent },
     { path: 'components/file', component: FileDemoComponent },
     { path: 'documentation', component: DocumentationComponent }
-]
+];
 
 export const AppRoutes: ModuleWithProviders = RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'});

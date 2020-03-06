@@ -14,7 +14,7 @@ import { filter } from 'rxjs/operators';
 export class AppMenuComponent implements OnInit {
 
     @Input() reset: boolean;
-    
+
     @ViewChild('appSubmenu', { static: true }) appSubmenuViewChild: any;
 
     model: any[];
@@ -23,10 +23,10 @@ export class AppMenuComponent implements OnInit {
 
     currentRoute: string[] = [];
 
-    constructor(public app: AppComponent, private router:Router) { 
+    constructor(public app: AppComponent, private router: Router) {
         this.router.events.pipe(filter(event => event instanceof NavigationEnd))
         .subscribe( params => {
-            this.currentRoute = (params as NavigationEnd).url.substring(this.router.url.indexOf('/')+1).split('/');
+            this.currentRoute = (params as NavigationEnd).url.substring(this.router.url.indexOf('/') + 1).split('/');
             this.appSubmenuViewChild.resetLoaded();
         });
     }
@@ -188,7 +188,7 @@ export class AppSubMenuComponent {
 
     loaded: boolean;
 
-    appSubmenuViewChild:any;
+    appSubmenuViewChild: any;
 
     constructor(public app: AppComponent, public appMenu: AppMenuComponent, private cd: ChangeDetectorRef) { }
 
@@ -249,10 +249,10 @@ export class AppSubMenuComponent {
         let isActiveFromRoute: boolean;
         if (item && !this.loaded) {
             this.isLastItem(item);
-            
-            for(let route of this.appMenu.currentRoute) {
+
+            for (const route of this.appMenu.currentRoute) {
                 isActiveFromRoute = item.label.toLowerCase() === route;
-                if(isActiveFromRoute) {
+                if (isActiveFromRoute) {
                     this.activeIndex = index;
                     this.loaded = true;
                     this.cd.detectChanges();
@@ -278,9 +278,9 @@ export class AppSubMenuComponent {
     }
 
     isLastItem(item) {
-        if(this.item.length) {
+        if (this.item.length) {
             if (this.item[this.item.length - 1] === item) {
-                this.loaded = true
+                this.loaded = true;
             }
         }
     }

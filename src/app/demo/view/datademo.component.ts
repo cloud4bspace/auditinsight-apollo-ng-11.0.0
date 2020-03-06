@@ -27,12 +27,12 @@ import interactionPlugin from '@fullcalendar/interaction';
         .ui-column-filter .ui-multiselect-label {
             font-weight: 500;
         }
-        
+
         .ui-table.ui-table-cars .ui-table-thead > tr > th {
             border: 0 none;
             text-align: left;
         }
-        
+
         .ui-table-globalfilter-container {
             float: right;
             display: inline;
@@ -55,7 +55,7 @@ import interactionPlugin from '@fullcalendar/interaction';
         .filter-container {
             text-align: center;
         }
-        
+
         .car-details-list {
             display: flex;
             justify-content: space-between;
@@ -82,7 +82,7 @@ import interactionPlugin from '@fullcalendar/interaction';
         .ui-panel-content {
             padding: 1em;
         }
-        
+
         @media (max-width: 1024px) {
             .car-details-list img {
                 width: 75px;
@@ -92,7 +92,7 @@ import interactionPlugin from '@fullcalendar/interaction';
                 text-align: left;
             }
         }
-        
+
         /* Carousel */
         .car-item {
             padding-top: 5px;
