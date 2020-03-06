@@ -86,7 +86,7 @@
                                     <div class="ui-g-12">Color: <b>{{car.color}}</b></div>
                                 </div>
                             </div>
-                            <button pButton type="button" icon="pi pi-search" (click)="selectCar($event, car)"></button>
+                            <button pButton type="button" icon="pi pi-search"></button>
                         </div>
                     </div>
                 </ng-template>
@@ -95,7 +95,7 @@
                         <p-panel [header]="car.vin" [style]="{'text-align':'center'}">
                             <img src="assets/demo/images/car/{{car.brand}}.png" width="60">
                             <div class="car-detail">{{car.year}} - {{car.color}}</div>
-                            <button pButton type="button" icon="pi pi-search" (click)="selectCar($event, car)" style="margin-top:0"></button>
+                            <button pButton type="button" icon="pi pi-search" style="margin-top:0"></button>
                         </p-panel>
                     </div>
                 </ng-template>

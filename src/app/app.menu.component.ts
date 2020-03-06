@@ -143,7 +143,7 @@ export class AppMenuComponent implements OnInit {
                 </div>
                 <ul #appSubmenu app-submenu [item]="child" *ngIf="child.items" [visible]="isActive(i, child)" [reset]="reset" [parentActive]="isActive(i, child)"
                     [@children]="(app.isSlim()||app.isHorizontal())&&root ? isActive(i, child) ?
-                    'visible' : 'hidden' : isActive(i) ? 'visibleAnimated' : 'hiddenAnimated'"></ul>
+                    'visible' : 'hidden' : isActive(i, child) ? 'visibleAnimated' : 'hiddenAnimated'"></ul>
             </li>
         </ng-template>
     `,
