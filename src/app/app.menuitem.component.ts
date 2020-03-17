@@ -73,7 +73,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
 
     @Input() parentKey: string;
 
-    active: boolean = false;
+    active:boolean = false;
 
     menuSourceSubscription: Subscription;
 
