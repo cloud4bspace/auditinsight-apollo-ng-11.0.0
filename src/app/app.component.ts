@@ -1,12 +1,13 @@
 import { Component, ElementRef, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
 import {ScrollPanel} from 'primeng/primeng';
+import { MenuService } from './app.menu.service';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent {
 
     darkTheme = false;
 
@@ -32,20 +33,13 @@ export class AppComponent implements AfterViewInit {
 
     activeTopbarItem: any;
 
-    resetMenu: boolean;
-
     menuHoverActive: boolean;
 
     configClick: boolean;
 
     configActive: boolean;
 
-    @ViewChild('layoutMenuScroller', { static: true }) layoutMenuScrollerViewChild: ScrollPanel;
-
-    ngAfterViewInit() {
-        setTimeout(() => {this.layoutMenuScrollerViewChild.moveBar(); }, 100);
-    }
-
+    constructor(private menuService: MenuService) {}
 
     changeTheme(theme) {
         this.selectedColor = theme;
@@ -102,7 +96,7 @@ export class AppComponent implements AfterViewInit {
 
         if (!this.menuClick) {
             if (this.isHorizontal() || this.isSlim()) {
-                this.resetMenu = true;
+                this.menuService.reset();
             }
 
             if (this.overlayMenuActive || this.staticMenuMobileActive) {
@@ -137,13 +131,8 @@ export class AppComponent implements AfterViewInit {
         event.preventDefault();
     }
 
-    onMenuClick($event) {
+    onMenuClick() {
         this.menuClick = true;
-        this.resetMenu = false;
-
-        if (!this.isHorizontal()) {
-            setTimeout(() => {this.layoutMenuScrollerViewChild.moveBar(); }, 500);
-        }
     }
 
     onTopbarMenuButtonClick(event) {

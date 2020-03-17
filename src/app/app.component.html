@@ -8,24 +8,22 @@
                  'layout-overlay-active':overlayMenuActive}">
 
     <app-topbar></app-topbar>
-    <div class="layout-menu-container" (click)="onMenuClick($event)">
-        <p-scrollPanel #layoutMenuScroller [style]="{height: '100%'}">
-            <div class="layout-menu-content">
-                <div class="layout-menu-title">MENU</div>
-                <app-menu [reset]="resetMenu"></app-menu>
-                <div class="layout-menu-footer">
-                    <div class="layout-menu-footer-title">TASKS</div>
+    <div class="layout-menu-container" (click)="onMenuClick()">
+        <div class="layout-menu-content">
+            <div class="layout-menu-title">MENU</div>
+            <app-menu></app-menu>
+            <div class="layout-menu-footer">
+                <div class="layout-menu-footer-title">TASKS</div>
 
-                    <div class="layout-menu-footer-content">
-                        <p-progressBar [value]="50" [showValue]="false"></p-progressBar>
-                        Today
+                <div class="layout-menu-footer-content">
+                    <p-progressBar [value]="50" [showValue]="false"></p-progressBar>
+                    Today
 
-                        <p-progressBar [value]="80" [showValue]="false"></p-progressBar>
-                        Overall
-                    </div>
+                    <p-progressBar [value]="80" [showValue]="false"></p-progressBar>
+                    Overall
                 </div>
             </div>
-        </p-scrollPanel>
+        </div>
     </div>
 
     <div class="layout-content">

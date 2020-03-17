@@ -290,29 +290,10 @@ body {
             @include border-box();
             @include overlay-shadow;
 
-            .ui-scrollpanel {
-                background: transparent;
-                border-radius: 0;
-                border: none;
-                .ui-scrollpanel-bar {
-                  background-color: #aaaaaa;
-                  opacity: 0.3;
-                  filter: alpha(opacity=30);
-                }
-                .ui-scrollpanel-hidden {
-                  display: block;
-                  visibility: hidden;
-                }
-
-                .ui-scrollpanel-content {
-                    overflow-x: hidden;
-                }
-
-                .layout-menu-content {
-                  width: 248px;
-                  padding-right: 18px;
-                  padding-bottom: 110px;
-                }
+            .layout-menu-content {
+                width: 248px;
+                padding-right: 18px;
+                padding-bottom: 110px;
             }
 
             .layout-menu {
@@ -324,6 +305,8 @@ body {
                     > a {
                         color: $menuitemTextColor;
                         display: block;
+                        cursor: pointer;
+                        outline: none;
                         @include border-box();
 
                         span {
@@ -682,19 +665,10 @@ body {
                         }
                     }
 
-                    .ui-scrollpanel {
-                        .ui-scrollpanel-wrapper {
-                          overflow: visible;
-                          .ui-scrollpanel-content {
-                            overflow: visible;
-                              padding: 0;
-                          }
-                        }
-                        .layout-menu-content {
-                          width: 100%;
-                          padding-right: 0;
-                          padding-bottom: 0;
-                        }
+                    .layout-menu-content {
+                        width: 100%;
+                        padding-right: 0;
+                        padding-bottom: 0;
                     }
 
                     .layout-menu-footer {
@@ -716,6 +690,7 @@ body {
                     width: 230px;
                     height: 100%;
                     left: -230px;
+                    overflow: auto;
                     @include transition(left $transitionDuration);
 
                     .layout-menu-title {
@@ -890,30 +865,18 @@ body {
                     padding: 0;
                     height: 100%;
                     width: 60px;
-                    overflow: visible;
                     top: 50px;
                     position: fixed;
+                    overflow: auto;
+
 
                     .layout-menu-title, .layout-menu-footer {
                         display: none;
                     }
 
-                    .ui-scrollpanel {
-                        .ui-scrollpanel-wrapper {
-                            overflow: visible;
-                            .ui-scrollpanel-content {
-                                overflow: visible;
-                            }
-                        }
-
-                        .ui-scrollpanel-bar {
-                            display: none;
-                        }
-
-                        .layout-menu-content {
-                            width: 100%;
-                            padding-right: 0;
-                        }
+                    .layout-menu-content {
+                        width: 100%;
+                        padding-right: 0;
                     }
 
                     .layout-menu {
