@@ -62,7 +62,6 @@ export class AppComponent {
         }
     }
 
-
     changeStyleSheetsColor(id, value) {
         const element = document.getElementById(id);
         const urlTokens = element.getAttribute('href').split('/');
@@ -73,19 +72,28 @@ export class AppComponent {
         this.replaceLink(element, newURL);
     }
 
+    isIE() {
+        return /(MSIE|Trident\/|Edge\/)/i.test(window.navigator.userAgent);
+    }
+
     replaceLink(linkElement, href) {
-        const id = linkElement.getAttribute('id');
-        const cloneLinkElement = linkElement.cloneNode(true);
+        if (this.isIE()) {
+            linkElement.setAttribute('href', href);
+        }
+        else {
+            const id = linkElement.getAttribute('id');
+            const cloneLinkElement = linkElement.cloneNode(true);
 
-        cloneLinkElement.setAttribute('href', href);
-        cloneLinkElement.setAttribute('id', id + '-clone');
+            cloneLinkElement.setAttribute('href', href);
+            cloneLinkElement.setAttribute('id', id + '-clone');
 
-        linkElement.parentNode.insertBefore(cloneLinkElement, linkElement.nextSibling);
+            linkElement.parentNode.insertBefore(cloneLinkElement, linkElement.nextSibling);
 
-        cloneLinkElement.addEventListener('load', () => {
-            linkElement.remove();
-            cloneLinkElement.setAttribute('id', id);
-        });
+            cloneLinkElement.addEventListener('load', () => {
+                linkElement.remove();
+                cloneLinkElement.setAttribute('id', id);
+            });
+        }
     }
 
     onLayoutClick() {
