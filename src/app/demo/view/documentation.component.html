@@ -63,23 +63,21 @@ Run 'ng help' for more options.
 
     &lt;app-topbar&gt;&lt;/app-topbar&gt;
     &lt;div class="layout-menu-container" (click)="onMenuClick($event)"&gt;
-        &lt;p-scrollPanel #layoutMenuScroller [style]="&#123;height: '100%'&#125;"&gt;
-            &lt;div class="layout-menu-content"&gt;
-                &lt;div class="layout-menu-title"&gt;MENU&lt;/div&gt;
-                &lt;app-menu [reset]="resetMenu"&gt;&lt;/app-menu&gt;
-                &lt;div class="layout-menu-footer"&gt;
-                    &lt;div class="layout-menu-footer-title"&gt;TASKS&lt;/div&gt;
+        &lt;div class="layout-menu-content"&gt;
+            &lt;div class="layout-menu-title"&gt;MENU&lt;/div&gt;
+            &lt;app-menu&gt;&lt;/app-menu&gt;
+            &lt;div class="layout-menu-footer"&gt;
+                &lt;div class="layout-menu-footer-title"&gt;TASKS&lt;/div&gt;
 
-                    &lt;div class="layout-menu-footer-content"&gt;
-                        &lt;p-progressBar [value]="50" [showValue]="false"&gt;&lt;/p-progressBar&gt;
-                        Today
+                &lt;div class="layout-menu-footer-content"&gt;
+                    &lt;p-progressBar [value]="50" [showValue]="false"&gt;&lt;/p-progressBar&gt;
+                    Today
 
-                        &lt;p-progressBar [value]="80" [showValue]="false"&gt;&lt;/p-progressBar&gt;
-                        Overall
-                    &lt;/div&gt;
+                    &lt;p-progressBar [value]="80" [showValue]="false"&gt;&lt;/p-progressBar&gt;
+                    Overall
                 &lt;/div&gt;
             &lt;/div&gt;
-        &lt;/p-scrollPanel&gt;
+        &lt;/div&gt;
     &lt;/div&gt;
 
     &lt;div class="layout-content"&gt;
@@ -98,23 +96,20 @@ Run 'ng help' for more options.
 
             <h1>Menu</h1>
             <p>Menu is a separate component defined in app.menu.component.ts file based on PrimeNG MenuModel API. In order to define the menuitems,
-            navigate to this file and define your own model as a nested structure. Here is the menu component from the sample application. The helper
-            app-submenu component is also available in the same file.</p>
+            navigate to this file and define your own model as a nested structure. Here is the menu component from the sample application.</p>
 <pre>
-import &#123;Component, Input, OnInit&#125; from '@angular/core';
-import &#123;trigger, state, style, transition, animate&#125; from '@angular/animations';
-import &#123;MenuItem&#125; from 'primeng/primeng';
+import &#123;Component, OnInit&#125; from '@angular/core';
 import &#123;AppComponent&#125; from './app.component';
 
 @Component(&#123;
     selector: 'app-menu',
     template: `
-        &lt;ul app-submenu [item]="model" root="true" class="layout-menu" [reset]="reset" visible="true"&gt;&lt;/ul&gt;
+        &lt;ul class="layout-menu"&gt;
+            &lt;li app-menuitem *ngFor="let item of model; let i = index;" [item]="item" [index]="i" [root]="true"&gt;&lt;/li&gt;
+        &lt;/ul&gt;
     `
 &#125;)
 export class AppMenuComponent implements OnInit &#123;
-
-    @Input() reset: boolean;
 
     model: any[];
 
@@ -139,7 +134,7 @@ export class AppMenuComponent implements OnInit &#123;
                 ]
             &#125;,
             &#123;
-                label: 'Pages', icon: 'fa fa-fw fa-life-saver', , routerLink: ['/pages']
+                label: 'Pages', icon: 'fa fa-fw fa-life-saver', routerLink: ['/pages']
                 items: [
                     &#123;label: 'Empty Page', icon: 'fa fa-fw fa-square-o', routerLink: ['/pages/empty']&#125;,
                     &#123;label: 'Landing Page', icon: 'fa fa-fw fa-globe', url: 'assets/pages/landing.html', target: '_blank'&#125;,
