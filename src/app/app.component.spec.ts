@@ -1,7 +1,7 @@
 import {async, TestBed} from '@angular/core/testing';
 import {RouterTestingModule} from '@angular/router/testing';
 import {AppComponent} from './app.component';
-import {AppMenuComponent, AppSubMenuComponent} from './app.menu.component';
+import {AppMenuComponent} from './app.menu.component';
 import {AppTopBarComponent} from './app.topbar.component';
 import {AppConfigComponent} from './app.config.component';
 import {AppFooterComponent} from './app.footer.component';
@@ -28,7 +28,6 @@ describe('AppComponent', () => {
                 AppComponent,
                 AppMenuComponent,
                 AppConfigComponent,
-                AppSubMenuComponent,
                 AppTopBarComponent,
                 AppFooterComponent,
                 AppBreadcrumbComponent
