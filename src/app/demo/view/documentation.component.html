@@ -12,13 +12,13 @@
             <p>Apollo is a true native application template for Angular and is distributed as a CLI project. If you don't have CLI installed already run the following commands to set it up. In case
             you have an application that do not use CLI, skip the <a href="#noncli">Integration with an Existing Non CLI Application</a> part.
             Apollo is distributed with PrimeNG 5.2.x and Angular 5.2.x based on Angular CLI 1.6.x.</p>
-<pre>
+<pre class="doc-command">
 npm install -g @angular/cli
 </pre>
 
             <p>Once CLI is ready in your system, extract the contents of the Apollo zip file distribution, cd to the directory,
             install the libraries from npm and then execute "ng serve" to run the application in your local environment at http://localhost:4200/.</p>
-<pre>
+<pre class="doc-command">
 cd apollo
 npm install
 ng serve
@@ -28,7 +28,7 @@ ng serve
 
             <h1>Important CLI Commands</h1>
             <p>Following commands are derived from CLI.</p>
-<pre>
+<pre class="doc-command">
 Run 'ng serve' for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 Run 'ng generate component component-name' to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
@@ -52,6 +52,7 @@ Run 'ng help' for more options.
                 the main template. The component class app.component.ts implements the logic such as opening menus, managing layout modes and so on.
             </p>
 <pre>
+<code class="language-markup" pCode>
 &lt;div class="layout-wrapper" (click)="onLayoutClick()"
     [ngClass]="&#123;'layout-horizontal': isHorizontal(),
                 'layout-overlay': isOverlay(),
@@ -92,12 +93,16 @@ Run 'ng help' for more options.
         &lt;div class="layout-mask" *ngIf="staticMenuMobileActive"&gt;&lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
+</code>
 </pre>
 
             <h1>Menu</h1>
             <p>Menu is a separate component defined in app.menu.component.ts file based on PrimeNG MenuModel API. In order to define the menuitems,
             navigate to this file and define your own model as a nested structure. Here is the menu component from the sample application.</p>
+
+<div style="height:400px;overflow: auto;">
 <pre>
+<code class="language-javascript" pCode>
 import &#123;Component, OnInit&#125; from '@angular/core';
 import &#123;AppComponent&#125; from './app.component';
 
@@ -194,7 +199,9 @@ export class AppMenuComponent implements OnInit &#123;
         ];
     &#125;
 &#125;
+</code>
 </pre>
+</div>
 
 
             <h1>Integration with an Existing CLI Project</h1>
@@ -202,7 +209,7 @@ export class AppMenuComponent implements OnInit &#123;
                 and replace the contents of app.component.ts, app.component.html with their counterparts in Apollo under <i>src/app</i> folder.</p>
 
           <p>Install PrimeNG</p>
-<pre>
+<pre class="doc-command">
 npm install primeng@latest --save
 npm install primeicons@latest --save
 </pre>
@@ -210,11 +217,13 @@ npm install primeicons@latest --save
           <p>Add PrimeNG CSS at styles section in angular.json.</p>
 
 <pre>
+<code class="language-json" pCode>
 "styles": [
     "../node_modules/primeng/resources/primeng.min.css",        //required: PrimeNG components
     "node_modules/primeicons/primeicons.css",                   //required: PrimeIcons
     "styles.scss"                                               //your styles and overrides
 ],
+</code>
 </pre>
 
             <p>Last part is adding theme and layout css files, in the CLI app they are defined using link tags in index.html so the demo can switch them on
@@ -260,29 +269,33 @@ npm install primeicons@latest --save
             <p>Here are the variables required to create a theme.</p>
 
 <pre>
+<code class="language-css" pCode>
 $primaryColor:#39a3f4;
 $primaryTextColor:#ffffff;
 
 @import '../sass/theme/_theme_light.scss';
+</code>
 </pre>
 
             <p>If you are creating a dark theme, import the _theme_dark.scss instead;</p>
 <pre>
+<code class="language-css" pCode>
 $primaryColor:#39a3f4;
 $primaryTextColor:#ffffff;
 
 @import '../sass/theme/_theme_light.scss';
+</code>
 </pre>
 
             <p> An example sass command to compile the css would be;</p>
 
-<pre>
+<pre class="doc-command">
 sass src/assets/theme/theme-myown.scss src/assets/theme/theme-myown.css
 </pre>
 
             <p>Watch mode is handy to avoid compiling everytime when a change is made, instead use the following command
             so that sass generates the file whenever you make a customization. This builds all css files whenever a change is made to any scss file.</p>
-<pre>
+<pre class="doc-command">
 sass --watch src/:src/ --no-source-map
 </pre>
 
@@ -298,6 +311,7 @@ sass --watch src/:src/ --no-source-map
             <p>Here are the variables required to create a layout.</p>
 
 <pre>
+<code class="language-css" pCode>
 $primaryColor:#39a3f4;
 $primaryTextColor:#ffffff;
 $menuBgColor:#243447;
@@ -313,6 +327,7 @@ $placeholderColor:#6c6c6c;
 $dividerColor:#121213;
 
 @import '../../sass/layout/_layout.scss';
+</code>
 </pre>
 
             <h1>Common SASS Variables</h1>
@@ -320,6 +335,7 @@ $dividerColor:#121213;
 
 <h3>sass/variables/_commons.scss</h3>
 <pre>
+<code class="language-css" pCode>
 $fontFamily:"Source Sans Pro",Arial,sans-serif;
 $fontSize:14px;
 $borderRadius:2px;
@@ -335,10 +351,13 @@ $indigo:#5C6BC0;
 $orange:#f6a821;
 $yellow:#ffc800;
 $red:#EF5350;
+</code>
 </pre>
 
 <h3>sass/variables/_theme_light.scss</h3>
+<div style="height:400px;overflow: auto;">
 <pre>
+<code class="language-css" pCode>
 @import '../variables';
 
 $textColor:#424242;
@@ -392,10 +411,14 @@ $datableEvenRowBgColor:#f9f9f9;
 $tabHeaderPadding:.571em .857em;
 
 @import './_theme.scss';
+</code>
 </pre>
+</div>
 
 <h3>sass/variables/_theme_dark.scss</h3>
+<div style="height:400px;overflow: auto;">
 <pre>
+<code class="language-css" pCode>
 @import '../variables';
 
 $textColor:#d8d8d8;
@@ -449,7 +472,9 @@ $datableEvenRowBgColor:#15222F;
 $tabHeaderPadding:.571em .857em;
 
 @import './_theme.scss';
+</code>
 </pre>
+</div>
 
             <h1>Menu Modes</h1>
             <p>Menu has 4 modes, static, overlay, slim and horizontal. Layout container element in app.component.html is used to define which mode to use by adding specific classes. List
@@ -463,7 +488,9 @@ $tabHeaderPadding:.571em .857em;
 
             <p>For example to create a horizontal menu, the div element should be in following form;</p>
 <pre>
+<code class="language-markup" pCode>
 &lt;div class="layout-wrapper layout-horizontal"&gt;
+</code>
 </pre>
 
             <p>It is also possible to leave the choice to the user by keeping the preference at a component and using an ngClass expression so that user can switch between modes. Sample
@@ -474,6 +501,7 @@ $tabHeaderPadding:.571em .857em;
                 The items are dynamically generated using a BreadcrumbService where each main page that goes into the router-outlet should provide a collection of MenuItem instances.
                 Here is an example component that updates the breadcrumb.</p>
 <pre>
+<code class="language-javascript" pCode>
 import &#123;Component&#125; from '@angular/core';
 import &#123;BreadcrumbService&#125; from '../../breadcrumb.service';
 
@@ -490,6 +518,7 @@ export class ControlPanelComponent &#123;
     &#125;
 
 &#125;
+</code>
 </pre>
 
             <h1>Grid CSS</h1>
@@ -507,6 +536,16 @@ export class ControlPanelComponent &#123;
             </ul>
 
             <h1>Migration Guide</h1>
+            <h4>8.0.1 to 9.0.0</h4>
+            <p>Angular 9 and PrimeNG 9</p>
+            <ul>
+                <li>Update dependencies with <a href="https://angular.io/cli/update">ng update</a>.</li>
+                <li>Update theme.css and layout.css files.</li>
+                <li>Update app.menu.component.ts while retaining your MenuModel.</li>
+                <li>Include app.menuitem.component.ts under app folder and define it app.module.ts with declarations property.</li>
+                <li>Include app.menu.service.ts under app folder and define it app.module.ts with providers property.</li>
+            </ul>
+
             <h4>8.0.0 to 8.0.1</h4>
             <ul>
                 <li>Update layout css files.</li>
