@@ -40,7 +40,7 @@
                 </div>
                 <div class="ui-g-12" style="margin-bottom:10px">
                     <p-autoComplete id="acSimple" [(ngModel)]="country" [suggestions]="filteredCountries" (completeMethod)="filterCountry($event)" field="name" [size]="30"
-                        placeholder="Countries" [minLength]="1" dropdown="cagatay"></p-autoComplete>
+                        placeholder="Countries" [minLength]="1" [dropdown]="true"></p-autoComplete>
                 </div>
 
                 <div class="ui-g-12">
