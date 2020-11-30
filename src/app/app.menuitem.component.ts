@@ -1,40 +1,44 @@
-import { Component, Input, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { trigger, state, style, transition, animate } from '@angular/animations';
-import { Subscription } from 'rxjs';
-import { filter } from 'rxjs/operators';
-import { MenuService } from './app.menu.service';
-import { AppMainComponent } from './app.main.component';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {NavigationEnd, Router} from '@angular/router';
+import {animate, state, style, transition, trigger} from '@angular/animations';
+import {Subscription} from 'rxjs';
+import {filter} from 'rxjs/operators';
+import {MenuService} from './app.menu.service';
+import {AppMainComponent} from './app.main.component';
 
 @Component({
     /* tslint:disable:component-selector */
     selector: '[app-menuitem]',
     /* tslint:enable:component-selector */
     template: `
-          <ng-container>
-              <a [attr.href]="item.url" (click)="itemClick($event)" *ngIf="!item.routerLink || item.items" (mouseenter)="onMouseEnter()" (keydown.enter)="itemClick($event)"
-                [attr.target]="item.target" [attr.tabindex]="0" pRipple>
-                    <i [ngClass]="item.icon"></i>
-                    <span>{{item.label}}</span>
-                    <i class="pi pi-fw pi-angle-down layout-menuitem-toggler" *ngIf="item.items"></i>
-                    <span class="menuitem-badge" *ngIf="item.badge">{{item.badge}}</span>
-              </a>
-              <a (click)="itemClick($event)" (mouseenter)="onMouseEnter()" *ngIf="item.routerLink && !item.items"
-                  [routerLink]="item.routerLink" routerLinkActive="active-menuitem-routerlink"
-                  [routerLinkActiveOptions]="{exact: true}" [attr.target]="item.target" [attr.tabindex]="0" pRipple>
-                    <i [ngClass]="item.icon"></i>
-                    <span>{{item.label}}</span>
-                    <i class="pi pi-fw pi-angle-down" *ngIf="item.items"></i>
-                    <span class="menuitem-badge" *ngIf="item.badge">{{item.badge}}</span>
-              </a>
-              <ul *ngIf="item.items && active" [@children]="((app.isHorizontal() || app.isSlim()) && root) ? (active ? 'visible' : 'hidden') : (active ? 'visibleAnimated' : 'hiddenAnimated')">
-                  <ng-template ngFor let-child let-i="index" [ngForOf]="item.items">
-                      <li app-menuitem [item]="child" [index]="i" [parentKey]="key" [class]="child.badgeClass"></li>
-                  </ng-template>
-              </ul>
-          </ng-container>
-      `,
+        <ng-container>
+            <div *ngIf="root" class="layout-menuitem-root-text">{{item.label}}</div>
+            <a [attr.href]="item.url" (click)="itemClick($event)" *ngIf="!item.routerLink || item.items" (mouseenter)="onMouseEnter()"
+               (keydown.enter)="itemClick($event)"
+               [attr.target]="item.target" [attr.tabindex]="0" [ngClass]="item.class" pRipple>
+                <i [ngClass]="item.icon" class="layout-menuitem-icon"></i>
+                <span>{{item.label}}</span>
+                <i class="pi pi-fw pi-angle-down layout-menuitem-toggler" *ngIf="item.items"></i>
+                <span class="menuitem-badge" *ngIf="item.badge">{{item.badge}}</span>
+            </a>
+            <a (click)="itemClick($event)" (mouseenter)="onMouseEnter()" *ngIf="item.routerLink && !item.items"
+               [routerLink]="item.routerLink" routerLinkActive="active-menuitem-routerlink"
+               [routerLinkActiveOptions]="{exact: true}" [attr.target]="item.target" [attr.tabindex]="0" [ngClass]="item.class" pRipple>
+                <i [ngClass]="item.icon" class="layout-menuitem-icon"></i>
+                <span>{{item.label}}</span>
+                <i class="pi pi-fw pi-angle-down" *ngIf="item.items"></i>
+                <span class="menuitem-badge" *ngIf="item.badge">{{item.badge}}</span>
+            </a>
+            <ul *ngIf="item.items" [@children]="((app.isHorizontal() || app.isSlim()) && root && !app.isMobile()) ? (active ? 'visible' : 'hidden') :
+                    (root ? 'visible' : active ? 'visibleAnimated' : 'hiddenAnimated')">
+                <ng-template ngFor let-child let-i="index" [ngForOf]="item.items">
+                    <li app-menuitem [item]="child" [index]="i" [parentKey]="key" [class]="child.badgeClass"></li>
+                </ng-template>
+            </ul>
+        </ng-container>
+    `,
     host: {
+        '[class.layout-root-menuitem]': 'root',
         '[class.active-menuitem]': 'active'
     },
     animations: [
@@ -155,6 +159,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
             // reset horizontal menu
             if (this.app.isHorizontal() || this.app.isSlim()) {
                 this.menuService.reset();
+                this.app.menuHoverActive = false;
             }
         }
     }
@@ -167,7 +172,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
         }
     }
 
-    ngOnDestroy() {
+    ngOnDestroy() {
         if (this.menuSourceSubscription) {
             this.menuSourceSubscription.unsubscribe();
         }
