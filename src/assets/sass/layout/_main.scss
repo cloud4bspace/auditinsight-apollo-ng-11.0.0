@@ -470,10 +470,6 @@ body {
                     padding: 0 20px;
                     width: 100%;
 
-                    .layout-menu-title {
-                        display: none;
-                    }
-
                     .layout-menu {
 
                         > li {
@@ -661,15 +657,6 @@ body {
                         justify-content: space-between;
                     }
 
-                    .layout-menu-title {
-                        display: block;
-                        padding: 11px;
-                        font-size: 16px;
-                        color: $textSecondaryColor;
-                        border-bottom: 1px solid $dividerColor;
-                        letter-spacing: 2px;
-                    }
-
                     app-menu {
                         flex: 1 1 0;
                     }
@@ -838,7 +825,7 @@ body {
                     position: fixed;
 
 
-                    .layout-menu-title, .layout-menu-footer {
+                    .layout-menu-footer {
                         display: none;
                     }
 
@@ -1039,15 +1026,6 @@ body {
                 height: 100%;
                 left: -230px;
                 @include transition(left $transitionDuration);
-
-                .layout-menu-title {
-                    display: block;
-                    padding: 16px;
-                    font-size: 16px;
-                    color: $textSecondaryColor;
-                    border-bottom: 1px solid $dividerColor;
-                    letter-spacing: 2px;
-                }
 
                 .layout-menu {
 
