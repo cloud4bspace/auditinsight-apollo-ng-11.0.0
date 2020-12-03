@@ -78,10 +78,29 @@ body {
                     margin: 0px;
                     @include border-radius(2px);
 
-                    &::-webkit-input-placeholder { color:$primaryTextColor;; opacity: .7; @include transition(opacity $transitionDuration);}
-                    &:-moz-placeholder { color:$primaryTextColor;; opacity: .7; @include transition(opacity $transitionDuration);}
-                    &::-moz-placeholder { color:$primaryTextColor;; opacity: .7; @include transition(opacity $transitionDuration);}
-                    &:-ms-input-placeholder { color:$primaryTextColor;; opacity: .7; @include transition(opacity $transitionDuration);}
+                    &::-webkit-input-placeholder {
+                        color: $primaryTextColor;;
+                        opacity: .7;
+                        @include transition(opacity $transitionDuration);
+                    }
+
+                    &:-moz-placeholder {
+                        color: $primaryTextColor;;
+                        opacity: .7;
+                        @include transition(opacity $transitionDuration);
+                    }
+
+                    &::-moz-placeholder {
+                        color: $primaryTextColor;;
+                        opacity: .7;
+                        @include transition(opacity $transitionDuration);
+                    }
+
+                    &:-ms-input-placeholder {
+                        color: $primaryTextColor;;
+                        opacity: .7;
+                        @include transition(opacity $transitionDuration);
+                    }
                 }
 
                 .topbar-search-icon {
@@ -229,7 +248,7 @@ body {
                 @include overlay-shadow;
 
                 #menu-button {
-                  display: inline-block;
+                    display: inline-block;
                 }
             }
         }
@@ -306,6 +325,12 @@ body {
                             padding-top: 1px;
                         }
 
+                        &.rotated-icon {
+                            .layout-menuitem-icon {
+                                transform: rotate(90deg);
+                            }
+                        }
+
                         .layout-menuitem-toggler {
                             @include transition(transform $transitionDuration);
                         }
@@ -333,7 +358,7 @@ body {
                 }
 
                 .layout-menu-tooltip {
-                    display:none;
+                    display: none;
                     padding: 0 5px;
                     position: absolute;
                     left: 61px;
@@ -578,13 +603,13 @@ body {
                                             ul {
                                                 li {
                                                     a {
-                                                      padding-left: 36px;
+                                                        padding-left: 36px;
                                                     }
 
                                                     ul {
                                                         li {
                                                             a {
-                                                              padding-left: 48px;
+                                                                padding-left: 48px;
                                                             }
 
                                                             ul {
@@ -779,7 +804,7 @@ body {
                 }
             }
 
-            &.layout-overlay{
+            &.layout-overlay {
                 &.layout-overlay-active {
                     .layout-menu-container {
                         left: 0;
@@ -799,6 +824,7 @@ body {
                         margin-left: 0;
                     }
                 }
+
                 .layout-menu-container {
                     left: 0;
                 }
@@ -882,6 +908,7 @@ body {
                                 top: 0;
                                 left: 60px;
                                 min-width: 200px;
+                                display: none;
 
                                 li {
                                     a {
@@ -924,25 +951,25 @@ body {
 
                                         li {
                                             a {
-                                              padding-left: 24px;
+                                                padding-left: 24px;
                                             }
 
                                             ul {
                                                 li {
                                                     a {
-                                                      padding-left: 36px;
+                                                        padding-left: 36px;
                                                     }
 
                                                     ul {
                                                         li {
                                                             a {
-                                                              padding-left: 48px;
+                                                                padding-left: 48px;
                                                             }
 
                                                             ul {
                                                                 li {
                                                                     a {
-                                                                      padding-left: 60px;
+                                                                        padding-left: 60px;
                                                                     }
 
                                                                     ul {
@@ -964,19 +991,23 @@ body {
                             }
 
                             &.active-menuitem {
-                              > a {
-                                  background-color: $menuitemActiveBgColor;
-                                  color: $primaryColor;
+                                > a {
+                                    background-color: $menuitemActiveBgColor;
+                                    color: $primaryColor;
 
-                                &:hover {
-                                  background-color: $primaryColor;
-                                  color: $primaryTextColor;
+                                    &:hover {
+                                        background-color: $primaryColor;
+                                        color: $primaryTextColor;
+                                    }
+
+                                    &:hover + .layout-menu-tooltip {
+                                        display: none;
+                                    }
                                 }
 
-                                &:hover + .layout-menu-tooltip {
-                                  display: none;
+                                > ul {
+                                    display: block;
                                 }
-                              }
                             }
                         }
                     }
@@ -992,7 +1023,7 @@ body {
 
                 .profile {
                     .username {
-                      display: none;
+                        display: none;
                     }
                 }
 
@@ -1016,8 +1047,9 @@ body {
                     }
                 }
             }
+
             .layout-mask {
-              display: none;
+                display: none;
             }
 
             .layout-menu-container {

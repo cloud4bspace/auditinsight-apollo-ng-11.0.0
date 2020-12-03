@@ -14,8 +14,7 @@ import {AppMainComponent} from './app.main.component';
         <ng-container>
             <div *ngIf="root" class="layout-menuitem-root-text">{{item.label}}</div>
             <a [attr.href]="item.url" (click)="itemClick($event)" *ngIf="!item.routerLink || item.items" (mouseenter)="onMouseEnter()"
-               (keydown.enter)="itemClick($event)"
-               [attr.target]="item.target" [attr.tabindex]="0" [ngClass]="item.class" pRipple>
+               (keydown.enter)="itemClick($event)" [attr.target]="item.target" [attr.tabindex]="0" [ngClass]="item.class" pRipple>
                 <i [ngClass]="item.icon" class="layout-menuitem-icon"></i>
                 <span>{{item.label}}</span>
                 <i class="pi pi-fw pi-angle-down layout-menuitem-toggler" *ngIf="item.items"></i>
@@ -29,8 +28,7 @@ import {AppMainComponent} from './app.main.component';
                 <i class="pi pi-fw pi-angle-down" *ngIf="item.items"></i>
                 <span class="menuitem-badge" *ngIf="item.badge">{{item.badge}}</span>
             </a>
-            <ul *ngIf="item.items" [@children]="((app.isHorizontal() || app.isSlim()) && root && !app.isMobile()) ? (active ? 'visible' : 'hidden') :
-                    (root ? 'visible' : active ? 'visibleAnimated' : 'hiddenAnimated')">
+            <ul *ngIf="(item.items && root) || (item.items && active)" [@children]="(root ? 'visible' : active ? 'visibleAnimated' : 'hiddenAnimated')">
                 <ng-template ngFor let-child let-i="index" [ngForOf]="item.items">
                     <li app-menuitem [item]="child" [index]="i" [parentKey]="key" [class]="child.badgeClass"></li>
                 </ng-template>
@@ -153,7 +151,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
             // hide overlay menus
             if (this.app.isMobile()) {
                 // this.app.sidebarActive = false;
-                // this.app.menuMobileActive = false;
+                 this.app.staticMenuMobileActive = false;
             }
 
             // reset horizontal menu
