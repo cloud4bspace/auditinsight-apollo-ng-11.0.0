@@ -119,7 +119,12 @@ export class AppMenuComponent implements OnInit &#123;
 
     ngOnInit() &#123;
         this.model = [
-            &#123;label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/']&#125;,
+            &#123;
+                label: 'Favorites', icon: 'pi pi-fw pi-home',
+                items: [
+                    &#123;label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/']&#125;
+                ]
+            &#125;,
             &#123;
                 label: 'UI Kit', icon: 'pi pi-fw pi-star', routerLink: ['/uikit'],
                 items: [
@@ -211,10 +216,15 @@ export class AppMenuComponent implements OnInit &#123;
                 ]
             &#125;,
             &#123;
-                label: 'Buy Now', icon: 'pi pi-fw pi-shopping-cart', url: ['https://www.primefaces.org/store']
-            &#125;,
-            &#123;
-                label: 'Documentation', icon: 'pi pi-fw pi-info-circle', routerLink: ['/documentation']
+                label: 'Start', icon: 'pi pi-download',
+                items: [
+                    &#123;
+                        label: 'Buy Now', icon: 'pi pi-fw pi-shopping-cart', url: ['https://www.primefaces.org/store']
+                    &#125;,
+                    &#123;
+                        label: 'Documentation', icon: 'pi pi-fw pi-info-circle', routerLink: ['/documentation']
+                    &#125;
+                ]
             &#125;
         ];
     &#125;
@@ -1150,6 +1160,9 @@ export class ControlPanelComponent &#123;
 
 &#125;
 </app-code>
+
+            <h4>Grid CSS</h4>
+            <p>Apollo uses PrimeNG Flex Grid CSS throughout the demos such as Dashboard, however any Grid library can be used with it since Apollo Layout itself does not depend on PrimeFlex CSS.</p>
 
             <h4>Customizing Styles</h4>
             <p>It is suggested to add your customizations in the following sass files under the override folder instead of adding them to the

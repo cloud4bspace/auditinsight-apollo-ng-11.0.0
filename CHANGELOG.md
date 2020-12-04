@@ -1,5 +1,15 @@
 # Changelog
 
+## 10.1.0
+
+**Migration Guide**
+- Update app.menuitem.component.ts, app.menu.component.ts and app.main.component.html.
+- Update theme files and layout files.
+
+**Implemented New Features and Enhancements:**
+
+- New Design for Menu
+
 ##10.0.0
 **Migration Guide**
 - Update your project to Angular 10.
