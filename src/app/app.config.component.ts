@@ -14,20 +14,21 @@ import { AppMainComponent } from './app.main.component';
 
             <div class="layout-config-content">
 
-                <h5 style="margin-top: 0">Input Style</h5>
+                <h5>Color Mode</h5>
                 <div class="p-field-radiobutton">
-                    <p-radioButton name="inputStyle" value="outlined" [(ngModel)]="app.inputStyle" inputId="inputStyle1"></p-radioButton>
-                    <label for="inputStyle1">Outlined</label>
+                    <p-radioButton name="colorScheme" value="dark" [(ngModel)]="app.colorScheme" inputId="theme1" (onClick)="app.changeColorScheme('dark')"></p-radioButton>
+                    <label for="theme1">Dark</label>
                 </div>
                 <div class="p-field-radiobutton">
-                    <p-radioButton name="inputStyle" value="filled" [(ngModel)]="app.inputStyle" inputId="inputStyle2"></p-radioButton>
-                    <label for="inputStyle2">Filled</label>
+                    <p-radioButton name="colorScheme" value="dim" [(ngModel)]="app.colorScheme" inputId="theme2" (onClick)="app.changeColorScheme('dim')"></p-radioButton>
+                    <label for="theme2">Dim</label>
+                </div>
+                <div class="p-field-radiobutton">
+                    <p-radioButton name="colorScheme" value="light" [(ngModel)]="app.colorScheme" inputId="theme3" (onClick)="app.changeColorScheme('light')"></p-radioButton>
+                    <label for="theme3">Light</label>
                 </div>
 
-                <h5>Ripple Effect</h5>
-                <p-inputSwitch [ngModel]="app.ripple" (onChange)="app.onRippleChange($event)"></p-inputSwitch>
-
-                <h5>Menu Type</h5>
+                <h5>Menu Mode</h5>
                 <div class="p-field-radiobutton">
                     <p-radioButton name="menuMode" value="static" [(ngModel)]="app.menuMode" inputId="mode1"></p-radioButton>
                     <label for="mode1">Static</label>
@@ -45,19 +46,19 @@ import { AppMainComponent } from './app.main.component';
                     <label for="mode4">Slim</label>
                 </div>
 
-                <h5>Color Scheme</h5>
+                <h5 style="margin-top: 0">Input Background</h5>
                 <div class="p-field-radiobutton">
-                    <p-radioButton name="colorScheme" value="dark" [(ngModel)]="app.colorScheme" inputId="theme1" (onClick)="app.changeColorScheme('dark')"></p-radioButton>
-                    <label for="theme1">Dark</label>
+                    <p-radioButton name="inputStyle" value="outlined" [(ngModel)]="app.inputStyle" inputId="inputStyle1"></p-radioButton>
+                    <label for="inputStyle1">Outlined</label>
                 </div>
                 <div class="p-field-radiobutton">
-                    <p-radioButton name="colorScheme" value="dim" [(ngModel)]="app.colorScheme" inputId="theme2" (onClick)="app.changeColorScheme('dim')"></p-radioButton>
-                    <label for="theme2">Dim</label>
+                    <p-radioButton name="inputStyle" value="filled" [(ngModel)]="app.inputStyle" inputId="inputStyle2"></p-radioButton>
+                    <label for="inputStyle2">Filled</label>
                 </div>
-                <div class="p-field-radiobutton">
-                    <p-radioButton name="colorScheme" value="light" [(ngModel)]="app.colorScheme" inputId="theme3" (onClick)="app.changeColorScheme('light')"></p-radioButton>
-                    <label for="theme3">Light</label>
-                </div>
+
+                <h5>Ripple Effect</h5>
+                <p-inputSwitch [ngModel]="app.ripple" (onChange)="app.onRippleChange($event)"></p-inputSwitch>
+
 
                 <h5>Component Themes</h5>
                 <div class="layout-themes">
