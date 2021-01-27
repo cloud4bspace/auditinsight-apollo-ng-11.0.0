@@ -7,5 +7,5 @@ import { AppMainComponent } from './app.main.component';
 })
 export class AppTopBarComponent {
 
-    constructor(public app: AppMainComponent) { }
+    constructor(public appMain: AppMainComponent) { }
 }

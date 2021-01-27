@@ -1,10 +1,11 @@
 import {Component, OnInit} from '@angular/core';
+import { AppComponent } from './app.component';
 import { AppMainComponent } from './app.main.component';
 
 @Component({
     selector: 'app-config',
     template: `
-        <div class="layout-config" [ngClass]="{'layout-config-active': app.configActive}" (click)="app.onConfigClick($event)">
+        <div class="layout-config" [ngClass]="{'layout-config-active': appMain.configActive}" (click)="appMain.onConfigClick($event)">
             <a style="cursor: pointer" id="layout-config-button" class="layout-config-button" (click)="onConfigButtonClick($event)">
                 <i class="pi pi-cog"></i>
             </a>
@@ -16,15 +17,15 @@ import { AppMainComponent } from './app.main.component';
 
                 <h5>Color Mode</h5>
                 <div class="p-field-radiobutton">
-                    <p-radioButton name="colorScheme" value="dark" [(ngModel)]="app.colorScheme" inputId="theme1" (onClick)="app.changeColorScheme('dark')"></p-radioButton>
+                    <p-radioButton name="colorScheme" value="dark" [(ngModel)]="app.colorScheme" inputId="theme1" (onClick)="changeColorScheme('dark')"></p-radioButton>
                     <label for="theme1">Dark</label>
                 </div>
                 <div class="p-field-radiobutton">
-                    <p-radioButton name="colorScheme" value="dim" [(ngModel)]="app.colorScheme" inputId="theme2" (onClick)="app.changeColorScheme('dim')"></p-radioButton>
+                    <p-radioButton name="colorScheme" value="dim" [(ngModel)]="app.colorScheme" inputId="theme2" (onClick)="changeColorScheme('dim')"></p-radioButton>
                     <label for="theme2">Dim</label>
                 </div>
                 <div class="p-field-radiobutton">
-                    <p-radioButton name="colorScheme" value="light" [(ngModel)]="app.colorScheme" inputId="theme3" (onClick)="app.changeColorScheme('light')"></p-radioButton>
+                    <p-radioButton name="colorScheme" value="light" [(ngModel)]="app.colorScheme" inputId="theme3" (onClick)="changeColorScheme('light')"></p-radioButton>
                     <label for="theme3">Light</label>
                 </div>
 
@@ -57,13 +58,13 @@ import { AppMainComponent } from './app.main.component';
                 </div>
 
                 <h5>Ripple Effect</h5>
-                <p-inputSwitch [ngModel]="app.ripple" (onChange)="app.onRippleChange($event)"></p-inputSwitch>
+                <p-inputSwitch [ngModel]="app.ripple" (onChange)="appMain.onRippleChange($event)"></p-inputSwitch>
 
 
                 <h5>Component Themes</h5>
                 <div class="layout-themes">
                     <div *ngFor="let theme of themes">
-                        <a style="cursor: pointer" (click)="app.onThemeChange(theme.name)" [ngStyle]="{'background-color': theme.color}">
+                        <a style="cursor: pointer" (click)="onThemeChange(theme.name)" [ngStyle]="{'background-color': theme.color}">
                             <i class="pi pi-check" *ngIf="app.theme === theme.name"></i>
                         </a>
                     </div>
@@ -76,7 +77,7 @@ export class AppConfigComponent implements OnInit {
 
     themes: any[];
 
-    constructor(public app: AppMainComponent) {}
+    constructor(public app: AppComponent, public appMain: AppMainComponent) {}
 
     ngOnInit() {
         this.themes = [
@@ -91,13 +92,87 @@ export class AppConfigComponent implements OnInit {
         ];
     }
 
+    changeColorScheme(scheme) {
+        const themeLink = document.getElementById('theme-css');
+        const href = themeLink.getAttribute('href');
+        const themeFile = href.substring(href.lastIndexOf('/') + 1, href.lastIndexOf('.'));
+        const themeTokens = themeFile.split('-');
+        const themeName = themeTokens[1];
+
+        const invoiceLogoLink = document.getElementById('invoice-logo') as HTMLImageElement;
+
+        if (invoiceLogoLink) {
+            if (scheme === 'light') {
+                invoiceLogoLink.src = 'assets/layout/images/logo-dark.png';
+            }
+            else {
+                invoiceLogoLink.src = 'assets/layout/images/logo-white.png';
+            }
+        }
+
+        this.changeTheme(themeName + '-' + scheme);
+    }
+
+    onThemeChange(theme) {
+        this.app.theme = theme;
+        this.changeTheme(this.app.theme + '-' + this.app.colorScheme);
+
+        event.preventDefault();
+    }
+
+    changeTheme(theme) {
+        this.app.theme = theme.split('-')[0];
+        this.changeStyleSheetUrl('layout-css', theme, 'layout');
+        this.changeStyleSheetUrl('theme-css', theme, 'theme');
+    }
+
+    changeStyleSheetUrl(id, value, prefix) {
+        const element = document.getElementById(id);
+        const urlTokens = element.getAttribute('href').split('/');
+        urlTokens[urlTokens.length - 1] = prefix + '-' + value + '.css';
+        const newURL = urlTokens.join('/');
+        this.replaceLink(element, newURL);
+
+        if (value.indexOf('dark') !== -1) {
+            this.app.colorScheme = 'dark';
+        } else if (value.indexOf('dim') !== -1) {
+            this.app.colorScheme = 'dim';
+        } else {
+            this.app.colorScheme = 'light';
+        }
+
+    }
+
+    replaceLink(linkElement, href) {
+        if (this.isIE()) {
+            linkElement.setAttribute('href', href);
+        } else {
+            const id = linkElement.getAttribute('id');
+            const cloneLinkElement = linkElement.cloneNode(true);
+
+            cloneLinkElement.setAttribute('href', href);
+            cloneLinkElement.setAttribute('id', id + '-clone');
+
+            linkElement.parentNode.insertBefore(cloneLinkElement, linkElement.nextSibling);
+
+            cloneLinkElement.addEventListener('load', () => {
+                linkElement.remove();
+                cloneLinkElement.setAttribute('id', id);
+            });
+        }
+    }
+
+    isIE() {
+        return /(MSIE|Trident\/|Edge\/)/i.test(window.navigator.userAgent);
+    }
+
     onConfigButtonClick(event) {
-        this.app.configActive = !this.app.configActive;
+        this.appMain.configActive = !this.appMain.configActive;
         event.preventDefault();
     }
 
     onConfigCloseClick(event) {
-        this.app.configActive = false;
+        this.appMain.configActive = false;
         event.preventDefault();
     }
 }

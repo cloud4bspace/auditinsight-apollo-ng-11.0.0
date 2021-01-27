@@ -1,18 +1,13 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {MenuService} from './app.menu.service';
 import {PrimeNGConfig} from 'primeng/api';
+import {AppComponent} from './app.component';
 
 @Component({
     selector: 'app-main',
     templateUrl: './app.main.component.html'
 })
-export class AppMainComponent implements OnInit {
-
-    menuMode = 'static';
-
-    colorScheme = 'light';
-
-    theme = 'blue-light';
+export class AppMainComponent {
 
     topbarMenuActive: boolean;
 
@@ -34,90 +29,7 @@ export class AppMainComponent implements OnInit {
 
     configActive: boolean;
 
-    inputStyle = 'outlined';
-
-    ripple: boolean;
-
-    constructor(private menuService: MenuService, private primengConfig: PrimeNGConfig) {
-    }
-
-    ngOnInit() {
-        this.primengConfig.ripple = true;
-    }
-
-    changeColorScheme(scheme) {
-        const themeLink = document.getElementById('theme-css');
-        const href = themeLink.getAttribute('href');
-        const themeFile = href.substring(href.lastIndexOf('/') + 1, href.lastIndexOf('.'));
-        const themeTokens = themeFile.split('-');
-        const themeName = themeTokens[1];
-
-        const invoiceLogoLink = document.getElementById('invoice-logo') as HTMLImageElement;
-
-        if (invoiceLogoLink) {
-            if (scheme === 'light') {
-                invoiceLogoLink.src = 'assets/layout/images/logo-dark.png';
-            }
-            else {
-                invoiceLogoLink.src = 'assets/layout/images/logo-white.png';
-            }
-        }
-
-        this.changeTheme(themeName + '-' + scheme);
-    }
-
-    onThemeChange(theme) {
-        this.theme = theme;
-        this.changeTheme(this.theme + '-' + this.colorScheme);
-
-        event.preventDefault();
-    }
-
-    changeTheme(theme) {
-        this.theme = theme.split('-')[0];
-        this.changeStyleSheetUrl('layout-css', theme, 'layout');
-        this.changeStyleSheetUrl('theme-css', theme, 'theme');
-    }
-
-    changeStyleSheetUrl(id, value, prefix) {
-        const element = document.getElementById(id);
-        const urlTokens = element.getAttribute('href').split('/');
-        urlTokens[urlTokens.length - 1] = prefix + '-' + value + '.css';
-        const newURL = urlTokens.join('/');
-        this.replaceLink(element, newURL);
-
-        if (value.indexOf('dark') !== -1) {
-            this.colorScheme = 'dark';
-        } else if (value.indexOf('dim') !== -1) {
-            this.colorScheme = 'dim';
-        } else {
-            this.colorScheme = 'light';
-        }
-
-    }
-
-    replaceLink(linkElement, href) {
-        if (this.isIE()) {
-            linkElement.setAttribute('href', href);
-        } else {
-            const id = linkElement.getAttribute('id');
-            const cloneLinkElement = linkElement.cloneNode(true);
-
-            cloneLinkElement.setAttribute('href', href);
-            cloneLinkElement.setAttribute('id', id + '-clone');
-
-            linkElement.parentNode.insertBefore(cloneLinkElement, linkElement.nextSibling);
-
-            cloneLinkElement.addEventListener('load', () => {
-                linkElement.remove();
-                cloneLinkElement.setAttribute('id', id);
-            });
-        }
-    }
-
-    isIE() {
-        return /(MSIE|Trident\/|Edge\/)/i.test(window.navigator.userAgent);
-    }
+    constructor(private menuService: MenuService, private primengConfig: PrimeNGConfig, public app: AppComponent) {}
 
     onLayoutClick() {
         if (!this.topbarItemClick) {
@@ -196,23 +108,24 @@ export class AppMainComponent implements OnInit {
     }
 
     onRippleChange(event) {
-        this.ripple = event.checked;
+        this.app.ripple = event.checked;
+        this.primengConfig = event.checked;
     }
 
     isHorizontal() {
-        return this.menuMode === 'horizontal';
+        return this.app.menuMode === 'horizontal';
     }
 
     isSlim() {
-        return this.menuMode === 'slim';
+        return this.app.menuMode === 'slim';
     }
 
     isOverlay() {
-        return this.menuMode === 'overlay';
+        return this.app.menuMode === 'overlay';
     }
 
     isStatic() {
-        return this.menuMode === 'static';
+        return this.app.menuMode === 'static';
     }
 
     isMobile() {
