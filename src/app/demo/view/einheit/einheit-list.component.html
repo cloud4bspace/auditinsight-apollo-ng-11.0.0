@@ -1,0 +1,101 @@
+<div class="p-grid table-demo">
+    <div class="p-col-12">
+        <div class="card">
+            <h5>Liste der Einheiten</h5>
+            <p>Organisationen, Dienstabteilungen, Departemente, Ämter der Stadt Zürich sowie Kontrollstellenmandate</p>
+            <p-table #dt [value]="einheiten" [(selection)]="selectedCustomers1" dataKey="id"
+                     styleClass="p-datatable-customers" [rowHover]="true" [rows]="10" [paginator]="true"
+                     [filterDelay]="0" [globalFilterFields]="['bezeichnung', 'kuerzel', 'nummer']">
+                <ng-template pTemplate="caption">
+                    <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
+                        Einheiten
+                        <span class="p-input-icon-left">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
+                           placeholder="Global Search"/>
+                </span>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="width: 3rem">
+                            <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                        </th>
+                        <th width="120px" pSortableColumn="nummer">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                Nummer
+                                <p-sortIcon field="nummer"></p-sortIcon>
+                                <p-columnFilter type="text" field="nummer" display="menu" class="p-ml-auto"></p-columnFilter>
+                            </div>
+                        </th>
+                        <th pSortableColumn="bezeichnung">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                Bezeichnung
+                                <p-sortIcon field="bezeichnung"></p-sortIcon>
+                                <p-columnFilter type="text" field="bezeichnung" display="menu" class="p-ml-auto"></p-columnFilter>
+                            </div>
+                        </th>
+                        <th pSortableColumn="kuerzel">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                Kürzel
+                                <p-sortIcon field="kuerzel"></p-sortIcon>
+                                <p-columnFilter type="text" field="kuerzel" display="menu" class="p-ml-auto"></p-columnFilter>
+                            </div>
+                        </th>
+                        <th pSortableColumn="orgtyp">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                Orgtyp
+                                <p-sortIcon field="orgtyp"></p-sortIcon>
+                                <p-columnFilter type="text" field="orgtyp" display="menu" class="p-ml-auto"></p-columnFilter>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                Status
+                            </div>
+                        </th>
+
+                        <th style="width: 8rem"></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-einheit>
+                    <tr class="p-selectable-row">
+                        <td>
+                            <p-tableCheckbox [value]="einheit"></p-tableCheckbox>
+                        </td>
+                        <td>
+                            <span class="p-column-title">Nummer</span>
+                            {{einheit.id}}
+                        </td>
+                        <td>
+                            <span class="p-column-title">Bezeichnung</span>
+                            {{einheit.bezeichnung}}
+                        </td>
+                        <td>
+                            <span class="p-column-title">Kürzel</span>
+                            {{ einheit.kuerzel }}
+                        </td>
+                        <td>
+                            <span class="p-column-title">Orgtyp</span>
+                            <span [class]="'customer-badge orgtyp-' + einheit.orgtyp">{{einheit.orgtyp }}</span>
+                        </td>
+                        <td>
+                            <span class="p-column-title">Status</span>
+                            <span [class]="'customer-badge status-' + einheit.orgstatus">{{einheit.orgstatus }}</span>
+                        </td>
+
+                        <td style="text-align: center">
+                            <button pButton type="button" class="p-button-secondary" icon="pi pi-cog"></button>
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="emptymessage">
+                    <tr>
+                        <td colspan="8">No customers found.</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>
+

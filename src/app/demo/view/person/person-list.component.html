@@ -1,0 +1,90 @@
+<div class="p-grid table-demo">
+    <div class="p-col-12">
+        <div class="card">
+            <h5>Personen</h5>
+            <p>Personenliste</p>
+            <p-table #dt [value]="personen" [(selection)]="selectedCustomers1" dataKey="id"
+                     styleClass="p-datatable-customers" [rowHover]="true" [rows]="10" [paginator]="true"
+                     [filterDelay]="0" [globalFilterFields]="['nachname', 'vorname', 'kurzzeichen', 'funktion']">
+                <ng-template pTemplate="caption">
+                    <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
+                        {{ personen.length }} Personen
+                        <span class="p-input-icon-left">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
+                           placeholder="Global Search"/>
+                </span>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th pSortableColumn="nachname">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                Name
+                                <p-sortIcon field="nachname"></p-sortIcon>
+                                <p-columnFilter type="text" field="nachname" display="menu" class="p-ml-auto"></p-columnFilter>
+                            </div>
+                        </th>
+                        <th pSortableColumn="id">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                Vorname
+                                <p-sortIcon field="vorname"></p-sortIcon>
+                                <p-columnFilter type="text" field="vorname" display="menu" class="p-ml-auto"></p-columnFilter>
+                            </div>
+                        </th>
+                        <th pSortableColumn="kurzzeichen">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                MA-Kurzzeichen
+                                <p-sortIcon field="kurzzeichen"></p-sortIcon>
+                                <p-columnFilter type="text" field="kurzzeichen" display="menu" class="p-ml-auto"></p-columnFilter>
+                            </div>
+                        </th>
+                        <th pSortableColumn="funktion">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                Funktion
+                                <p-sortIcon field="funktion"></p-sortIcon>
+                                <p-columnFilter type="text" field="funktion" display="menu" class="p-ml-auto"></p-columnFilter>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                Link
+                            </div>
+                        </th>
+
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-person>
+                    <tr class="p-selectable-row">
+                        <td>
+                            <span class="p-column-title">Name</span>
+                            {{ person.nachname }}
+                        </td>
+                        <td>
+                            <span class="p-column-title">Vorname</span>
+                            {{person.vorname}}
+                        </td>
+                        <td>
+                            <span class="p-column-title">MA-Kurzzeichen</span>
+                            {{person.kurzzeichen}}
+                        </td>
+                        <td>
+                            <span class="p-column-title">Funktion</span>
+                            {{person.funktion}}
+                        </td>
+                        <td>
+                            <span class="p-column-title">Link</span>
+                            <a href={{person.link}} class="p-button-rounded" pButton type="button" icon="pi pi-id-card" iconPos="left"></a>
+                        </td>
+
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="emptymessage">
+                    <tr>
+                        <td colspan="8">No customers found.</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,101 @@
+<div class="p-grid table-demo">
+    <div class="p-col-12">
+        <div class="card">
+            <h5>Kontenrahmen</h5>
+            <p>HRM2 ab 2019</p>
+            <p-table #dt [value]="kontenrahmen" [(selection)]="selectedCustomers1" dataKey="id"
+                     styleClass="p-datatable-customers" [rowHover]="true" [rows]="10" [paginator]="true"
+                     [filterDelay]="0" [globalFilterFields]="['teiljr', 'id', 'bezeichnung', 'hinweis']">
+                <ng-template pTemplate="caption">
+                    <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
+                        {{ kontenrahmen.length }} Positionen des Kontenrahmens
+                        <span class="p-input-icon-left">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
+                           placeholder="Global Search"/>
+                </span>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th width="100px" pSortableColumn="teiljr">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                Teil
+                                <p-sortIcon field="teiljr"></p-sortIcon>
+                                <p-columnFilter type="text" field="teiljr" display="menu" class="p-ml-auto"></p-columnFilter>
+                            </div>
+                        </th>
+                        <th width="100px" pSortableColumn="ebene">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                Ebene
+                                <p-sortIcon field="ebene"></p-sortIcon>
+                                <p-columnFilter type="text" field="ebene" display="menu" class="p-ml-auto"></p-columnFilter>
+                            </div>
+                        </th>
+                        <th width="120px" pSortableColumn="id">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                Nummer
+                                <p-sortIcon field="id"></p-sortIcon>
+                                <p-columnFilter type="text" field="id" display="menu" class="p-ml-auto"></p-columnFilter>
+                            </div>
+                        </th>
+                        <th pSortableColumn="bezeichnung">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                Bezeichnung
+                                <p-sortIcon field="bezeichnung"></p-sortIcon>
+                                <p-columnFilter type="text" field="bezeichnung" display="menu" class="p-ml-auto"></p-columnFilter>
+                            </div>
+                        </th>
+                        <th pSortableColumn="hinweis">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                Hinweis
+                                <p-sortIcon field="hinweis"></p-sortIcon>
+                                <p-columnFilter type="text" field="hinweis" display="menu" class="p-ml-auto"></p-columnFilter>
+                            </div>
+                        </th>
+
+
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-position>
+                    <tr class="p-selectable-row">
+                        <td>
+                            <span class="p-column-title">Teil</span>
+                            <span [class]="'jr-badge teiljr-' + position.teiljr">{{position.teiljr }}</span>
+                        </td>
+                        <td>
+                            <span class="p-column-title">Ebene</span>
+                            {{ position.ebene }}
+                        </td>
+                        <td>
+                            <span class="p-column-title">Nummer</span>
+                            {{position.id}}
+                        </td>
+                        <td>
+                            <span class="p-column-title">Bezeichnung</span>
+                            {{position.bezeichnung}}
+                        </td>
+                        <td pTooltip={{position.hinweis}}>
+                            <span class="p-column-title">Hinweise</span>
+                            {{ (position.hinweis.length>50)? (position.hinweis | slice:0:50)+'..':(position.hinweis) }}
+                        </td>
+
+                    <!--    <td>
+                            <span class="p-column-title">Status</span>
+                            <span *ngIf="position.status === '1'" [class]="'status-badge status-' + position.status">aktiv</span>
+                            <span *ngIf="position.status === '0'" [class]="'status-badge status-' + position.status">inaktiv</span>
+                        </td> -->
+
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="emptymessage">
+                    <tr>
+                        <td colspan="8">No customers found.</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>
+
+
