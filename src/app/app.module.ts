@@ -142,6 +142,10 @@ import {PhotoService} from './demo/service/photoservice';
 import {ProductService} from './demo/service/productservice';
 import {AppBreadcrumbService} from './app.breadcrumb.service';
 import {MenuService} from './app.menu.service';
+import {EinheitService} from './demo/service/einheitservice';
+import { EinheitListComponent } from './demo/view/einheit-list.component';
+import {KontenrahmenService} from "./demo/service/kontenrahmenservice";
+import { KontenrahmenListComponent } from './demo/view/kontenrahmen-list.component';
 
 
 @NgModule({
@@ -279,10 +283,12 @@ import {MenuService} from './app.menu.service';
         AppNotfoundComponent,
         AppErrorComponent,
         AppAccessdeniedComponent,
+        EinheitListComponent,
+        KontenrahmenListComponent,
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
-        CountryService, CustomerService, EventService, IconService, NodeService,
+        EinheitService, KontenrahmenService, CountryService, CustomerService, EventService, IconService, NodeService,
         PhotoService, ProductService, MenuService, AppBreadcrumbService
     ],
     bootstrap: [AppComponent]
