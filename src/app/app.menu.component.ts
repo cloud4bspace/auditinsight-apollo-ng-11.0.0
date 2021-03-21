@@ -30,9 +30,9 @@ export class AppMenuComponent implements OnInit {
             },
 
             {
-                label: 'Personen', icon: 'pi pi-fw pi-star', routerLink: ['/personen'],
+                label: 'Personen', icon: 'pi pi-fw pi-star', routerLink: ['/person'],
                 items: [
-                    {label: 'Personen', icon: 'pi pi-fw pi-id-card', routerLink: ['/uikit/personen']},
+                    {label: 'Personen', icon: 'pi pi-fw pi-id-card', routerLink: ['/person/liste']},
                 ]
             },
 

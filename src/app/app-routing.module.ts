@@ -38,8 +38,9 @@ import {AppCalendarComponent} from './pages/app.calendar.component';
 import {AppTimelineDemoComponent} from './pages/app.timelinedemo.component';
 import {AppInvoiceComponent} from './pages/app.invoice.component';
 import {AppHelpComponent} from './pages/app.help.component';
-import {EinheitListComponent} from "./demo/view/einheit-list.component";
-import {KontenrahmenListComponent} from "./demo/view/kontenrahmen-list.component";
+import {EinheitListComponent} from './demo/view/einheit/einheit-list.component';
+import {KontenrahmenListComponent} from './demo/view/kontenrahmen/kontenrahmen-list.component';
+import {PersonListComponent} from "./demo/view/person/person-list.component";
 
 @NgModule({
     imports: [
@@ -57,6 +58,7 @@ import {KontenrahmenListComponent} from "./demo/view/kontenrahmen-list.component
                     {path: 'uikit/einheiten', component: EinheitListComponent},
                     {path: 'einheit/liste', component: EinheitListComponent},
                     {path: 'jahresrechnung/kontenrahmen', component: KontenrahmenListComponent},
+                    {path: 'person/liste', component: PersonListComponent},
                     {path: 'uikit/list', component: ListDemoComponent},
                     {path: 'uikit/tree', component: TreeDemoComponent},
                     {path: 'uikit/panel', component: PanelsDemoComponent},

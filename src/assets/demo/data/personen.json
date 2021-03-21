@@ -1,0 +1,24 @@
+{
+    "data": [
+        {
+            "id": "1",
+            "nachname": "Kämpf",
+            "vorname": "Bernhard",
+            "kurzzeichen": "zfkkab",
+            "einheit": "1007",
+            "funktion": "Revisor",
+            "link": "https://stackoverflow.com/questions/44669340/how-to-truncate-text-in-angular2",
+            "status": "1"
+        },
+        {
+            "id": "2",
+            "nachname": "Rosa-Zeiser",
+            "vorname": "Armin",
+            "kurzzeichen": "zfkroa",
+            "einheit": "1007",
+            "funktion": "IT-Revisor",
+            "link": "https://forum.primefaces.org/viewforum.php?f=35",
+            "status": "1"
+        }
+    ]
+}
