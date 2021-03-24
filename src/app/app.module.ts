@@ -148,6 +148,7 @@ import {KontenrahmenService} from "./demo/service/kontenrahmenservice";
 import { KontenrahmenListComponent } from './demo/view/kontenrahmen/kontenrahmen-list.component';
 import { PersonListComponent } from './demo/view/person/person-list.component';
 import {PersonService} from "./demo/service/personservice";
+import { EinheitDetailComponent } from './demo/view/einheit/einheit-detail.component';
 
 
 @NgModule({
@@ -288,6 +289,7 @@ import {PersonService} from "./demo/service/personservice";
         EinheitListComponent,
         KontenrahmenListComponent,
         PersonListComponent,
+        EinheitDetailComponent,
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},

@@ -59,7 +59,7 @@
                     </tr>
                 </ng-template>
                 <ng-template pTemplate="body" let-einheit>
-                    <tr class="p-selectable-row">
+                    <tr [routerLink]="[einheit.id]" class="p-selectable-row" routerLinkActive="active">
                         <td>
                             <p-tableCheckbox [value]="einheit"></p-tableCheckbox>
                         </td>

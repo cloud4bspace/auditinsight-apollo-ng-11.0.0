@@ -41,6 +41,7 @@ import {AppHelpComponent} from './pages/app.help.component';
 import {EinheitListComponent} from './demo/view/einheit/einheit-list.component';
 import {KontenrahmenListComponent} from './demo/view/kontenrahmen/kontenrahmen-list.component';
 import {PersonListComponent} from "./demo/view/person/person-list.component";
+import {EinheitDetailComponent} from "./demo/view/einheit/einheit-detail.component";
 
 @NgModule({
     imports: [
@@ -57,6 +58,8 @@ import {PersonListComponent} from "./demo/view/person/person-list.component";
                     {path: 'uikit/table', component: TableDemoComponent},
                     {path: 'uikit/einheiten', component: EinheitListComponent},
                     {path: 'einheit/liste', component: EinheitListComponent},
+                    {path: 'einheit/liste/:id', component: EinheitDetailComponent},
+                    {path: 'einheit/detail/:id', component: EinheitDetailComponent},
                     {path: 'jahresrechnung/kontenrahmen', component: KontenrahmenListComponent},
                     {path: 'person/liste', component: PersonListComponent},
                     {path: 'uikit/list', component: ListDemoComponent},
