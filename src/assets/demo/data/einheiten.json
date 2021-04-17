@@ -133,6 +133,17 @@
             "orgstatus": "aktiv"
         },
         {
+            "id": "10",
+            "nummer": "10",
+            "bezeichnung": "Behörden und Gesamtverwaltung",
+            "kuerzel": "BUG",
+            "departementid": "10",
+            "ewb": "0",
+            "pga": "0",
+            "orgtyp": "DP",
+            "orgstatus": "aktiv"
+        },
+        {
             "id": "1500",
             "nummer": "1500",
             "bezeichnung": "Departementssekretariat",

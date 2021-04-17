@@ -31,6 +31,7 @@ export class EinheitListComponent implements OnInit {
     ngOnInit() {
         this.einheitService.getEinheiten().then(einheiten => {
             this.einheiten = einheiten;
+            this.einheiten.sort((a, b) => a.nummer.localeCompare(b.nummer));
             console.log('Einheiten wurden geladen: ' + einheiten.length);
         });
     }
